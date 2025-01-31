@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
+
+
+    
+
+<!-- keywords -->
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Sherroe Huang">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Sherroe Huang">
+    
+        <meta name="keywords" content="Sherroe,sherroe,blog,hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="">
+    <meta name="description" content="你好，欢迎来到我的博客。 你可以叫我鱼籽，或山阳子瑜，亦或Sherroe，再或者……其他什么都行。 这并不重要，名字只是个代号罢了。 真正重要的是，我可以用这些独属于自己的代号在这个小小的博客里获得一点满足感，这便足够了。  关于我 首都垂雷大学毕业，不思进取的混子大学生。 刚开始接触游戏行业，职业方向大概是策划。 擅长睡觉，摸鱼，摆烂以及copy别人的代码。 喜欢打游戏，画个画，看点二次元啥玩意">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About Me">
+<meta property="og:url" content="http://sherroe.github.io/about/index.html">
+<meta property="og:site_name" content="妄想录">
+<meta property="og:description" content="你好，欢迎来到我的博客。 你可以叫我鱼籽，或山阳子瑜，亦或Sherroe，再或者……其他什么都行。 这并不重要，名字只是个代号罢了。 真正重要的是，我可以用这些独属于自己的代号在这个小小的博客里获得一点满足感，这便足够了。  关于我 首都垂雷大学毕业，不思进取的混子大学生。 刚开始接触游戏行业，职业方向大概是策划。 擅长睡觉，摸鱼，摆烂以及copy别人的代码。 喜欢打游戏，画个画，看点二次元啥玩意">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-01-31T09:18:02.252Z">
+<meta property="article:modified_time" content="2025-01-31T09:18:02.252Z">
+<meta property="article:author" content="Sherroe Huang">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/img/favicon.png">
+    
+    <title>About Me · 妄想录 | Sherroe&#39;s Blog</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20211217" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/css/dark.css?v=20211217" as="style">
+    <link rel="stylesheet" href="/css/dark.css">
+    <link rel="stylesheet" href="/css/mobile.css?v=20211217" media="(max-width: 960px)">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js?v=20211217" as="script">
+    <link rel="preload" href="/scripts/dark.js?v=20211217" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+    
+        <script>
+            var hits = JSON.parse('{"per_page":10}')
+            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
+
+            var algolia = {
+                applicationID: 'GEEDN46CDJ',
+                apiKey: '8d3c584ac83bd68b3e1b07c68e0404e6',
+                indexName: 'Sherroe Huang',
+                hits: hits,
+                labels: labels
+            }
+        </script>
+    
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+    
+        <body class="about-body">
+    
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress read-progress-feature"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        
+            <div class="header-sidebar-menu header-sidebar-menu-rounded">
+        
+            
+                <i class="fas fa-bars"></i>
+            
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href=/>Sherroe's Blog</a>
+        </span>
+    </div>
+    <!-- toggle banner for post layout -->
+    
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- back to top button -->
+    <div class="footer-fixed-element">
+        
+            <div class="back-top back-top-hidden back-top-rounded">
+        
+        
+            <i class="fas fa-chevron-up"></i>
+        
+        </div>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="
+
+
+
+
+
+
+
+    height:50vh;
+
+">
+    
+    <!-- 主页  -->
+    
+        
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/img/cover.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+                About Me
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+        </p>
+        <!-- 文章页 meta -->
+        
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+            <div class="container container-unloaded">
+                <!-- 不可以删除，否则会调用 post 的 layout -->
+<main class="main about-page">
+    <article class="article-entry">
+        <p>你好，欢迎来到我的博客。</p>
+<p>你可以叫我鱼籽，或山阳子瑜，亦或Sherroe，再或者……其他什么都行。</p>
+<p>这并不重要，名字只是个代号罢了。</p>
+<p>真正重要的是，我可以用这些独属于自己的代号在这个小小的博客里获得一点满足感，这便足够了。</p>
+<hr>
+<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><blockquote>
+<p>首都垂雷大学毕业，不思进取的混子大学生。</p>
+<p>刚开始接触游戏行业，职业方向大概是策划。</p>
+<p>擅长睡觉，摸鱼，摆烂以及copy别人的代码。</p>
+<p>喜欢打游戏，画个画，看点二次元啥玩意的。</p>
+<p>或许会在这里发布一些自己脑中构造的东西。</p>
+</blockquote>
+<p><del>为什么我会把这个关于页面写得这么像简历呢</del></p>
+<h3 id="教育经历"><a href="#教育经历" class="headerlink" title="教育经历"></a>教育经历</h3><ul>
+<li><strong>2019.9 - 2024.7  北京邮电大学  本科  计算机学院  网络工程</strong></li>
+</ul>
+<p>为什么读了五年本科呢？小编也很好奇。</p>
+<h3 id="工作-实习经历"><a href="#工作-实习经历" class="headerlink" title="工作&#x2F;实习经历"></a>工作&#x2F;实习经历</h3><ul>
+<li><strong>2024.2 - 至今  欢乐互娱  RO3  技术策划</strong></li>
+</ul>
+<p>*经历待补充</p>
+<ul>
+<li><strong>2023.11 - 2024.2  永星科技  白夜极光  剧情策划实习生</strong></li>
+</ul>
+<p>*经历待补充</p>
+<ul>
+<li><strong>2023.7 - 2023.8  字节跳动  朝夕光年  技术策划实习生</strong></li>
+</ul>
+<p>能够进入字节这样的大厂，我还是产生了不少的被认可的感觉。技术策划的头衔也终于可以让我担任的岗位和自己的大学专业产生一些匹配度。由于我进入的项目组负责一个新开的在研项目，平时的工作能够更多地接触到创意性的内容，不仅仅是执行的活儿了。或许这样的工作才更符合我心目中的“策划”？很多事情应该都还需要摸索。</p>
+<p>在字节的生活也是很令人满意的。在这里工作能感受到大公司的规范化和专业性，同事都是各个领域的优秀人才，平时交流非常友善且高效，也都会为了一个共同的目标而努力。食堂味道很好，公司提供的配套帮助和福利也十分完善。</p>
+<p>但不得不说这里的工作确实节奏很快，大家普遍也会默认加班。工作到很晚都是常有的事，不知道自己能不能扛得住压力。不过总归是一个不错的机会，暂且走一步看一步吧。</p>
+<ul>
+<li><strong>2023.1 - 2023.7  贝塔科技  游戏策划实习生</strong></li>
+</ul>
+<p>这是一家面向海外市场制作休闲游戏的公司。我在组内属于剧情策划，工作内容也差不多是纯执行层面的剧情配置。虽然现在看来当时的工作内容总归是有些简单和枯燥，但作为人生的第一份实习经历，从这里开始我终于有半只脚踏入了游戏行业的门槛，窥视到了一个商业游戏产出过程的冰山一角。</p>
+<p>在贝塔的半年还是很开心的，一家仅有几百人规模的中小公司也会尽可能提供令人满意的工作环境和福利待遇，同事也都很好相处。虽然公司楼下的食堂口味一般，但园区里有可以用工卡餐补消费的和府捞面和汉堡王，也总能满足下班之后“吃点好的”。唯一遗憾的地方是刚好在公司举办七月生日会的前一周离职了，没拿到生日礼物，至今仍心有不甘。</p>
+<h3 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h3><ul>
+<li><strong>GameJam</strong></li>
+</ul>
+<p>2022年、2023年连续参加了两届CIGA举办的GameJam48h开发比赛。第一年是和同样在北邮的同学完成的，第二年是在网上临时寻找了一些陌生的小伙伴（很巧的是竟然遇到了同样在字节工作的同事）。</p>
+<p>两次GameJam产出的作品都是像素风的2D横板&#x2F;平台跳跃类型的解谜游戏。我在两个作品中担任的都是美术职位，绘制像素美术资源和游戏封面，同时也为策划部分提供了一些思路。</p>
+<p>2023年的作品获得了海南站第二名的奖项。</p>
+<p>游戏链接：2022-<a target="_blank" rel="noopener" href="https://www.gmhub.com/game/1234">GmHub</a>  2023-<a target="_blank" rel="noopener" href="https://www.gmhub.com/game/2879">GmHub</a></p>
+<h3 id="在校经历"><a href="#在校经历" class="headerlink" title="在校经历"></a>在校经历</h3><ul>
+<li><strong>2020.8 - 2021.8  北邮檐枫动漫社  社长&#x2F;创作组组长</strong></li>
+</ul>
+<p>在社团作为社员的三年和作为社长的一年，算是在校期间最开心的一段经历。社团给我带来了很多有趣的故事，也帮我认识了很多有趣的人。</p>
+<p>无论是管理一个社团、组织一场大型晚会、创作一个动态漫画、导演一台舞台剧、编制一本社刊、绘制一个社团logo……檐枫动漫社给我提供了非常多的机会，让我去尝试参与许多从未体验过的、极具创意性的东西。同时，我也是第一次以一个领头人的身份管理一个规模巨大的集体。与不同的人沟通交流、策划事项和活动、组织推进项目进度等等……这都让我经受了不小的锻炼。总体来说，这段经历对我而言是弥足珍贵的。</p>
+<p>不过在繁杂的人际关系中，也总会经历一些不愉快的事情。对于这个人员一年更换一轮的学生组织，我最终也还是在这里留下了许多遗憾。但希望随着时间逐渐抚平创伤，多年后回忆起这些事的时候，我可以只是像望着夜空中的星星那样：“哦，原来是这样的。”</p>
+<p><strong>“社团是人组成的，人永远是组织社团的目的，而不是手段。”</strong>——这是我在经历了不少上述所说的“不愉快的事”之后，所得出的结论。回过头想想，我在担任社长一职时（甚至在社长卸任后很长一段时间里），心态与这句话恰恰相反了。我的确为社团做出了不少贡献和成就，但背后的代价是给自己和身边的人都带来了不小的压力，这也在一定程度上影响了我的生活和学业。在这样一个非盈利性的、纯粹是兴趣导向的组织里，付出与收获极容易不匹配。那我还能多做什么呢？我需要多做什么吗？我应该多做吗？这大概是需要我长久思考的一个问题。</p>
+<h3 id="兴趣爱好"><a href="#兴趣爱好" class="headerlink" title="兴趣爱好"></a>兴趣爱好</h3><p>要聊起兴趣爱好的话……我总会感觉自己接触到的各种不同领域的事物还算是比较广泛的，但大多都只是浅尝辄止罢了，与在这些领域有长久发展的人无法相比。同时我也不想把一些“谁都会喜欢”的事儿列作自己独特的“兴趣爱好”——比如旅游听歌看电影……之类的。而与自己的专业和职业规划相关的东西——游戏开发，也是一件虽因兴趣而起，但不可能永远都会保持为兴趣的事吧。</p>
+<p>仔细想了想，我大概会把以下这些东西列作自己目前的“兴趣爱好”：</p>
+<ul>
+<li><strong>绘画与平面设计</strong></li>
+</ul>
+<p>画画是我儿时唯一在校外额外学习的东西。初中开始大概进行了两年半的正统绘画学习，14岁时考了速写六级（在美术生里其实是没什么含金量的东西），中考艺考失败后便再没有正经学过画画了。在高中接触到数码绘画之后，自学了一段时间日式漫画风格的板绘，画风也逐渐向二次元靠拢。在大学尝试了游戏开发后，练习了一些像素风格的绘画。现在只是属于偶尔会随便动笔画画，自我欣赏一下的程度。绘画水平放在任何一个社交平台大概都排不上号。</p>
+<p>自从绘画类AI的技术大爆炸出现后，我突然发现：自己可能并不需要继续在绘画这件事上投入更多了。AI的迭代速度之快、产出作品效果之好，我的画作与之相比过于相形见绌。在那之后我开始尝试AI生成底稿+人工修笔的流程，在自己有一定绘画基础的情况下，确实能很高效地产出各种质量和完成度都不错的产品。市场上的绝大部分商业绘画作品基本也都开始这样操作了吧。</p>
+<p>也许我不会再专门练习绘画、精进画技了。但如果画画这个过程本身还能够满足自己的一些精神需求的话，AI也不会对我产生什么影响吧。</p>
+<p>实际上我完全没有接触过任何系统的平面设计学习，这仅仅也是我熟悉数码绘画后的延伸。虽然我所做过的都是在学生时代产出的一些小打小闹的东西，但这些单独的作品实际上还是很能令自己满意的——比如兰铁一中次元动漫社、北邮檐枫动漫社两个社团的logo设计，以及北邮檐枫动漫社社刊《檐艺》第8刊的编辑等等。</p>
+<ul>
+<li><strong>视频剪辑与特效</strong></li>
+</ul>
+<p>做视频是一件很有趣的事情。我制作的绝大部分视频作品我都会上传至我的<a target="_blank" rel="noopener" href="https://space.bilibili.com/57427709">bilibili账号</a>。但仔细想来，自己大概也只能算是有一定的处理视频的能力，却并没有真正独立产出过完整的视频作品。</p>
+<ul>
+<li><strong>摄影与后期修图</strong></li>
+</ul>
+<p>*器材是佳能</p>
+<p>拍照向来是很令人放松身心的。目前的摄影方向主要是人像——从漫展拍摄开始，后来也接了一部分毕业照的活儿。</p>
+<p>后期修图的部分与以上提到的绘画、平面设计、视频剪辑都有很多共通之处，学习软件操作和调色修图思路对我来说都还算容易上手。这件事大概是我以后会愿意投入很多时间和精力去发展的一个方向。 </p>
+<ul>
+<li><strong>二次元</strong></li>
+</ul>
+<p>我的二次元纯度可能实际上也没多高，但基本上和一些拥有相同属性的朋友还是很能聊得来的。这里大概列举一些——只是写到这里的时候回忆起自己印象很深刻的东西——并且不限于动画、漫画、游戏或其他企划的话——最喜欢的作品应该有《命运石之门》、《冰菓》、《再见绘梨》、《弹丸论破》系列、《LoveLive》企划……</p>
+<p>开始上班之后，属于自己的休闲时间显著减少，也很久没有追过新番了。现在大概只会在空闲的时候补一补优秀的老作品吧。</p>
+<ul>
+<li><strong>游戏</strong></li>
+</ul>
+<p>游戏这件事，虽然确实也是“谁都会喜欢”的，但作为一个相对来说比较“硬核”的玩家，也还是列举一些吧——最常玩也最熟悉的是FPS游戏：守望先锋、Apex Legends、CSGO，基本上都有上千小时的时长了。手游都是二次元类的：崩坏3、原神、明日方舟、公主连结……虽然现在差不多都弃坑了。单机的话比较杂，各种知名3A大作或小型的独立游戏都玩过不少，就不再过多列举了。</p>
+<ul>
+<li><strong>数码</strong></li>
+</ul>
+<p>哪有理工男不喜欢研究数码的？手机、电脑、耳机、显示器、客制化键盘、鼠标……平日里很喜欢看各类数码产品的评测体验，也很喜欢和别人聊数码相关的话题。</p>
+<ul>
+<li><strong>写作</strong></li>
+</ul>
+<p>我思考了很久要不要把“文学”作为最后一个兴趣爱好写在这里。实际上我读过的文学作品并没有多少，我也理解一个没有读过足够多的作品的人不该说自己喜欢文学。那我或许只是喜欢写作？所以我把这个条目改成了“写作”。</p>
+<p>那我写过什么呢……基本上都在这个博客里面了。主要是一些短篇小说和随笔，最近也开始尝试写长篇，我发现这件事还是比较困难的。诗歌方面，在高中阶段还能构思出一些自认为还不错的古诗词句子，但上大学后由于贫瘠的文学积累，也忘记了很多文言的用词和写法了。另外，受到当代互联网迷因的影响，我现在更喜欢因一时的情绪而产出一些没有什么水平的抽象现代诗。</p>
+<p>依然只是在自娱自乐的程度——我想，要写出更好的作品的话，一定要读更多的书才行。</p>
+<hr>
+<h2 id="赞赏"><a href="#赞赏" class="headerlink" title="赞赏"></a>赞赏</h2><p>最后，如果您对我这个博客页面内写的奇奇怪怪的东西感兴趣的话……</p>
+<p>您可以<a target="_blank" rel="noopener" href="http://sherroe.top/1970/01/01/%E8%B5%9E%E8%B5%8F/">点击这里</a>来请我喝一杯焦糖玛奇朵……或是牛奶百利甜？还是金汤力？</p>
+<p>……当然，最简单的冰啤酒也是完全可以的啦(｀・ω・´)</p>
+
+    </article>
+</main>
+
+                <!-- profile -->
+                
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+        <div class="social">
+            
+    
+        
+            
+                <a href="mailto:sherroe@163.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/Sherroe" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//twitter.com/Sherroe_XD" class="iconfont-archer twitter" target="_blank" title=twitter></a>
+            
+        
+    
+        
+            
+                <a href="//space.bilibili.com/57427709" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
+        
+    
+        
+            
+                <a href="//weibo.com/u/5992045682" class="iconfont-archer weibo" target="_blank" title=weibo></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+        </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    
+        <div class="website-approve">
+            
+            
+        </div>
+    
+    <!-- 不蒜子  -->
+    
+        <div class="busuanzi-container">
+            
+             
+                <span id="busuanzi_container_site_pv">访问量: <span id="busuanzi_value_site_pv"></span> ——也许实际上并没有这么多？</span>
+            
+        </div>
+    	
+</footer>
+
+        </div>
+        <!-- toc -->
+        
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 22
+        </div>
+        <!-- search  -->
+        
+            <div class="site-search site-search-loading popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+        
+    </div>
+    
+    <div class="post-archive">
+    
+        
+            
+            
+            <div class="archive-year"> 2077 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span>
+            <a class="archive-post-title" href="/2077/07/08/%E6%AD%8C%E5%A1%94/">歌塔</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/07</span>
+            <a class="archive-post-title" href="/2077/07/07/%E5%BC%82%E6%AC%A1%E5%85%83%E7%9A%84%E5%B9%B8%E5%AD%98%E8%80%85/">异次元的幸存者</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span>
+            <a class="archive-post-title" href="/2025/01/31/%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E7%9A%84Python%E5%BA%93/">关于工作中常用的一些操作文件的Python库</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2023/08/18/%E6%AF%9B%E9%9B%A8%E6%98%9F/">毛雨星</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/20</span>
+            <a class="archive-post-title" href="/2023/07/20/%E9%80%9A%E6%81%92%E9%9B%86/">通恒集</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2023/02/21/%E9%9D%A2%E8%AF%95/">面试</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span>
+            <a class="archive-post-title" href="/2022/12/16/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/">新年快乐</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span>
+            <a class="archive-post-title" href="/2022/11/20/%E5%A6%84%E6%83%B3%E5%BD%95%20%E5%A4%96%E7%AF%87%20%E6%A0%B8%E9%85%B8%E6%97%A5%E8%AE%B0/">妄想录 外篇 核酸日记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/19</span>
+            <a class="archive-post-title" href="/2022/09/19/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%B8%80/">妄想录 篇一</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span>
+            <a class="archive-post-title" href="/2022/09/10/%E7%BB%9D%E4%B8%96%E5%94%90%E9%97%A8/">绝世唐门</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2022/08/10/%E5%BE%B7%E5%A1%94/">德塔</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span>
+            <a class="archive-post-title" href="/2022/05/03/%E7%95%AA%E8%8C%84%E6%B1%A4/">番茄汤</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span>
+            <a class="archive-post-title" href="/2022/04/13/%E7%88%86%E7%82%B8%E3%80%81%E5%91%8A%E7%99%BD%E3%80%81%E8%89%BA%E6%9C%AF%E5%AE%B6%E4%B8%8E%E5%A4%A7%E4%BE%BF/">爆炸、告白、艺术家与大便</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2022/04/12/%E6%9D%A8%E5%A4%8F%E7%9A%84%E6%97%A5%E8%AE%B0/">杨夏的日记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2022/04/11/%E4%B8%80%E7%99%BD%E7%9A%84%E5%AE%87%E5%AE%99/">一白的宇宙</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2022/04/07/Linux%E4%BD%9C%E4%B8%9A%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">Linux作业 正则表达式</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/28</span>
+            <a class="archive-post-title" href="/2022/03/28/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%BA%8C/">妄想录 篇二</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span>
+            <a class="archive-post-title" href="/2022/03/27/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Linux学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span>
+            <a class="archive-post-title" href="/2022/03/17/%E4%BD%BF%E7%94%A8Github%E4%B8%8Ehexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用GitHub与Hexo搭建个人博客</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2022/03/16/HelloWorld/">Hello World</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2020 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span>
+            <a class="archive-post-title" href="/2020/09/03/%E8%9B%87/">蛇</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 1970 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/1970/01/01/%E8%B5%9E%E8%B5%8F/">赞赏</a>
+        </li>
+    
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+        
+            <span class="sidebar-tag-name" data-tags="呓语">
+                <span class="iconfont-archer">&#xe606;</span>
+                呓语
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="学习">
+                <span class="iconfont-archer">&#xe606;</span>
+                学习
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="作业">
+                <span class="iconfont-archer">&#xe606;</span>
+                作业
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                Linux
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="笔记">
+                <span class="iconfont-archer">&#xe606;</span>
+                笔记
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="随笔">
+                <span class="iconfont-archer">&#xe606;</span>
+                随笔
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="短篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                短篇
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="妄想录">
+                <span class="iconfont-archer">&#xe606;</span>
+                妄想录
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="小说">
+                <span class="iconfont-archer">&#xe606;</span>
+                小说
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="教程">
+                <span class="iconfont-archer">&#xe606;</span>
+                教程
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="GitHub">
+                <span class="iconfont-archer">&#xe606;</span>
+                GitHub
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                Hexo
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="长篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                长篇
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="连载">
+                <span class="iconfont-archer">&#xe606;</span>
+                连载
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="杂谈">
+                <span class="iconfont-archer">&#xe606;</span>
+                杂谈
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="通恒集">
+                <span class="iconfont-archer">&#xe606;</span>
+                通恒集
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Python">
+                <span class="iconfont-archer">&#xe606;</span>
+                Python
+            </span>
+        
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="呓语">
+            <span class="iconfont-archer">&#xe60a;</span>
+            呓语
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="学习">
+            <span class="iconfont-archer">&#xe60a;</span>
+            学习
+        </span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "http://sherroe.github.io",
+        root: siteMetaRoot,
+        author: "Sherroe Huang"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+
+        <!-- main func -->
+        <script src="/scripts/main.js?v=20211217"></script>
+        <!-- dark mode -->
+        <script src="/scripts/dark.js?v=20211217"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
+        <!-- algolia -->
+        
+            <div class="site-search site-search-loading">
+    <div class="algolia-popup popup">
+        <div class="algolia-search">
+            <div class="algolia-search-input-icon">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="algolia-search-input" id="algolia-search-input"></div>
+            <div class="popup-btn-close">
+                <i class="iconfont-archer">&#xe609;</i>
+            </div>
+        </div>
+
+        <div class="algolia-results">
+            <div id="algolia-stats" class="algolia-stats"></div>
+            <div id="algolia-hits"></div>
+            <div id="algolia-pagination" class="algolia-pagination"></div>
+        </div>
+    </div>
+</div>
+
+            <script src="/scripts/search.js?v=20211217" defer></script>
+        
+        <!-- busuanzi -->
+        
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        
+        <!-- CNZZ -->
+        
+        <!-- async load share.js -->
+        
+        <!-- mermaid -->
+        
+    </body>
+</html>
