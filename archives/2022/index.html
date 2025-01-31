@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <!-- title -->
-
-
-    
-
 <!-- keywords -->
-
-
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="author" content="Sherroe Huang">
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="Sherroe Huang">
-    
         <meta name="keywords" content="Sherroe,sherroe,blog,hexo,hexo-theme,hexo-blog">
-    
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="妄想录">
@@ -29,7 +20,6 @@
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="/img/favicon.png">
-    
     <title>妄想录 | Sherroe&#39;s Blog</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -152,7 +142,7 @@
 
     header,
     footer,
-    .back-top,
+    .footer-fixed-btn,
     .sidebar,
     .container,
     .site-intro-meta,
@@ -175,7 +165,13 @@
         left: 0;
         width: calc(100% + 300px);
         height: 100%;
-        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background: repeating-linear-gradient(
+            -45deg,
+            #444 0,
+            #444 80px,
+            #333 80px,
+            #333 160px
+        );
         background-position: center center;
         transform: translate3d(-226px, 0, 0);
         animation: gradient-move 2.5s ease-out 0s infinite;
@@ -191,18 +187,15 @@
     }
 </style>
 
-    <link rel="preload" href="/css/style.css?v=20211217" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="/css/dark.css?v=20211217" as="style">
-    <link rel="stylesheet" href="/css/dark.css">
-    <link rel="stylesheet" href="/css/mobile.css?v=20211217" media="(max-width: 960px)">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="/css/dark.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
-    <link rel="preload" href="/scripts/main.js?v=20211217" as="script">
-    <link rel="preload" href="/scripts/dark.js?v=20211217" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
     <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
     <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
     <!-- algolia -->
-    
         <script>
             var hits = JSON.parse('{"per_page":10}')
             var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
@@ -215,11 +208,10 @@
                 labels: labels
             }
         </script>
-    
     <!-- 百度统计  -->
-    
     <!-- 谷歌统计  -->
-    
+    <!-- Google tag (gtag.js) -->
+<link rel="alternate" href="/atom.xml" title="妄想录" type="application/atom+xml">
 </head>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
@@ -229,7 +221,6 @@
             document.write('<script src="/lib/jquery.min.js" />')
         }
     </script>
-    
         <!-- header -->
         <header class="header header-mobile">
     <!-- top read progress line -->
@@ -238,12 +229,8 @@
     </div>
     <!-- sidebar menu button -->
     <div class="header-element">
-        
-            <div class="header-sidebar-menu header-sidebar-menu-rounded">
-        
-            
-                <i class="fas fa-bars"></i>
-            
+        <div class="header-sidebar-menu header-sidebar-menu-rounded">
+            <i class="fas fa-bars"></i>
         </div>
     </div>
     <!-- header actions -->
@@ -254,56 +241,46 @@
         </span>
         <!-- back to home page text -->
         <span class="home-link header-element">
-            <a href=/>Sherroe's Blog</a>
+            <a href="/">Sherroe's Blog</a>
         </span>
     </div>
-    <!-- toggle banner for post layout -->
-    
+    <!-- toggle banner -->
+    <div class="banner banner-clean">
+        <div class="blog-title header-element">
+            <a href="/">Sherroe&#39;s Blog</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name"></a>
+        </div>
+    </div>
 </header>
 
         <!-- fixed footer -->
         <footer class="footer-fixed">
+    <!-- donate button -->
+
     <!-- back to top button -->
-    <div class="footer-fixed-element">
-        
-            <div class="back-top back-top-hidden back-top-rounded">
-        
-        
-            <i class="fas fa-chevron-up"></i>
-        
-        </div>
+    <div class="footer-fixed-btn footer-fixed-btn--hidden footer-fixed-btn--rounded back-top">
+        <i class="fas fa-chevron-up"></i>
     </div>
 </footer>
 
         <!-- wrapper -->
         <div class="wrapper">
-            <div class="site-intro" style="
-
-
-
-
-
-
-
-">
-    
+            <div class="site-intro" style="">
     <!-- 主页  -->
-            
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
-            
         </p>
         <!-- 文章页 meta -->
-        
     </div>
 </div>
 
@@ -430,654 +407,491 @@
   )
 </script>
 
-            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
             <div class="container container-unloaded">
                 <main class="main index-page">
-    
-        
-        
-        
-        
-            
-        
         <article class="index-post">
             <a class="abstract-title" href="/2022/12/16/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/">
-                
                 <span class="abstract-title-text">新年快乐</span>
             </a>
             <div class="abstract-content">
-                
-改编自王浚哲所著同名小说
-
-“嗡——”
-玛丽被墙外的轰鸣声吵醒。她迷迷糊糊地看了眼床头的闹钟，四点三十分，离上班还有半个小时。玛丽把头埋进被子，打算再睡一会。
-“妈妈，我今天可以穿红色的防护服...
+                <blockquote>
+<p>改编自王浚哲所著同名小说</p>
+</blockquote>
+<p>“嗡——”</p>
+<p>玛丽被墙外的轰鸣声吵醒。她迷迷糊糊地看了眼床头的闹钟，四点三十分，离上班还有半个小时。玛丽把头埋进被子，打算再睡一会。</p>
+<p>“妈妈，我今天可以穿红色的防护服去学校吗？”</p>
+<p>孩子的声音在床边出现，玛丽没有睁眼，只是抬了抬手，表示同意。</p>
+<p>但仅仅十分钟，轰鸣声又出现了。玛丽不情愿地从床上爬起来，因为她知道自己不可能再睡着了。“这个破地方的气闸啥时候换新的啊……”她轻声抱怨着。</p>
+<p>打开储物柜，玛丽把最后一包“每日速食”拿出来后，这里便空空如也了。刚好在一年的最后一天用完全部物资，玛丽对自己的资源规划十分满意。虽然一直都有人劝她多囤一些物资，但玛丽从来不担心这些——反正社区每个月都会按时发新的，不是吗？</p>
+<p>玛丽把床的一侧折起来，这样自己便获得了一个有靠背的沙发。再把微型电脑放在小桌板上，这就是玛丽的工位。作为一名软件工程师，她在几十年前就适应了在电脑面前度过全部生活的日子。</p>
+<p>几十年前——那时自己还是个学生。自从学校停课之后，玛丽就很少离开过家门了。她回忆起那段上网课的日子，自己只需要动动手指，就可以在网上随意搜索到不少顶尖学校的课程资源。</p>
+<p>但她的孩子一定要和自己不同。8年前，玛丽把孩子送去了昂贵的私立学校，虽然那里要求学生每天自己去学校线下上课，但她一点都不后悔这样的决定。自从中考大规模缩招后，也只有这些强制要求线下授课的学校不会泄露教育资源。为了让自己的孩子挤进那前20%，她愿意这么做。</p>
             </div>
             <!-- read more -->
-            
+                <div class="abstract-read-more-button">
+                    <a href="/2022/12/16/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/">
+                        <span style="margin-right: 0.2rem;">阅读全文</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2023/08/29">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/12/16</span>
                 </div>
                 <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-        
-        
-            
-        
-        
-        <span class="post-category" data-categories="呓语"">
+                    <div class="abstract-tags" >
+        <span class="post-category" data-categories="呓语">
             <i class="fas fa-folder post-category-icon"></i>
             <span class="post-category-text">
                 呓语
             </span>
         </span>
-    
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="呓语">呓语</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小说">小说</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="短篇">短篇</a>
-    
+        <a class="post-tag" href="javascript:void(0);" data-tags="小说">小说</a>
 </div>
 
-                
             </div>
         </article>
         <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
         <article class="index-post">
             <a class="abstract-title" href="/2022/11/20/%E5%A6%84%E6%83%B3%E5%BD%95%20%E5%A4%96%E7%AF%87%20%E6%A0%B8%E9%85%B8%E6%97%A5%E8%AE%B0/">
-                
                 <span class="abstract-title-text">妄想录 外篇 核酸日记</span>
             </a>
             <div class="abstract-content">
-                其一学六五层的饮水机修好了。在这短暂缺水的四天内，我和它一起盯着不远处洗手池上的水龙头，希望这个小小的金属玩意能吐出什么独特的生命源泉。
-今天终于能打到热水了，我的生命又被延续了不少。在成功充盈...
+                <h2 id="其一"><a href="#其一" class="headerlink" title="其一"></a>其一</h2><p>学六五层的饮水机修好了。在这短暂缺水的四天内，我和它一起盯着不远处洗手池上的水龙头，希望这个小小的金属玩意能吐出什么独特的生命源泉。</p>
+<p>今天终于能打到热水了，我的生命又被延续了不少。在成功充盈了我的保温杯和大脑皮层后，我却又看到背后洗手池的水龙头坏了——它在漏水。我拨弄着把手，却怎么也关不上它。</p>
+<p>我询问水龙头是否有和我一样的苦楚，它没有回答。在这个阳光照不进来的水房里，我只能听着洗手池滴答的水声和饮水机制热时发出的怒吼。</p>
+<p>突然在一瞬间，我想到了。我猛然理解了我和水房的一切的问题的根源——</p>
+<p>这两个小家伙，没做核酸。</p>
+<hr>
+<h2 id="其二"><a href="#其二" class="headerlink" title="其二"></a>其二</h2><p>约摸半小时前，我经历了我人生中第三次纯正的咽拭子核酸检测——那根长长的棉签，没有敷衍地停留在我的舌根、上颚、牙齿或是空气中，而是深入咽喉，狠狠地在内里搅拌着。这让我回忆起那两年半前，初次体验核酸时，同样的棉签和同样的试管，同样的模糊痛感与同样的轻微恶心……只是没有了预约挂号与一百多元人民币的收据，有的只是一眼望不到头的队伍和日复一日的恍惚的记忆。</p>
+<p>我看着眼前的年轻的“大白”医生，他或许与我差不多大的年纪，或许比我大不多几岁。我呆滞地看着他，他坚定地看着我。他目光如炬，与手中娴熟的操作相衬，眼神中满是理想与信念。</p>
             </div>
             <!-- read more -->
-            
+                <div class="abstract-read-more-button">
+                    <a href="/2022/11/20/%E5%A6%84%E6%83%B3%E5%BD%95%20%E5%A4%96%E7%AF%87%20%E6%A0%B8%E9%85%B8%E6%97%A5%E8%AE%B0/">
+                        <span style="margin-right: 0.2rem;">阅读全文</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2023/07/22">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/11/20</span>
                 </div>
                 <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-        
-        
-            
-        
-        
-        <span class="post-category" data-categories="呓语"">
+                    <div class="abstract-tags" >
+        <span class="post-category" data-categories="呓语">
             <i class="fas fa-folder post-category-icon"></i>
             <span class="post-category-text">
                 呓语
             </span>
         </span>
-    
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="呓语">呓语</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="短篇">短篇</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="随笔">随笔</a>
-    
+        <a class="post-tag" href="javascript:void(0);" data-tags="短篇">短篇</a>
         <a class="post-tag" href="javascript:void(0);" data-tags="妄想录">妄想录</a>
-    
 </div>
 
-                
             </div>
         </article>
         <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
         <article class="index-post">
             <a class="abstract-title" href="/2022/09/19/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%B8%80/">
-                
                 <span class="abstract-title-text">妄想录 篇一</span>
             </a>
             <div class="abstract-content">
-                索引
-
-妄想录 篇一（2017-2019）
-妄想录 篇二（2021-2022）
-
-此篇所谓“妄想录”者，只是一些没有意义的，自以为是的，晦涩抽象的文字罢了。
-或许是某一时刻的情感流露？或许仅仅是...
+                <p><strong>索引</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://sherroe.top/2022/09/19/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%B8%80/">妄想录 篇一</a>（2017-2019）</li>
+<li><a target="_blank" rel="noopener" href="http://sherroe.top/2022/03/28/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%BA%8C/">妄想录 篇二</a>（2021-2022）</li>
+</ul>
+<p>此篇所谓“妄想录”者，只是一些没有意义的，自以为是的，晦涩抽象的文字罢了。</p>
+<p>或许是某一时刻的情感流露？或许仅仅是百无聊赖之中的闲言碎语？亦或者根本就是小丑般的哗众取宠与无病呻吟？</p>
+<p>谁知道呢，但它们就在这里。</p>
+<hr>
+<h2 id="心向往兮负行囊"><a href="#心向往兮负行囊" class="headerlink" title="心向往兮负行囊"></a>心向往兮负行囊</h2><blockquote>
+<p>2017年 初</p>
+</blockquote>
+<p>幼时梦兮心向往<br>心向往兮负行囊<br>负行囊兮图风光<br>图风光兮十里香<br>十里香兮何芬芳<br>何芬芳兮独彷徨<br>独彷徨兮路迷茫<br>路迷茫兮心已罔<br>心已罔兮多惆怅<br>多惆怅兮梦已荒</p>
+<p>梦已荒兮心悔悟<br>心悔悟兮重上路<br>重上路兮望前途<br>望前途兮多难苦<br>多难苦兮磨肉骨<br>磨肉骨兮自缝补<br>自缝补兮已日暮<br>已日暮兮路仍殊<br>路虽殊兮吾心足<br>吾心足兮花团簇</p>
             </div>
             <!-- read more -->
-            
+                <div class="abstract-read-more-button">
+                    <a href="/2022/09/19/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%B8%80/">
+                        <span style="margin-right: 0.2rem;">阅读全文</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/09/20">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/09/19</span>
                 </div>
                 <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-        
-        
-            
-        
-        
-        <span class="post-category" data-categories="呓语"">
+                    <div class="abstract-tags" >
+        <span class="post-category" data-categories="呓语">
             <i class="fas fa-folder post-category-icon"></i>
             <span class="post-category-text">
                 呓语
             </span>
         </span>
-    
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="呓语">呓语</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="妄想录">妄想录</a>
-    
 </div>
 
-                
             </div>
         </article>
         <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
         <article class="index-post">
             <a class="abstract-title" href="/2022/09/10/%E7%BB%9D%E4%B8%96%E5%94%90%E9%97%A8/">
-                
                 <span class="abstract-title-text">绝世唐门</span>
             </a>
             <div class="abstract-content">
-                “天堂没有关门。”
-​     
-故事发生在2022年9月10日，中秋节的这一天。一切还得从一个中秋喝酒计划说起。
-我们计划当天晚上一起出去吃饭喝酒，其中炸鸡、熏鱼、蛋总三人不远万里从沙河来到本...
+                <p>“天堂没有关门。”</p>
+<p>​     </p>
+<p>故事发生在2022年9月10日，中秋节的这一天。一切还得从一个中秋喝酒计划说起。</p>
+<p>我们计划当天晚上一起出去吃饭喝酒，其中炸鸡、熏鱼、蛋总三人不远万里从沙河来到本部，鱼籽、石上、12、木兮、mhy、poria六个本部老狗负责接应。虽然要去哪里喝酒一直没有定好，但大家还是先动身了。讲究的就是一个车到山前必有路，挺牛的。</p>
+<p>​     </p>
+<p>喝酒计划的前边有点小插曲，虽然不重要，但还是挺搞笑的，也就一起说了。</p>
+<p>当天下午两点半的时候，我和几个住学一学二的（陈安洁，石上，丸子，mhy）约洗澡。只有我是学六孤儿，我先到了澡堂门口等他们几个。因为外边太阳巨晒，我就站在澡堂入口的大厅等人，顺手把澡篮放在了一边。</p>
+<p>估计因为是下午洗澡的人不多，学校就摆烂，澡堂门口没有人看守，就我一个人叉着腰给那大门口站着。然后捏，每个走进澡堂的人，一看见我，就掏出手机扫码然后把健康宝展示给我看……草你妈当时真的笑死我了，但我又不好说啥，我就顺坡下驴，对着他们的绿码一个一个点头：“进进进”。</p>
+<p>这他妈不该给我点志愿时长？</p>
+<p>前奏演完了，后面是正片。</p>
             </div>
             <!-- read more -->
-            
+                <div class="abstract-read-more-button">
+                    <a href="/2022/09/10/%E7%BB%9D%E4%B8%96%E5%94%90%E9%97%A8/">
+                        <span style="margin-right: 0.2rem;">阅读全文</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2023/08/29">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/09/10</span>
                 </div>
                 <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-        
-        
-            
-        
-        
-        <span class="post-category" data-categories="呓语"">
+                    <div class="abstract-tags" >
+        <span class="post-category" data-categories="呓语">
             <i class="fas fa-folder post-category-icon"></i>
             <span class="post-category-text">
                 呓语
             </span>
         </span>
-    
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="呓语">呓语</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="短篇">短篇</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="随笔">随笔</a>
-    
+        <a class="post-tag" href="javascript:void(0);" data-tags="短篇">短篇</a>
 </div>
 
-                
             </div>
         </article>
         <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
         <article class="index-post">
             <a class="abstract-title" href="/2022/08/10/%E5%BE%B7%E5%A1%94/">
-                
                 <span class="abstract-title-text">德塔</span>
             </a>
             <div class="abstract-content">
-                小学五年级的德塔并不喜欢读书。
-这个孤僻的小女孩完全没有一个小孩子该有的活泼——她既不喜欢学习，也不喜欢和大家一起玩，甚至几乎没有任何兴趣爱好。她像一个冰冷的机器人，只是在整天在教室里呆坐着，不...
+                <p>小学五年级的德塔并不喜欢读书。</p>
+<p>这个孤僻的小女孩完全没有一个小孩子该有的活泼——她既不喜欢学习，也不喜欢和大家一起玩，甚至几乎没有任何兴趣爱好。她像一个冰冷的机器人，只是在整天在教室里呆坐着，不与任何人交流。</p>
+<p>没有人会注意这样一个既不出彩也不惹麻烦的孩子。就算注意到了，也无法知道她究竟在想什么。</p>
+<p>这一天，德塔第一次被大家同时注目——她被语文老师批评“上课不认真听讲”，然后被罚在教室门外罚站。</p>
+<p>德塔拿起语文课本，在全班同学的目光下走出了教室。</p>
+<p>下课之后，德塔没有回到座位上，而是继续在原地呆站着。但没有人问她为什么，也没有人让她回到座位上——没有人在意她。甚至到第二节课上课时，她还在教室门外站着。</p>
+<p>数学老师是个老眼昏花的老头，他没有注意到这个小个子的女生。老师径直走进教室，顺手把门关上了。</p>
+<p>小小的德塔，就这样又在走廊里站了一节课。</p>
+<p>数学课下课后，是放学时间。</p>
+<p>德塔知道自己要回去了——回到座位上，收拾书包，然后回家。但她想等一会儿再去做，她想等教室里的人都走空后，再好好享受独处的时间。现在的教室实在是太吵了。</p>
             </div>
             <!-- read more -->
-            
+                <div class="abstract-read-more-button">
+                    <a href="/2022/08/10/%E5%BE%B7%E5%A1%94/">
+                        <span style="margin-right: 0.2rem;">阅读全文</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2023/08/29">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/10</span>
                 </div>
                 <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-        
-        
-            
-        
-        
-        <span class="post-category" data-categories="呓语"">
+                    <div class="abstract-tags" >
+        <span class="post-category" data-categories="呓语">
             <i class="fas fa-folder post-category-icon"></i>
             <span class="post-category-text">
                 呓语
             </span>
         </span>
-    
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="呓语">呓语</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小说">小说</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="短篇">短篇</a>
-    
+        <a class="post-tag" href="javascript:void(0);" data-tags="小说">小说</a>
 </div>
 
-                
             </div>
         </article>
         <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
         <article class="index-post">
             <a class="abstract-title" href="/2022/05/03/%E7%95%AA%E8%8C%84%E6%B1%A4/">
-                
                 <span class="abstract-title-text">番茄汤</span>
             </a>
             <div class="abstract-content">
-                “最新一期的《番茄汤》还没有货，可能明后天才能送到。”
-突然从背后出现的声音把他吓了一跳，手中正在翻阅的杂志也差点滑落。他回过头，才发觉书店的店主正站在身后。
-“那好吧，看来只能明天再来一趟了。...
+                <p>“最新一期的《番茄汤》还没有货，可能明后天才能送到。”</p>
+<p>突然从背后出现的声音把他吓了一跳，手中正在翻阅的杂志也差点滑落。他回过头，才发觉书店的店主正站在身后。</p>
+<p>“那好吧，看来只能明天再来一趟了。”</p>
+<p>“不过您要是对夏虫老师的作品感兴趣的话，在这边有他的短篇作品集。”</p>
+<p>店主把一本《夏虫短篇集》从书架中抽出来，书上的塑封包装略显陈旧。</p>
+<p>“哦！原来这里也有……不过这本我已经买过了。”</p>
+<p>“那他的长篇小说您看过吗？比如这本《五分钟的时差》。”店主又抽出另一本书。</p>
+<p>“这本也算是我最满意的作品了，嗯……是最喜欢的。”</p>
+<p>店主抬起头，与他对视了一秒，眼神中似乎有一丝疑惑。</p>
+<p>他突然觉得自己的话有些别扭。</p>
             </div>
             <!-- read more -->
-            
+                <div class="abstract-read-more-button">
+                    <a href="/2022/05/03/%E7%95%AA%E8%8C%84%E6%B1%A4/">
+                        <span style="margin-right: 0.2rem;">阅读全文</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2023/08/29">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/03</span>
                 </div>
                 <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-        
-        
-            
-        
-        
-        <span class="post-category" data-categories="呓语"">
+                    <div class="abstract-tags" >
+        <span class="post-category" data-categories="呓语">
             <i class="fas fa-folder post-category-icon"></i>
             <span class="post-category-text">
                 呓语
             </span>
         </span>
-    
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="呓语">呓语</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小说">小说</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="短篇">短篇</a>
-    
+        <a class="post-tag" href="javascript:void(0);" data-tags="小说">小说</a>
 </div>
 
-                
             </div>
         </article>
         <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
         <article class="index-post">
             <a class="abstract-title" href="/2022/04/13/%E7%88%86%E7%82%B8%E3%80%81%E5%91%8A%E7%99%BD%E3%80%81%E8%89%BA%E6%9C%AF%E5%AE%B6%E4%B8%8E%E5%A4%A7%E4%BE%BF/">
-                
                 <span class="abstract-title-text">爆炸、告白、艺术家与大便</span>
             </a>
             <div class="abstract-content">
-                ——关于《再见绘梨》与我所知的一切
-​     
-
-关于本文的阅读提示：
-0. 本文含有大量剧透内容，强烈建议在阅读本文前反复认真欣赏藤本树短篇漫画《再见绘梨》。
-1. 本文所叙述的内容包含了大...
+                <p>——<strong>关于《再见绘梨》与我所知的一切</strong></p>
+<p>​     </p>
+<blockquote>
+<p><strong>关于本文的阅读提示：</strong></p>
+<p><strong>0.</strong> 本文含有大量剧透内容，强烈建议在阅读本文前反复认真欣赏藤本树短篇漫画《再见绘梨》。</p>
+<p><strong>1.</strong> 本文所叙述的内容包含了大量笔者的主观评价与个人论断。</p>
+<p><strong>2.</strong> 如果在阅读本文的过程中产生任何生理上的不适感，请立刻停止阅读，并向医生寻求帮助。</p>
+<p><strong>3.</strong> 藤本树，我的超人，精神病人，永远的神明。</p>
+<p><strong>4.</strong> ？</p>
+<p><strong>7.</strong> 爆炸爆炸爆炸爆炸爆炸爆炸爆炸爆炸爆炸爆炸爆炸爆炸爆炸爆炸</p>
+</blockquote>
+<p>​    </p>
+<p><em>“创作就是深入作品受众的内心问题，让他们大哭或者大笑。如果作者不受到相应的伤害，岂不是很不公平？”</em></p>
+<p>电影的台词如是说，拍电影的人如是说；漫画的文本如是说，漫画家如是说。</p>
+<p><img src="/images/tengbenshu/01.png" alt="01"></p>
+<h2 id="爆炸"><a href="#爆炸" class="headerlink" title="爆炸"></a>爆炸</h2><p>全作的开篇，一切之起始——便是年轻的电影艺术家伊藤优太为他的母亲所拍摄的亲情电影纪录片——《爆亡吾母》</p>
+<p>母亲罹患重病，即将撒手人寰。唯一的儿子用手机镜头为她记录下每天的生活，直到母亲去世的那一刻——</p>
             </div>
             <!-- read more -->
-            
+                <div class="abstract-read-more-button">
+                    <a href="/2022/04/13/%E7%88%86%E7%82%B8%E3%80%81%E5%91%8A%E7%99%BD%E3%80%81%E8%89%BA%E6%9C%AF%E5%AE%B6%E4%B8%8E%E5%A4%A7%E4%BE%BF/">
+                        <span style="margin-right: 0.2rem;">阅读全文</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/05/03">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/13</span>
                 </div>
                 <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-        
-        
-            
-        
-        
-        <span class="post-category" data-categories="呓语"">
+                    <div class="abstract-tags" >
+        <span class="post-category" data-categories="呓语">
             <i class="fas fa-folder post-category-icon"></i>
             <span class="post-category-text">
                 呓语
             </span>
         </span>
-    
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="呓语">呓语</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="杂谈">杂谈</a>
-    
 </div>
 
-                
             </div>
         </article>
         <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
         <article class="index-post">
             <a class="abstract-title" href="/2022/04/12/%E6%9D%A8%E5%A4%8F%E7%9A%84%E6%97%A5%E8%AE%B0/">
-                
                 <span class="abstract-title-text">杨夏的日记</span>
             </a>
             <div class="abstract-content">
-                （一） 基地楼3020年2月24日 星期四
-昨天，后勤部的天瑾姐姐送给我一个新的本子，还有三根中性笔，她说可以在休息的时候写写画画什么的。但我不会画画，也不知道能写些什么，就想到可以记日记。但其...
+                <h2 id="（一）-基地楼"><a href="#（一）-基地楼" class="headerlink" title="（一） 基地楼"></a><strong>（一）</strong> <strong>基地楼</strong></h2><p>3020年2月24日 星期四</p>
+<p>昨天，后勤部的天瑾姐姐送给我一个新的本子，还有三根中性笔，她说可以在休息的时候写写画画什么的。但我不会画画，也不知道能写些什么，就想到可以记日记。但其实也没什么好记的，想到哪就写到哪吧。真羡慕7号走廊的烨老师，他画的画太好看了。我记得还在学校里的时候，妈妈说等我升上八年级就送我去绘画兴趣班，可是还没过多久我就被带到这里来了，听说那个美术学校也停办了。如果有机会的话，我说不定可以请烨老师教我画画。</p>
+<p>3020年2月25日 星期五</p>
+<p>今天是中国农历新年，食堂里包了饺子。但是饺子馅非常少，也没什么味道，完全没有小时候在家里吃到的那么好吃。不过虽然饺子不好吃，但大家今天都能额外放半天假，明天也正好轮到我的周末假，我得好好考虑一下去哪玩。</p>
+<p>3020年2月26日 星期六</p>
+<p>早上去7号走廊找了烨老师，但他不在，只能去找鹿和安安了。中午吃饭的时候门口来了三辆大卡车，我还以为是新的物资到了呢，结果是来征兵的。希望天瑾姐姐和烨老师不要跟他们走。</p>
+<p>3020年2月27日 星期日</p>
+<p>我的床单又被老鼠咬了一个洞。真讨厌啊这些老鼠，床单有什么好吃的。</p>
+<p>3020年2月28日 星期一</p>
             </div>
             <!-- read more -->
-            
+                <div class="abstract-read-more-button">
+                    <a href="/2022/04/12/%E6%9D%A8%E5%A4%8F%E7%9A%84%E6%97%A5%E8%AE%B0/">
+                        <span style="margin-right: 0.2rem;">阅读全文</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2023/08/29">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/12</span>
                 </div>
                 <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-        
-        
-            
-        
-        
-        <span class="post-category" data-categories="呓语"">
+                    <div class="abstract-tags" >
+        <span class="post-category" data-categories="呓语">
             <i class="fas fa-folder post-category-icon"></i>
             <span class="post-category-text">
                 呓语
             </span>
         </span>
-    
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="呓语">呓语</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="小说">小说</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="长篇">长篇</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="连载">连载</a>
-    
 </div>
 
-                
             </div>
         </article>
         <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
         <article class="index-post">
             <a class="abstract-title" href="/2022/04/11/%E4%B8%80%E7%99%BD%E7%9A%84%E5%AE%87%E5%AE%99/">
-                
                 <span class="abstract-title-text">一白的宇宙</span>
             </a>
             <div class="abstract-content">
-                “老师，我们为什么要在三维教室里上课呢？”
-夕老师刚走进门，一个稚嫩的声音就在教室后排响起。一白，这个班里最调皮的孩子又没经过老师的同意就发言了。
-“这节实验课的内容是创造一个三维的宇宙。”夕老...
+                <p>“老师，我们为什么要在三维教室里上课呢？”</p>
+<p>夕老师刚走进门，一个稚嫩的声音就在教室后排响起。一白，这个班里最调皮的孩子又没经过老师的同意就发言了。</p>
+<p>“这节实验课的内容是创造一个三维的宇宙。”夕老师把课本放在讲台上，慢慢地说，“大家在三维空间里操作可以更好地理解实验过程。”</p>
+<p>“可是三维空间好挤啊……”一白伸出脚，踢到了桌子腿。</p>
+<p>“那么，给大家一个奖励怎么样？”夕老师露出一个微笑，“这节课表现好的同学，明天的体育课可以去六维体育馆。” </p>
+<p>孩子们的情绪瞬间高涨了起来。</p>
+<p>“太棒了！”</p>
+<p>“明天我要去玩六维弹球！”</p>
+<p>……</p>
+<p>“安静。”夕老师拍了拍讲桌，“但是，有奖励就有惩罚。表现不好的同学只能去四维教室做义务劳动。”</p>
             </div>
             <!-- read more -->
-            
+                <div class="abstract-read-more-button">
+                    <a href="/2022/04/11/%E4%B8%80%E7%99%BD%E7%9A%84%E5%AE%87%E5%AE%99/">
+                        <span style="margin-right: 0.2rem;">阅读全文</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2023/08/29">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/11</span>
                 </div>
                 <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-        
-        
-            
-        
-        
-        <span class="post-category" data-categories="呓语"">
+                    <div class="abstract-tags" >
+        <span class="post-category" data-categories="呓语">
             <i class="fas fa-folder post-category-icon"></i>
             <span class="post-category-text">
                 呓语
             </span>
         </span>
-    
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="呓语">呓语</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小说">小说</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="短篇">短篇</a>
-    
+        <a class="post-tag" href="javascript:void(0);" data-tags="小说">小说</a>
 </div>
 
-                
             </div>
         </article>
         <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
         <article class="index-post">
             <a class="abstract-title" href="/2022/04/07/Linux%E4%BD%9C%E4%B8%9A%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-                
                 <span class="abstract-title-text">Linux作业 正则表达式</span>
             </a>
             <div class="abstract-content">
-                [TOC]
-题目要求从因特网上搜索相关Web网页，处理网页html数据，从中提取出当前时间点北京各监测站的PM2.5浓度，输出格式如下。要求：写出各个处理步骤，并给出解释。
-2020-03-09...
+                <p>[TOC]</p>
+<h2 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求"></a>题目要求</h2><p>从因特网上搜索相关Web网页，处理网页html数据，从中提取出当前时间点北京各监测站的PM2.5浓度，输出格式如下。要求：写出各个处理步骤，并给出解释。</p>
+<p>2020-03-09 13:00:00,海淀区万柳,73</p>
+<p>2020-03-09 13:00:00,昌平镇,67</p>
+<p>2020-03-09 13:00:00,奥体中心,66</p>
+<p>2020-03-09 13:00:00,海淀区万柳,73</p>
+<p>2020-03-09 13:00:00,昌平镇,73</p>
+<p>2020-03-09 13:00:00,奥体中心,75</p>
+<hr>
             </div>
             <!-- read more -->
-            
+                <div class="abstract-read-more-button">
+                    <a href="/2022/04/07/Linux%E4%BD%9C%E4%B8%9A%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+                        <span style="margin-right: 0.2rem;">阅读全文</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/07">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/07</span>
                 </div>
                 <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-        
-        
-            
-        
-        
-        <span class="post-category" data-categories="学习"">
+                    <div class="abstract-tags" >
+        <span class="post-category" data-categories="学习">
             <i class="fas fa-folder post-category-icon"></i>
             <span class="post-category-text">
                 学习
             </span>
         </span>
-    
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="Linux">Linux</a>
-    
+        <a class="post-tag" href="javascript:void(0);" data-tags="笔记">笔记</a>
 </div>
 
-                
             </div>
         </article>
         <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
-    
         <nav class="page-nav">
             <span class="page-number current">1</span><a class="page-number" href="/archives/2022/page/2/">2</a><a class="extend next" rel="next" href="/archives/2022/page/2/">NEXT &gt;</a>
         </nav>
-    
 </main>
 
                 <!-- profile -->
-                
             </div>
             <footer class="footer footer-unloaded">
     <!-- social  -->
-    
         <div class="social">
-            
-    
-        
-            
-                <a href="mailto:sherroe@163.com" class="iconfont-archer email" title=email ></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/Sherroe" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="//twitter.com/Sherroe_XD" class="iconfont-archer twitter" target="_blank" title=twitter></a>
-            
-        
-    
-        
-            
-                <a href="//space.bilibili.com/57427709" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
-            
-        
-    
-        
-            
-                <a href="//weibo.com/u/5992045682" class="iconfont-archer weibo" target="_blank" title=weibo></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
+                            <a href="mailto:sherroe@163.com" class="iconfont-archer email" title="email" ></a>
+                <a href="//github.com/Sherroe" class="iconfont-archer github" target="_blank" title="github"></a>
+                <a href="//twitter.com/Sherroe_XD" class="iconfont-archer twitter" target="_blank" title="twitter"></a>
+                <a href="//space.bilibili.com/57427709" class="iconfont-archer bilibili" target="_blank" title="bilibili"></a>
+                <a href="//weibo.com/u/5992045682" class="iconfont-archer weibo" target="_blank" title="weibo"></a>
 
         </div>
-    
     <!-- powered by Hexo  -->
     <div class="copyright">
         <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
     </div>
     <!-- website approve for Chinese user -->
-    
         <div class="website-approve">
-            
-            
         </div>
-    
     <!-- 不蒜子  -->
-    
         <div class="busuanzi-container">
-            
-             
                 <span id="busuanzi_container_site_pv">访问量: <span id="busuanzi_value_site_pv"></span> ——也许实际上并没有这么多？</span>
-            
         </div>
-    	
 </footer>
 
         </div>
         <!-- toc -->
-        
         <!-- sidebar -->
         <div class="sidebar sidebar-hide">
     <ul class="sidebar-tabs sidebar-tabs-active-0">
@@ -1088,7 +902,6 @@
     <div class="sidebar-content sidebar-content-show-archive">
         <div class="sidebar-panel-archives">
     <!-- 在 ejs 中将 archive 按照时间排序 -->
-    
         
         
         
@@ -1111,525 +924,195 @@
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 22
         </div>
         <!-- search  -->
-        
             <div class="site-search site-search-loading popup-trigger">
                 <span class="iconfont-archer search-icon">&#xe627;</span>
             </div>
-        
     </div>
-    
     <div class="post-archive">
-    
-        
-            
-            
             <div class="archive-year"> 2077 </div>
             <ul class="year-list">
-            
-        
         <li class="archive-post-item">
             <span class="archive-post-date">07/08</span>
             <a class="archive-post-title" href="/2077/07/08/%E6%AD%8C%E5%A1%94/">歌塔</a>
         </li>
-    
-        
         <li class="archive-post-item">
             <span class="archive-post-date">07/07</span>
             <a class="archive-post-title" href="/2077/07/07/%E5%BC%82%E6%AC%A1%E5%85%83%E7%9A%84%E5%B9%B8%E5%AD%98%E8%80%85/">异次元的幸存者</a>
         </li>
-    
-        
-            
-            
-                
                 </ul>
-            
             <div class="archive-year"> 2025 </div>
             <ul class="year-list">
-            
-        
         <li class="archive-post-item">
             <span class="archive-post-date">01/31</span>
             <a class="archive-post-title" href="/2025/01/31/%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E7%9A%84Python%E5%BA%93/">关于工作中常用的一些操作文件的Python库</a>
         </li>
-    
-        
-            
-            
-                
                 </ul>
-            
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
-            
-        
         <li class="archive-post-item">
             <span class="archive-post-date">08/18</span>
             <a class="archive-post-title" href="/2023/08/18/%E6%AF%9B%E9%9B%A8%E6%98%9F/">毛雨星</a>
         </li>
-    
-        
         <li class="archive-post-item">
             <span class="archive-post-date">07/20</span>
             <a class="archive-post-title" href="/2023/07/20/%E9%80%9A%E6%81%92%E9%9B%86/">通恒集</a>
         </li>
-    
-        
         <li class="archive-post-item">
             <span class="archive-post-date">02/21</span>
             <a class="archive-post-title" href="/2023/02/21/%E9%9D%A2%E8%AF%95/">面试</a>
         </li>
-    
-        
-            
-            
-                
                 </ul>
-            
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
-            
-        
         <li class="archive-post-item">
             <span class="archive-post-date">12/16</span>
             <a class="archive-post-title" href="/2022/12/16/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/">新年快乐</a>
         </li>
-    
-        
         <li class="archive-post-item">
             <span class="archive-post-date">11/20</span>
             <a class="archive-post-title" href="/2022/11/20/%E5%A6%84%E6%83%B3%E5%BD%95%20%E5%A4%96%E7%AF%87%20%E6%A0%B8%E9%85%B8%E6%97%A5%E8%AE%B0/">妄想录 外篇 核酸日记</a>
         </li>
-    
-        
         <li class="archive-post-item">
             <span class="archive-post-date">09/19</span>
             <a class="archive-post-title" href="/2022/09/19/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%B8%80/">妄想录 篇一</a>
         </li>
-    
-        
         <li class="archive-post-item">
             <span class="archive-post-date">09/10</span>
             <a class="archive-post-title" href="/2022/09/10/%E7%BB%9D%E4%B8%96%E5%94%90%E9%97%A8/">绝世唐门</a>
         </li>
-    
-        
         <li class="archive-post-item">
             <span class="archive-post-date">08/10</span>
             <a class="archive-post-title" href="/2022/08/10/%E5%BE%B7%E5%A1%94/">德塔</a>
         </li>
-    
-        
         <li class="archive-post-item">
             <span class="archive-post-date">05/03</span>
             <a class="archive-post-title" href="/2022/05/03/%E7%95%AA%E8%8C%84%E6%B1%A4/">番茄汤</a>
         </li>
-    
-        
         <li class="archive-post-item">
             <span class="archive-post-date">04/13</span>
             <a class="archive-post-title" href="/2022/04/13/%E7%88%86%E7%82%B8%E3%80%81%E5%91%8A%E7%99%BD%E3%80%81%E8%89%BA%E6%9C%AF%E5%AE%B6%E4%B8%8E%E5%A4%A7%E4%BE%BF/">爆炸、告白、艺术家与大便</a>
         </li>
-    
-        
         <li class="archive-post-item">
             <span class="archive-post-date">04/12</span>
             <a class="archive-post-title" href="/2022/04/12/%E6%9D%A8%E5%A4%8F%E7%9A%84%E6%97%A5%E8%AE%B0/">杨夏的日记</a>
         </li>
-    
-        
         <li class="archive-post-item">
             <span class="archive-post-date">04/11</span>
             <a class="archive-post-title" href="/2022/04/11/%E4%B8%80%E7%99%BD%E7%9A%84%E5%AE%87%E5%AE%99/">一白的宇宙</a>
         </li>
-    
-        
         <li class="archive-post-item">
             <span class="archive-post-date">04/07</span>
             <a class="archive-post-title" href="/2022/04/07/Linux%E4%BD%9C%E4%B8%9A%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">Linux作业 正则表达式</a>
         </li>
-    
-        
         <li class="archive-post-item">
             <span class="archive-post-date">03/28</span>
             <a class="archive-post-title" href="/2022/03/28/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%BA%8C/">妄想录 篇二</a>
         </li>
-    
-        
         <li class="archive-post-item">
             <span class="archive-post-date">03/27</span>
             <a class="archive-post-title" href="/2022/03/27/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Linux学习笔记</a>
         </li>
-    
-        
         <li class="archive-post-item">
             <span class="archive-post-date">03/17</span>
             <a class="archive-post-title" href="/2022/03/17/%E4%BD%BF%E7%94%A8Github%E4%B8%8Ehexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用GitHub与Hexo搭建个人博客</a>
         </li>
-    
-        
         <li class="archive-post-item">
             <span class="archive-post-date">03/16</span>
             <a class="archive-post-title" href="/2022/03/16/HelloWorld/">Hello World</a>
         </li>
-    
-        
-            
-            
-                
                 </ul>
-            
             <div class="archive-year"> 2020 </div>
             <ul class="year-list">
-            
-        
         <li class="archive-post-item">
             <span class="archive-post-date">09/03</span>
             <a class="archive-post-title" href="/2020/09/03/%E8%9B%87/">蛇</a>
         </li>
-    
-        
-            
-            
-                
                 </ul>
-            
             <div class="archive-year"> 1970 </div>
             <ul class="year-list">
-            
-        
         <li class="archive-post-item">
             <span class="archive-post-date">01/01</span>
             <a class="archive-post-title" href="/1970/01/01/%E8%B5%9E%E8%B5%8F/">赞赏</a>
         </li>
-    
+            </ul>
     </div>
 </div>
 
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
-        
             <span class="sidebar-tag-name" data-tags="呓语">
                 <span class="iconfont-archer">&#xe606;</span>
                 呓语
             </span>
-        
             <span class="sidebar-tag-name" data-tags="学习">
                 <span class="iconfont-archer">&#xe606;</span>
                 学习
             </span>
-        
-            <span class="sidebar-tag-name" data-tags="笔记">
-                <span class="iconfont-archer">&#xe606;</span>
-                笔记
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="Linux">
-                <span class="iconfont-archer">&#xe606;</span>
-                Linux
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="作业">
                 <span class="iconfont-archer">&#xe606;</span>
                 作业
             </span>
-        
-            <span class="sidebar-tag-name" data-tags="小说">
+            <span class="sidebar-tag-name" data-tags="Linux">
                 <span class="iconfont-archer">&#xe606;</span>
-                小说
+                Linux
             </span>
-        
-            <span class="sidebar-tag-name" data-tags="短篇">
+            <span class="sidebar-tag-name" data-tags="笔记">
                 <span class="iconfont-archer">&#xe606;</span>
-                短篇
+                笔记
             </span>
-        
-            <span class="sidebar-tag-name" data-tags="教程">
-                <span class="iconfont-archer">&#xe606;</span>
-                教程
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="GitHub">
-                <span class="iconfont-archer">&#xe606;</span>
-                GitHub
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="Hexo">
-                <span class="iconfont-archer">&#xe606;</span>
-                Hexo
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="随笔">
                 <span class="iconfont-archer">&#xe606;</span>
                 随笔
             </span>
-        
+            <span class="sidebar-tag-name" data-tags="短篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                短篇
+            </span>
             <span class="sidebar-tag-name" data-tags="妄想录">
                 <span class="iconfont-archer">&#xe606;</span>
                 妄想录
             </span>
-        
+            <span class="sidebar-tag-name" data-tags="教程">
+                <span class="iconfont-archer">&#xe606;</span>
+                教程
+            </span>
+            <span class="sidebar-tag-name" data-tags="GitHub">
+                <span class="iconfont-archer">&#xe606;</span>
+                GitHub
+            </span>
+            <span class="sidebar-tag-name" data-tags="Hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                Hexo
+            </span>
+            <span class="sidebar-tag-name" data-tags="小说">
+                <span class="iconfont-archer">&#xe606;</span>
+                小说
+            </span>
             <span class="sidebar-tag-name" data-tags="Python">
                 <span class="iconfont-archer">&#xe606;</span>
                 Python
             </span>
-        
             <span class="sidebar-tag-name" data-tags="长篇">
                 <span class="iconfont-archer">&#xe606;</span>
                 长篇
             </span>
-        
             <span class="sidebar-tag-name" data-tags="连载">
                 <span class="iconfont-archer">&#xe606;</span>
                 连载
             </span>
-        
             <span class="sidebar-tag-name" data-tags="杂谈">
                 <span class="iconfont-archer">&#xe606;</span>
                 杂谈
             </span>
-        
             <span class="sidebar-tag-name" data-tags="通恒集">
                 <span class="iconfont-archer">&#xe606;</span>
                 通恒集
             </span>
-        
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -1640,17 +1123,14 @@
 
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
-    
         <span class="sidebar-category-name" data-categories="呓语">
             <span class="iconfont-archer">&#xe60a;</span>
             呓语
         </span>
-    
         <span class="sidebar-category-name" data-categories="学习">
             <span class="iconfont-archer">&#xe60a;</span>
             学习
         </span>
-    
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
     <div class="sidebar-categories-list"></div>
@@ -1675,15 +1155,11 @@
         <!-- import experimental options here -->
         <!-- Custom Font -->
 
-
         <!-- main func -->
-        <script src="/scripts/main.js?v=20211217"></script>
-        <!-- dark mode -->
-        <script src="/scripts/dark.js?v=20211217"></script>
+        <script src="/scripts/main.js"></script>
         <!-- fancybox -->
-        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
         <!-- algolia -->
-        
             <div class="site-search site-search-loading">
     <div class="algolia-popup popup">
         <div class="algolia-search">
@@ -1704,17 +1180,10 @@
     </div>
 </div>
 
-            <script src="/scripts/search.js?v=20211217" defer></script>
-        
+            <script src="/scripts/search.js" async></script>
         <!-- busuanzi -->
-        
             <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-        
-        <!-- CNZZ -->
-        
         <!-- async load share.js -->
-        
         <!-- mermaid -->
-        
     </body>
 </html>

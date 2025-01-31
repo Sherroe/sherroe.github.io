@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
+<!-- keywords -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Sherroe Huang">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Sherroe Huang">
+        <meta name="keywords" content="Sherroe,sherroe,blog,hexo,hexo-theme,hexo-blog">
+    <meta name="description" content="">
+    <meta name="description" content="此篇所谓“通恒集”者，大抵都是笔者对一些旧事的回忆和思考。 剪指甲刀与新的笔 2023年3月21日  我小学的班主任，同时也是我的语文老师，是一位非常和蔼、温柔的女性。 我不记得那是几年级了。在某一次班会活动上，她和我们玩猜谜游戏。猜对的同学可以获得各式各样的小奖品。 她站在讲台上，一字一顿地说： “小小狗，手里走。走一步，咬一口。” 我当即猜到了那是什么，便自信地举起手，说出了我的答案：“剪指甲">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通恒集">
+<meta property="og:url" content="http://sherroe.github.io/2023/07/20/%E9%80%9A%E6%81%92%E9%9B%86/index.html">
+<meta property="og:site_name" content="妄想录">
+<meta property="og:description" content="此篇所谓“通恒集”者，大抵都是笔者对一些旧事的回忆和思考。 剪指甲刀与新的笔 2023年3月21日  我小学的班主任，同时也是我的语文老师，是一位非常和蔼、温柔的女性。 我不记得那是几年级了。在某一次班会活动上，她和我们玩猜谜游戏。猜对的同学可以获得各式各样的小奖品。 她站在讲台上，一字一顿地说： “小小狗，手里走。走一步，咬一口。” 我当即猜到了那是什么，便自信地举起手，说出了我的答案：“剪指甲">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-20T16:02:00.690Z">
+<meta property="article:author" content="Sherroe Huang">
+<meta property="article:tag" content="呓语">
+<meta property="article:tag" content="随笔">
+<meta property="article:tag" content="短篇">
+<meta property="article:tag" content="通恒集">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/img/favicon.png">
+    <title>通恒集 · 妄想录 | Sherroe&#39;s Blog</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .footer-fixed-btn,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(
+            -45deg,
+            #444 0,
+            #444 80px,
+            #333 80px,
+            #333 160px
+        );
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="/css/dark.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+        <script>
+            var hits = JSON.parse('{"per_page":10}')
+            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
+
+            var algolia = {
+                applicationID: 'GEEDN46CDJ',
+                apiKey: '8d3c584ac83bd68b3e1b07c68e0404e6',
+                indexName: 'Sherroe Huang',
+                hits: hits,
+                labels: labels
+            }
+        </script>
+    <!-- 百度统计  -->
+    <!-- 谷歌统计  -->
+    <!-- Google tag (gtag.js) -->
+<link rel="alternate" href="/atom.xml" title="妄想录" type="application/atom+xml">
+</head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+        <body class="post-body">
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress read-progress-feature"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        <div class="header-sidebar-menu header-sidebar-menu-rounded">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href="/">Sherroe's Blog</a>
+        </span>
+    </div>
+    <!-- toggle banner -->
+    <div class="banner banner-clean">
+        <div class="blog-title header-element">
+            <a href="/">Sherroe&#39;s Blog</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name">通恒集</a>
+        </div>
+    </div>
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- donate button -->
+
+    <!-- back to top button -->
+    <div class="footer-fixed-btn footer-fixed-btn--hidden footer-fixed-btn--rounded back-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="    height:50vh;
+">
+    <!-- 主页  -->
+    <!-- 404页  -->
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/img/cover.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+                通恒集
+            <!-- 404 -->
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            <!-- 404 -->
+        </p>
+        <!-- 文章页 meta -->
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                    <div class="post-intro-tags" >
+        <span class="post-category" data-categories="呓语">
+            <i class="fas fa-folder post-category-icon"></i>
+            <span class="post-category-text">
+                呓语
+            </span>
+        </span>
+        <a class="post-tag" href="javascript:void(0);" data-tags="呓语">呓语</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="随笔">随笔</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="短篇">短篇</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="通恒集">通恒集</a>
+</div>
+
+                <!-- 文章字数统计 -->
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">3.5k</span>阅读时长: <span class="post-count reading-time">11 min</span></span>
+                    </div>
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2023/07/20</span>
+                    <!-- busuanzi -->
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <p>此篇所谓“通恒集”者，大抵都是笔者对一些旧事的回忆和思考。</p>
+<h2 id="剪指甲刀与新的笔"><a href="#剪指甲刀与新的笔" class="headerlink" title="剪指甲刀与新的笔"></a>剪指甲刀与新的笔</h2><blockquote>
+<p>2023年3月21日</p>
+</blockquote>
+<p>我小学的班主任，同时也是我的语文老师，是一位非常和蔼、温柔的女性。</p>
+<p>我不记得那是几年级了。在某一次班会活动上，她和我们玩猜谜游戏。猜对的同学可以获得各式各样的小奖品。</p>
+<p>她站在讲台上，一字一顿地说：</p>
+<p>“小小狗，手里走。走一步，咬一口。”</p>
+<p>我当即猜到了那是什么，便自信地举起手，说出了我的答案：“剪指甲刀。”</p>
+<p>班主任看着我，似乎楞了一下。但短暂的犹豫后，她还是微笑着摇了摇头。</p>
+<p>瞬间，第二个同学举了手，说：“剪刀。”</p>
+<p>这位同学答对了。在全班学生的掌声里，他走上讲台，领取了他的奖品——是一只中性笔。我看到讲台上放着一个大塑料板，塑料板上整齐地摆放着两排笔，就和校门口文具店里陈列在货架上的一样。</p>
+<p>事后回忆起来，我总觉得我的答案不该算错。且不论“剪指甲刀”是否属于“剪刀”的子集，我甚至认为“剪指甲刀”本身就要更符合题目的描述——剪刀是长的，尖的；而指甲刀是宽的，平的。明显，指甲刀更符合动物嘴巴的形状。</p>
+<p>但当时，我并没有想这么多。我没有因错过了标准答案而后悔，也没有对班主任和那位同学产生什么怨恨或是嫉妒。我清楚地记得，自己的心情非常简单：我只是想要一支新的笔。</p>
+<p>十几年过去了，关于上小学那六年的回忆，大多都模糊不清了。但这件小事却一直清晰地藏在我脑中，我经常在自己剪指甲的时候突然想起这件事，想起当时的心情。</p>
+<p>我只是想要一支新的笔，但我没有得到它。</p>
+<hr>
+<h2 id="旧的拖把与新的思考"><a href="#旧的拖把与新的思考" class="headerlink" title="旧的拖把与新的思考"></a>旧的拖把与新的思考</h2><blockquote>
+<p>2023年6月4日</p>
+</blockquote>
+<p>突然想起来小学的时候，忘了是几年级了。当时和班里一个同学打闹，那个同学把教室后排的拖把弄断了。这时候，我的老师看到我和一截断掉的拖把站在一起，便以为是我搞坏的，让我去买一根新拖把来赔偿。</p>
+<p>我不知道我当时为什么没有辩解。我只记得回家以后跟父亲讲了这件事，父亲给了我买拖把的钱，然后对我说：“你给班里买新拖把可以，但你要跟老师说清楚，这个拖把不是你弄坏的。”</p>
+<p>我懒得照做。只是当天下午去学校的时候，在校门口的小店里买了一根新拖把，默默放到了教室里。我很清楚地记得，那根拖把是那时候最常见的木质拖把，6元钱一个。</p>
+<p>于是班里就这样有了一根新拖把。我再也没有跟任何人提起这件事，老师也没有再过问一句。究竟是谁把拖把弄坏的，又是谁买了新的拖把，整个班级里没人关心了。</p>
+<p>可能到今天，也只有我自己记得这件小事了。甚至这么多年过去了，我反而会想——是不是我记错了，当时弄坏拖把的，会不会就是我自己呢？</p>
+<p>总之我意识到了，我这个人向来懒得与人解释或是争辩——或者说仅仅只是怕麻烦。从小到大一向如此。</p>
+<p>大三上学期的时候，我在闲鱼卖耳机被人骗了。耳机发货出去了但没收到钱，我也仅仅试图维权了一个晚上之后便放弃了。再或者说其他的各种事儿……在遇到某个需要我去花费太过多余的时间和精力去解释或争辩的事情的时候，我往往会选择逃避。背锅也好吃亏也罢，只要对我造成的影响不是很大，我似乎也都不太在意吧。</p>
+<p>但总有些事情，在背了锅之后发现这个锅还是蛮沉的，夜里躺在床上复盘这些事的时候也总觉得别扭难受。时常会想自己是不是真的不该遭这些委屈，但也明白很多情况确实是我的责任——不过责任的归属和问题的归因本就是一个过于复杂的命题，我确实做不到最优解。时间一长以后，能做的也仅仅只有劝自己不再为这些烂事烦心，想必这就足够了。</p>
+<hr>
+<h2 id="朝花朝拾"><a href="#朝花朝拾" class="headerlink" title="朝花朝拾"></a>朝花朝拾</h2><blockquote>
+<p>2019年9月28日</p>
+</blockquote>
+<p>“下一个。”</p>
+<p>马老师的笑容转向教室另一端的排头，看着一个大眼睛的少年。</p>
+<p>“我的梦想是……当一个画家。”</p>
+<p>声音很小，但很坚定。班里传出一阵掌声。</p>
+<p>这是初一时的记忆，到今天只过去了六年，但已经非常模糊了。步入大学后，被繁忙杂多的课业与各种事项捆绑着身体，已经许久没有动过画笔了。今天回忆起来，竟觉得有一丝丝心酸。</p>
+<p>我从小就喜欢画画。现在脑海里残存的对于画画最早的记忆，是在幼儿园时画的一副简笔画《蚂蚁搬家》。虽是破碎残缺的记忆，但有一些片段却极为清楚。那个胖胖的幼儿园老师指导着我在纸上挥舞——还送给了我一支漂亮的铅笔——那是一支在笔杆的末端装着弹簧固定的小猫——在手里摇起来小猫就会晃来晃去——的铅笔。这幅作品后来还获得了儿童绘画比赛的金奖，但我对于获奖的记忆却远没有对于那支小猫铅笔的记忆清楚。</p>
+<p>小学之后，课本成为了我涂鸦的主要阵地。语文书和数学书上丰富的儿童画非常符合我的胃口。从临摹到自己创作，小学六年的课本，边边角角都被我的涂鸦塞满。甚至还有一些带着剧情的漫画——虽然现在看起来是极为幼稚的想法，但在当时可是我引以为傲的大作。</p>
+<p>在表哥的影响下，六年级的我喜欢上了动漫。而手中的画，也随着我的喜好转变为了日漫的风格（说是所谓风格，但也只是毫无功底的模仿罢了）。初一时当班主任问及我们的梦想时，我毫不犹豫地说出了那个词：</p>
+<p>“画家。”</p>
+<p>只是现在看来，我的人生轨迹已经离这个词越来越远了。</p>
+<p>上了初中后，父亲终于觉得我在绘画上具有着天赋，便打算认真地发展一下我这个兴趣。于是我进入了市里的一家美术兴趣班学习，这也是我第一次在学校课堂之外上课——开明的父亲从来不会逼迫我像其他孩子一样“从小培养各种特长”，也不信什么“让孩子输在起跑线上”的鬼话。与从小就被各种课外班占满空闲时间的同龄人相比，从初一才开始上第一堂课外班的我却丝毫没有“输在起跑线上”，这也常常成为父亲与老同学聚饮时的谈资。</p>
+<p>在那所叫做“于立刚”的美术学院，从来没有接受过美术教育的我被安排进了“小学班”，与一群比我年纪小三四岁的孩子一起学习。原因大致是老师听说我以前没有学习过绘画，所以要从最基础开始学习（那里的孩子大概都是从小学就在学习了吧）。但在“小学班”只上了一个学期，我就直接跳级到了“初中班”——因为画的很好。当时，每节课结束时老师都会给表现好的孩子一些贴纸，收集足够的贴纸就可以在学校换取玩具，算作是奖励。而我总是能拿到许多贴纸，在学期末拿着玩具满载而归。</p>
+<p>学习了正统美术后，我的画总算是“正规”了起来。而后在初二时也很轻松地考过了速写六级。但是到了初三，父亲却不打算让我继续学习了。</p>
+<p>“孩子文化课挺好的，没必要走艺术生，初三要好好准备中考呢。”</p>
+<p>在大多数人眼里，所谓“艺术生”、“体育生”，都是文化课成绩不好才选择走上特长生道路的。或许在中国的教育体制下，这种观念早已深入人心了吧。</p>
+<p>但我的一诊成绩并不理想。560分，只能上省级重点高中里较差的学校。为了能上一个更好的高中，我还是去参加了二中的美术生考试，但最终以一分之差未能通过考试。可这也并未留下什么遗憾。在最终的中考里，我考出了594分——比一诊高出30多分的成绩，最终进入了铁一中，一所与二中差不多优秀的学校。</p>
+<p>在高中，我加入了动漫社团的手绘部，认识了许多画画也很棒的同学，在动漫社里也接触到了许多新奇的东西。我没有再继续上美术课外班，而是买了一些绘画教学的书本，在家自己钻研学习。高一时，我得到了人生的第一块数位板，走上了板绘的道路，并且从那时起，我开始只绘制日漫风格的图画了。在“动漫”这个略显小众的圈子里，我很容易地能在网络上与那些和我有着相同兴趣爱好的年轻人中找到一种归属感。我开始在bilibili、pixiv、lofter这些网站上传自己的作品，甚至还在网络上直播画画——虽然只有个位数的人观看，但这都给我带来了许多特别的成就感。</p>
+<p>身为班里为数不多的会画画的学生，板报绘制、班徽设计这些艺术类的活动我基本都会参与——现在在大学也是这样。高二时学校举办绘画创作活动，我用一周多的时间画了一幅画，那是我迄今为止画的最用心的一幅画。这幅画后来连续三年被用在了高中动漫社的招新宣传上（顺带一提，动漫社的logo也是我设计的）。这两件事也是我到目前为止短暂的人生中为数不多的能让自己引以为傲的事情。</p>
+<p>高三，一定是一个人学生生涯中最累、最艰苦的时刻。在沉重的课业之余，我用来放松身体的，除了打游戏，就是画画了。我在我的素描本的扉页上写下了这样一句话：</p>
+<p>“想要成为画画很棒的人”</p>
+<p>可是我究竟想要成为什么样的人呢？真的会走上职业画家的道路吗？我产生了顾虑。“画家”，这是一个十分不稳定的，未来发展方向很不明确的职业。而我也很清楚家里的条件并不能支持我在这样一条未知且充满风险的道路上摸索前行。</p>
+<p>我的心中没有答案。</p>
+<p>高考临近，班主任开始动员我们做起了生涯规划，先从树立“上哪一所大学”的目标开始。我把目光投向了中国传媒大学的数字媒体专业——这是一个同时涉及技术与艺术的专业，而且其中的三维建模、游戏设计这些方面的课程也很对我的胃口。这个专业一方面可以发挥出我在美术方面的优势，另一方面涉及到的互联网行业在现今社会极受欢迎。如果我能考入这所大学，未来找到一份稳定的工作应该不成问题。我对自己的目标感到十分满意。</p>
+<p>可是，谁知道命运之神对你是什么态度呢？</p>
+<p>613分。在看到成绩的那一刻，我欣喜若狂。我比中国传媒大学的录取分数线整整高出了40多分，我从未想过自己能考出如此高分。但我随即意识到，这也让我远离了中传媒的数字媒体专业——我完全可以上一所更好的大学。最终，我来到了北京邮电大学的计算机专业。</p>
+<p>“不能拿画画当饭吃了呢。”我想着。那是一种异常奇特的，成就感与失落感并存的感觉。</p>
+<p>高中结束的那个暑假，一下子从高压状态掉落至空虚状态的我成为了怠惰的时间支配者。暑假初定下的计划大部分都没有完成，而是被无休止的懒惰与拖延代替。不知为什么，我越来越没有兴趣拿起那支画笔，游戏和番剧带给我的神经刺激比绘画要更加明显。三个月后，我带着一颗懵懂的心来到了大学校园。</p>
+<p>上课，打卡，签到，开会，生活中各种琐碎的杂事……我渐渐忘记了放在书架上的《伯里曼》和曾经“绘下我的梦想”的素描本。前些天和家里人视频聊天，母亲还问我家里的画材和画纸要不要拿到学校去。但是我……真的很久都没有再画过了。</p>
+<p>写到这里，我停下敲击键盘的手，抬起头看了看那被我束之高阁的“梦想”，伸手去拿画笔。</p>
+
+    </article>
+    <!-- license -->
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2023/08/18/%E6%AF%9B%E9%9B%A8%E6%98%9F/" title="毛雨星">
+                    <div class="nextTitle">毛雨星</div>
+                </a>
+        </li>
+        <li class="previous">
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2023/02/21/%E9%9D%A2%E8%AF%95/" title="面试">
+                    <div class="prevTitle">面试</div>
+                </a>
+        </li>
+    </ul>
+    <!-- comment -->
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+            
+            
+            
+            <!-- utteranc评论 -->
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+            
+            
+                <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+    <link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet' />
+    <div id="comment"></div>
+    <script>
+    Waline.init({
+        el: '#comment' ,
+        serverURL: "https://blog-api-48sc2v2e6-sherroe.vercel.app",
+        locale: {
+            placeholder: "讲两句"
+        },
+        login: ""
+    });
+    </script>
+
+        </div>
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    <!-- Mathjax -->
+</main>
+
+                <!-- profile -->
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+        <div class="social">
+                            <a href="mailto:sherroe@163.com" class="iconfont-archer email" title="email" ></a>
+                <a href="//github.com/Sherroe" class="iconfont-archer github" target="_blank" title="github"></a>
+                <a href="//twitter.com/Sherroe_XD" class="iconfont-archer twitter" target="_blank" title="twitter"></a>
+                <a href="//space.bilibili.com/57427709" class="iconfont-archer bilibili" target="_blank" title="bilibili"></a>
+                <a href="//weibo.com/u/5992045682" class="iconfont-archer weibo" target="_blank" title="weibo"></a>
+
+        </div>
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+        <div class="website-approve">
+        </div>
+    <!-- 不蒜子  -->
+        <div class="busuanzi-container">
+                <span id="busuanzi_container_site_pv">访问量: <span id="busuanzi_value_site_pv"></span> ——也许实际上并没有这么多？</span>
+        </div>
+</footer>
+
+        </div>
+        <!-- toc -->
+            <div class="toc-wrapper toc-wrapper-loding" style=    top:50vh;
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%AA%E6%8C%87%E7%94%B2%E5%88%80%E4%B8%8E%E6%96%B0%E7%9A%84%E7%AC%94"><span class="toc-number">1.</span> <span class="toc-text">剪指甲刀与新的笔</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A7%E7%9A%84%E6%8B%96%E6%8A%8A%E4%B8%8E%E6%96%B0%E7%9A%84%E6%80%9D%E8%80%83"><span class="toc-number">2.</span> <span class="toc-text">旧的拖把与新的思考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%9D%E8%8A%B1%E6%9C%9D%E6%8B%BE"><span class="toc-number">3.</span> <span class="toc-text">朝花朝拾</span></a></li></ol>
+            </div>
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 22
+        </div>
+        <!-- search  -->
+            <div class="site-search site-search-loading popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+    </div>
+    <div class="post-archive">
+            <div class="archive-year"> 2077 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span>
+            <a class="archive-post-title" href="/2077/07/08/%E6%AD%8C%E5%A1%94/">歌塔</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/07</span>
+            <a class="archive-post-title" href="/2077/07/07/%E5%BC%82%E6%AC%A1%E5%85%83%E7%9A%84%E5%B9%B8%E5%AD%98%E8%80%85/">异次元的幸存者</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span>
+            <a class="archive-post-title" href="/2025/01/31/%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E7%9A%84Python%E5%BA%93/">关于工作中常用的一些操作文件的Python库</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2023/08/18/%E6%AF%9B%E9%9B%A8%E6%98%9F/">毛雨星</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/20</span>
+            <a class="archive-post-title" href="/2023/07/20/%E9%80%9A%E6%81%92%E9%9B%86/">通恒集</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2023/02/21/%E9%9D%A2%E8%AF%95/">面试</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span>
+            <a class="archive-post-title" href="/2022/12/16/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/">新年快乐</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span>
+            <a class="archive-post-title" href="/2022/11/20/%E5%A6%84%E6%83%B3%E5%BD%95%20%E5%A4%96%E7%AF%87%20%E6%A0%B8%E9%85%B8%E6%97%A5%E8%AE%B0/">妄想录 外篇 核酸日记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/19</span>
+            <a class="archive-post-title" href="/2022/09/19/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%B8%80/">妄想录 篇一</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span>
+            <a class="archive-post-title" href="/2022/09/10/%E7%BB%9D%E4%B8%96%E5%94%90%E9%97%A8/">绝世唐门</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2022/08/10/%E5%BE%B7%E5%A1%94/">德塔</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span>
+            <a class="archive-post-title" href="/2022/05/03/%E7%95%AA%E8%8C%84%E6%B1%A4/">番茄汤</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span>
+            <a class="archive-post-title" href="/2022/04/13/%E7%88%86%E7%82%B8%E3%80%81%E5%91%8A%E7%99%BD%E3%80%81%E8%89%BA%E6%9C%AF%E5%AE%B6%E4%B8%8E%E5%A4%A7%E4%BE%BF/">爆炸、告白、艺术家与大便</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2022/04/12/%E6%9D%A8%E5%A4%8F%E7%9A%84%E6%97%A5%E8%AE%B0/">杨夏的日记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2022/04/11/%E4%B8%80%E7%99%BD%E7%9A%84%E5%AE%87%E5%AE%99/">一白的宇宙</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2022/04/07/Linux%E4%BD%9C%E4%B8%9A%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">Linux作业 正则表达式</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/28</span>
+            <a class="archive-post-title" href="/2022/03/28/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%BA%8C/">妄想录 篇二</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span>
+            <a class="archive-post-title" href="/2022/03/27/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Linux学习笔记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span>
+            <a class="archive-post-title" href="/2022/03/17/%E4%BD%BF%E7%94%A8Github%E4%B8%8Ehexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用GitHub与Hexo搭建个人博客</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2022/03/16/HelloWorld/">Hello World</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2020 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span>
+            <a class="archive-post-title" href="/2020/09/03/%E8%9B%87/">蛇</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 1970 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/1970/01/01/%E8%B5%9E%E8%B5%8F/">赞赏</a>
+        </li>
+            </ul>
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+            <span class="sidebar-tag-name" data-tags="呓语">
+                <span class="iconfont-archer">&#xe606;</span>
+                呓语
+            </span>
+            <span class="sidebar-tag-name" data-tags="学习">
+                <span class="iconfont-archer">&#xe606;</span>
+                学习
+            </span>
+            <span class="sidebar-tag-name" data-tags="作业">
+                <span class="iconfont-archer">&#xe606;</span>
+                作业
+            </span>
+            <span class="sidebar-tag-name" data-tags="Linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                Linux
+            </span>
+            <span class="sidebar-tag-name" data-tags="笔记">
+                <span class="iconfont-archer">&#xe606;</span>
+                笔记
+            </span>
+            <span class="sidebar-tag-name" data-tags="随笔">
+                <span class="iconfont-archer">&#xe606;</span>
+                随笔
+            </span>
+            <span class="sidebar-tag-name" data-tags="短篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                短篇
+            </span>
+            <span class="sidebar-tag-name" data-tags="妄想录">
+                <span class="iconfont-archer">&#xe606;</span>
+                妄想录
+            </span>
+            <span class="sidebar-tag-name" data-tags="教程">
+                <span class="iconfont-archer">&#xe606;</span>
+                教程
+            </span>
+            <span class="sidebar-tag-name" data-tags="GitHub">
+                <span class="iconfont-archer">&#xe606;</span>
+                GitHub
+            </span>
+            <span class="sidebar-tag-name" data-tags="Hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                Hexo
+            </span>
+            <span class="sidebar-tag-name" data-tags="小说">
+                <span class="iconfont-archer">&#xe606;</span>
+                小说
+            </span>
+            <span class="sidebar-tag-name" data-tags="Python">
+                <span class="iconfont-archer">&#xe606;</span>
+                Python
+            </span>
+            <span class="sidebar-tag-name" data-tags="长篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                长篇
+            </span>
+            <span class="sidebar-tag-name" data-tags="连载">
+                <span class="iconfont-archer">&#xe606;</span>
+                连载
+            </span>
+            <span class="sidebar-tag-name" data-tags="杂谈">
+                <span class="iconfont-archer">&#xe606;</span>
+                杂谈
+            </span>
+            <span class="sidebar-tag-name" data-tags="通恒集">
+                <span class="iconfont-archer">&#xe606;</span>
+                通恒集
+            </span>
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+        <span class="sidebar-category-name" data-categories="呓语">
+            <span class="iconfont-archer">&#xe60a;</span>
+            呓语
+        </span>
+        <span class="sidebar-category-name" data-categories="学习">
+            <span class="iconfont-archer">&#xe60a;</span>
+            学习
+        </span>
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "http://sherroe.github.io",
+        root: siteMetaRoot,
+        author: "Sherroe Huang"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+        <!-- main func -->
+        <script src="/scripts/main.js"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
+        <!-- algolia -->
+            <div class="site-search site-search-loading">
+    <div class="algolia-popup popup">
+        <div class="algolia-search">
+            <div class="algolia-search-input-icon">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="algolia-search-input" id="algolia-search-input"></div>
+            <div class="popup-btn-close">
+                <i class="iconfont-archer">&#xe609;</i>
+            </div>
+        </div>
+
+        <div class="algolia-results">
+            <div id="algolia-stats" class="algolia-stats"></div>
+            <div id="algolia-hits"></div>
+            <div id="algolia-pagination" class="algolia-pagination"></div>
+        </div>
+    </div>
+</div>
+
+            <script src="/scripts/search.js" async></script>
+        <!-- busuanzi -->
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        <!-- async load share.js -->
+            <script src="/scripts/share.js" async></script>
+        <!-- mermaid -->
+    </body>
+</html>

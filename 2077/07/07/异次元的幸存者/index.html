@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
+<!-- keywords -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Sherroe Huang">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Sherroe Huang">
+        <meta name="keywords" content="Sherroe,sherroe,blog,hexo,hexo-theme,hexo-blog">
+    <meta name="description" content="">
+    <meta name="description" content="[TOC] 第一章 负子“随着印度等国的加入，截至5月19日，莫斯科公约成员国数量已增加至112个……” 新闻主持人的声音在拥挤的地铁车厢内回荡。何逸歪着头，透过一排排乘客人头间的缝隙，看着在车窗边挂着的小电视机。 “……失踪的三名学生均来自于剑桥大学物理系，并属于同一实验室。英国警方现已开启调查，并多次传唤实验室相关人员，但拒绝对外公开调查进度。” 何逸低头看了一眼手表，这个点到学校，应该能赶上">
+<meta property="og:type" content="article">
+<meta property="og:title" content="异次元的幸存者">
+<meta property="og:url" content="http://sherroe.github.io/2077/07/07/%E5%BC%82%E6%AC%A1%E5%85%83%E7%9A%84%E5%B9%B8%E5%AD%98%E8%80%85/index.html">
+<meta property="og:site_name" content="妄想录">
+<meta property="og:description" content="[TOC] 第一章 负子“随着印度等国的加入，截至5月19日，莫斯科公约成员国数量已增加至112个……” 新闻主持人的声音在拥挤的地铁车厢内回荡。何逸歪着头，透过一排排乘客人头间的缝隙，看着在车窗边挂着的小电视机。 “……失踪的三名学生均来自于剑桥大学物理系，并属于同一实验室。英国警方现已开启调查，并多次传唤实验室相关人员，但拒绝对外公开调查进度。” 何逸低头看了一眼手表，这个点到学校，应该能赶上">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2077-07-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-08-29T15:37:46.756Z">
+<meta property="article:author" content="Sherroe Huang">
+<meta property="article:tag" content="呓语">
+<meta property="article:tag" content="小说">
+<meta property="article:tag" content="长篇">
+<meta property="article:tag" content="连载">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/img/favicon.png">
+    <title>异次元的幸存者 · 妄想录 | Sherroe&#39;s Blog</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .footer-fixed-btn,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(
+            -45deg,
+            #444 0,
+            #444 80px,
+            #333 80px,
+            #333 160px
+        );
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="/css/dark.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+        <script>
+            var hits = JSON.parse('{"per_page":10}')
+            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
+
+            var algolia = {
+                applicationID: 'GEEDN46CDJ',
+                apiKey: '8d3c584ac83bd68b3e1b07c68e0404e6',
+                indexName: 'Sherroe Huang',
+                hits: hits,
+                labels: labels
+            }
+        </script>
+    <!-- 百度统计  -->
+    <!-- 谷歌统计  -->
+    <!-- Google tag (gtag.js) -->
+<link rel="alternate" href="/atom.xml" title="妄想录" type="application/atom+xml">
+</head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+        <body class="post-body">
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress read-progress-feature"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        <div class="header-sidebar-menu header-sidebar-menu-rounded">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href="/">Sherroe's Blog</a>
+        </span>
+    </div>
+    <!-- toggle banner -->
+    <div class="banner banner-clean">
+        <div class="blog-title header-element">
+            <a href="/">Sherroe&#39;s Blog</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name">异次元的幸存者</a>
+        </div>
+    </div>
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- donate button -->
+
+    <!-- back to top button -->
+    <div class="footer-fixed-btn footer-fixed-btn--hidden footer-fixed-btn--rounded back-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="    height:50vh;
+">
+    <!-- 主页  -->
+    <!-- 404页  -->
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/img/cover.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+                异次元的幸存者
+            <!-- 404 -->
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            <!-- 404 -->
+        </p>
+        <!-- 文章页 meta -->
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                    <div class="post-intro-tags" >
+        <span class="post-category" data-categories="呓语">
+            <i class="fas fa-folder post-category-icon"></i>
+            <span class="post-category-text">
+                呓语
+            </span>
+        </span>
+        <a class="post-tag" href="javascript:void(0);" data-tags="呓语">呓语</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="小说">小说</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="长篇">长篇</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="连载">连载</a>
+</div>
+
+                <!-- 文章字数统计 -->
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">13.3k</span>阅读时长: <span class="post-count reading-time">44 min</span></span>
+                    </div>
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2077/07/07</span>
+                    <!-- busuanzi -->
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <p>[TOC]</p>
+<h2 id="第一章-负子"><a href="#第一章-负子" class="headerlink" title="第一章 负子"></a>第一章 负子</h2><p>“随着印度等国的加入，截至5月19日，莫斯科公约成员国数量已增加至112个……”</p>
+<p>新闻主持人的声音在拥挤的地铁车厢内回荡。何逸歪着头，透过一排排乘客人头间的缝隙，看着在车窗边挂着的小电视机。</p>
+<p>“……失踪的三名学生均来自于剑桥大学物理系，并属于同一实验室。英国警方现已开启调查，并多次传唤实验室相关人员，但拒绝对外公开调查进度。”</p>
+<p>何逸低头看了一眼手表，这个点到学校，应该能赶上下午的会议。所以他决定先去实验室一趟。</p>
+<p>“高教园站到了。要下车的乘客，请您携带好随身物品……”</p>
+<p>到站广播声盖过了电视机的声音。何逸提起书包，挤过人群下了车。</p>
+<p>高教园地铁站内熙熙攘攘。这里的乘客大多都是周围各所高校的学生，而最近也临近毕业季，所有人都显得异常忙碌。</p>
+<p>虽然不是毕业生，但何逸也一样忙碌。他所在的实验室最近正在攻克难关的关键时期，如果一切顺利的话……</p>
+<p>何逸走上了扶梯台阶。</p>
+<p>如果一切顺利的话，他们将成为历史——同时，成为罪犯。</p>
+<p>何逸不愿多想。</p>
+<p>​     </p>
+<p>到了实验室门口，何逸礼貌性地敲了敲门。</p>
+<p>“请进。”</p>
+<p>何逸推开门，走了进去。小小的实验室被各种仪器所包围，唯一的一张办公桌上也堆满了书刊与打印纸，几乎没有一点空闲的空间。</p>
+<p>“莹莹不在，你们就可劲儿乱造。”看着杂乱的实验室，何逸轻声抱怨。</p>
+<p>“别怪我啊？负责理论计算的都是你月姐，那桌上的稿纸全是她的大作。”不远处的郑宇辰笑着说。</p>
+<p>“你俩一个德行。”</p>
+<p>何逸走到桌边，伸出手想进行整理。</p>
+<p>“我劝你别动，不然她又不知道算到哪了。”</p>
+<p>“那也该怪她自己摆这么乱。”</p>
+<p>何逸刚拿起一本书，又放回了原位——他放弃了整理的念头。因为即便现在把桌子理整齐，不出半天就又会回到这个状态。更何况还可能如郑宇辰所说，自己整理了桌面之后，秦月就不知道计算的进度了。</p>
+<p>“谁说我坏话呢？”一个明亮的女声在门口响起。</p>
+<p>“不知道啊——我猜是亚里士多德和托勒密？”郑宇辰依旧在笑着打趣。</p>
+<p>“秦月，莹莹呢？”何逸问。</p>
+<p>“我记得她说今天要去做志愿者。”</p>
+<p>“做到几点？”</p>
+<p>“不知道，你自己问呗。”</p>
+<p>秦月把手提包随便扔在桌上，从包里拿出一叠文件。</p>
+<p>何逸用一只手拦住了正在向外拿取文件的秦月。</p>
+<p>“先别算你的数字了，我有重要的事情要说。”</p>
+<p>“什么？”</p>
+<p>“今早的新闻，剑桥那个——看了吗？”何逸打开手机，在浏览器中输入了“剑桥大学失踪”。</p>
+<p>“看了，咋了？”郑宇辰答道。</p>
+<p>何逸看着手机搜索出的新闻，说：“其中一个失踪的学生，叫麦里克斯。”</p>
+<p>“你认识？”</p>
+<p>“什么叫我认识……咱们都认识。”</p>
+<p>“是交流会那次的英国学生吗？”秦月似乎想起来了些什么。</p>
+<p>“对，就他。”</p>
+<p>“这人啊……”郑宇辰低着头思考，“我当时跟他交流不多，没什么印象了。”</p>
+<p>何逸放下手机，缓缓地说：“他也是研究负子的。”</p>
+<p>另外两人明显被这句话吓了一跳。</p>
+<p>“你的意思是……他的失踪，和负子机器有关？”秦月的声音听起来有点紧张。</p>
+<p>“我猜是这样的，毕竟是一整个实验室的人都失踪了。”何逸答道。</p>
+<p>“看来，他们还是跨过那条红线了。”郑宇辰的声音也低沉了下去。</p>
+<p>何逸站了起来，神情严肃地看着两人。</p>
+<p>“我的意见是，我们也就此打住吧。”</p>
+<p>郑宇辰与秦月对视一眼，他们似乎知道何逸的意图，但还是略显震惊。</p>
+<p>“所以你说这些，就是为了让我们放弃这个研究了三年的课题？”秦月质问道。</p>
+<p>“现在收手还来得及……这个东西太可怕了，负子的力量远不是人类所能驾驭的。”</p>
+<p>郑宇辰表示了反对：“但我们的实验可从来没出过问题。现在马上就能攻克微生物转移的难关了，怎么能唐突地说停就停啊……”</p>
+<p>“我们正在一步步走向深渊。”何逸的声音有些颤抖，“现在是微生物，下一步是什么？是植物？动物？最后是人类？”</p>
+<p>郑宇辰与秦月看着何逸的脸，没有说话。</p>
+<p>短暂的沉默后，郑宇辰先开了口：“放心，我们是不会跨过那条红线的。”</p>
+<p>“永不进行人体实验，这不是我们一开始就达成的共识吗？”秦月也跟着说。</p>
+<p>但两人的话并不能让何逸放下心来。</p>
+<p>“去年交流会的时候，麦里克斯也是这么说的。但是，当实验的进展达到足够的程度时，没有人能抵挡住求知的诱惑。”</p>
+<p>“我不同意。”秦月简单地进行了拒绝，“这么多年的心血，我不可能说放弃就放弃。”</p>
+<p>“是啊……再怎么说，也要把现阶段的课题完成吧。”</p>
+<p>何逸摇了摇头，一脸苦闷地说：“你们也知道，我们现在正在做的事，可是违法的。”</p>
+<p>“我们三年前开启课题的时候，还没这条法律呢。”秦月立即反击。</p>
+<p>“从法律，从道德，从理性……我都觉得不应该再进行下去了。”</p>
+<p>“在能揭露宇宙奥秘的机器面前，这些东西算什么？”秦月的话音十分坚定。</p>
+<p>何逸直勾勾地看着秦月的脸，仿佛在看一个怪物。</p>
+<p>“别劝了，你劝不动她的……”郑宇辰拍了拍何逸的肩膀，在他的耳边轻声说道。</p>
+<p>何逸提起自己的包，一言不发地向实验室门外走去。走到门口的时候，他转过身，对着秦月说：</p>
+<p>“你的大脑，已经被负子控制了。”</p>
+<p>​     </p>
+<p>负子，大概是历史上第一个实际应用程度远超理论研究的物体。人类对负子的认知，尚处在婴儿的阶段。甚至连其究竟是否存在，在学界依然有争议。但自大又狂妄的人类，却能在全面地认识这种粒子之前，就利用它的特性制造出曾经仅存在于科幻小说中的东西——宇宙穿梭机器。</p>
+<p>早在60多年前，人类就通过理论推演和负子实验，证明了平行宇宙的存在。而后，被誉为前苏联20世纪最伟大的物理学家——伦加，在一次负子实验中，偶然发现了在不同平行宇宙间穿梭的条件。而他所使用的方法也被称为伦加效应。虽然人类还未能搞清引发伦加效应的具体原因，但只要满足条件，伦加效应可以以极高的成功率进行复现。随后，大量“宇宙穿梭机器”被制造出来，人类热衷于探求平行宇宙的奥秘，各种各样的物体在实验中被送往其他平行宇宙——包括人。</p>
+<p>伦加效应提出十年后，美国一所高能物理研究所被曝出人体实验丑闻。这家研究所在四年间，一共将2000多位被实验者送往未知的平行宇宙，而其中大多数人都是单程票。</p>
+<p>随后，在人道主义思潮的推动下，联合国呼吁全世界停止人体穿越平行宇宙的实验，近80个国家共同签署了反对人体实验的“莫斯科公约”，各国也相继出台法律禁止或限制相关人体实验。</p>
+<p>作为莫斯科公约的发起国之一，中国的限制要更为严格。“禁止私自进行任何形式的未经许可的负子相关实验研究”被写入了刑法。何逸所在的307实验室启动了一年的研究课题也在此之后被上级勒令停止。</p>
+<p>尔后，307实验室在两年间数次提交研究申请，但被全部驳回。据说，目前全国范围内也只有两个中科院直属的实验室拥有研究许可。</p>
+<p>于是，在赤文大学物理系教授庄墨城的主导下，何逸、柳莹莹、郑宇辰和秦月四名学生在307实验室里秘密继续着之前的课题——关于负子的研究以及伦加效应的复现……最后，他们制造出了宇宙穿梭机器。</p>
+<p>​     </p>
+<p>团组织会议结束后，在去食堂的路上，何逸遇到了穿着志愿者服装的柳莹莹。</p>
+<p>“真巧呀，阿逸！”柳莹莹笑着向他打招呼。</p>
+<p>“你还在做志愿吗？”</p>
+<p>“刚做完，准备去吃饭了。”</p>
+<p>“那正好，我也去吃。一起吗？”</p>
+<p>“好啊！今天吃什么？”</p>
+<p>两人并肩走进食堂。</p>
+<p>此时的食堂人满为患，何逸不敢在这样的地方公开商量实验室的事情。他打算找个没人的地方表明他的想法。</p>
+<p>“今晚还有其他事吗？”</p>
+<p>“怎么了？”</p>
+<p>“有件事想和你单独商量一下……”</p>
+<p>柳莹莹的表情在一瞬间变得惊讶，但很快恢复了平常。</p>
+<p>“可以呀，我没有别的事。”</p>
+<p>“那吃完饭后我们去一下实验室吧。”</p>
+<p>“实验室？月姐和辰哥不在吗？”</p>
+<p>“在的吧。”</p>
+<p>“嗯……”</p>
+<p>“咋了？”</p>
+<p>“你不是说，要单独……”</p>
+<p>柳莹莹很快地扒了一口饭。</p>
+<p>“那好吧……我们去学院楼后？”</p>
+<p>“好。”柳莹莹一边咀嚼一边回答。</p>
+<p>物理学院楼的背后有一大片草坪，草坪正中间立着一尊牛顿雕像。何逸与柳莹莹此刻正坐在雕像前的长椅上。</p>
+<p>何逸先是给柳莹莹看了剑桥大学学生失踪的新闻，然后把他希望终止课题的想法表述了一遍。</p>
+<p>“所以，我想来问问你的想法……”</p>
+<p>柳莹莹没有回答，只是低着头，把志愿者服盖在了膝盖上。</p>
+<p>“有点冷。”</p>
+<p>“啊……是有点冷。”</p>
+<p>尽管已经五月份了，但入夜后，风吹起来，还是有些许凉意。</p>
+<p>“我还以为你要说什么呢。”柳莹莹小声嘟囔着。</p>
+<p>“什么？”</p>
+<p>“没什么。”</p>
+<p>“我……那你以为是啥？”</p>
+<p>“没啥。”</p>
+<p>何逸不知道柳莹莹在想什么，他的脑中现在只有一件事。</p>
+<p>“……那么，你的看法是什么？”</p>
+<p>“我觉得月姐不会同意的。”</p>
+<p>“她确实没有同意。”</p>
+<p>“她不同意，谁都劝不了她。”</p>
+<p>“但是我还是希望——”</p>
+<p>“我希望我们都能做自己想做的事情。”</p>
+<p>柳莹莹抬起头，认真地看着何逸。</p>
+<p>“意思是你也想继续……”</p>
+<p>何逸叹了口气，站了起来。</p>
+<p>“你要走了吗？”柳莹莹也站了起来。</p>
+<p>“如果你们三个人都不愿听我的劝告，那我也只能走了。”</p>
+<p>“不是不是，我不是这个意思……”</p>
+<p>“我知道，但我确实想走了。我明天会向庄老师申请退出实验室的。”</p>
+<p>“好吧……”</p>
+<p>何逸转过头看着柳莹莹，她看起来神情沮丧。</p>
+<p>“我还以为你会挽留一下我呢。”</p>
+<p>“你也是在做自己想做的事情，不是吗？”</p>
+<p>“或许不是，因为我现在没有自己想做的事情了。”</p>
+<p>“……”</p>
+<p>“我先回宿舍了，再见。”</p>
+<p>何逸转身离开了。</p>
+<p>柳莹莹目送着何逸离开，直到他逐渐消失在小路的尽头。</p>
+<p>路灯照在了牛顿雕像上，散映着冷色的光芒。</p>
+<p>“还是有点冷。”柳莹莹自言自语。</p>
+<p>​     </p>
+<hr>
+<p>​     </p>
+<h2 id="第二章-单程票"><a href="#第二章-单程票" class="headerlink" title="第二章 单程票"></a>第二章 单程票</h2><p>“是这样吗……现在考研的形式也越来越严峻了啊……”</p>
+<p>听完何逸的叙述，庄墨城沉思了起来。</p>
+<p>“非常抱歉，老师。”</p>
+<p>“不不不，这么重要的事情，我不可能拦着你。”</p>
+<p>“如果我考研成功的话，之后还是可以来庄老师的实验室的。”</p>
+<p>“哈哈哈……如果真是这样就好了……”</p>
+<p>撒谎的愧疚感让何逸的耳朵红了起来。他实在不愿向老师表述自己的真实想法，却也想不出更好的借口了。</p>
+<p>但实际上庄墨城早就知道这个年轻人申请退出的原因了，他不打算阻拦。</p>
+<p>“好好努力啊，你这么聪明，以后一定可以大有作为的。”</p>
+<p>“老师过奖……那我先告辞了。”</p>
+<p>何逸敬重地向庄墨城鞠了一躬，随后离开了办公室。从行政楼出去，只要经过两栋建筑物，就能走到物理学院楼。307实验室就在物理学院楼的地下一层。</p>
+<p>这座物理学院楼是何逸大学三年生涯中最常来的地方。学院楼外墙的爬山虎从墙根蔓延到楼顶，把斑驳的红砖遮掩了一半，成了这座沧桑老楼的遮羞布。而正门前早已掉漆的“物理学院”牌匾，依然在向众人展示着自己饱经风雨的印记。这座仅有6层的小楼没有电梯，一看就是上个世纪的老古董了。</p>
+<p>何逸犹豫了一会，还是决定去307实验室看一眼。走过掉了不少地砖的楼梯，他站在了307实验室的门前。</p>
+<p>何逸敲了敲门，没有人回应。转动门把手，是上锁的。于是他很自然地从口袋中拿出钥匙，打开了门。</p>
+<p>一开灯，那台“负子机器”便映入眼帘。何逸坐在了自己最常坐的座位上，静静地欣赏着这台硕大的机器。</p>
+<p>机器被廉价的铁皮外壳所包围，一片片铁板被歪歪扭扭地焊接在一起，随处可见凌乱的铜线、裸露的PCB板、弯折的合页和不加修饰的焊接点——很有蒸汽朋克的风格。谁也不会想到，在这样一个外表粗制滥造的机器中，竟然凝聚着人类最顶尖的物理学科技。</p>
+<p>无数回忆涌入何逸的脑海。三年前，当这个实验室里的四个学生第一次成功复现出伦加效应的时候，故事便开始了。莫斯科公约签订后，由于实验室无法通过任何正规渠道获取各种实验所需的仪器，他们便自己动手，如同原始人一般，从基础硬件和底层算法开始，一点一点打造出了这台负子机器。他甚至知道那些铁板上的焊接点有几个是自己焊的，几个是郑宇辰焊的。</p>
+<p>离开实验室的时候，何逸产生了一种说不出的失落感。他知道在每周的今天，另外三个人都因为有各自的课程或者其他活动几乎不会来实验室。自己大概只能在突然间不辞而别了——何逸的心里很不是滋味。</p>
+<p>但这样不也挺好的吗……难道要他们开个送别会吗？何逸苦笑着想。他瞬间觉得自己像一个逃兵，不敢面对未知的战场，怯懦、畏缩……</p>
+<p>不，他是理性的。他们正在走向的，根本就不是什么正义的战场，而是无间的地狱。</p>
+<p>​     </p>
+<p>一个月后。</p>
+<p>走出考场的何逸感到身心俱疲。不过总算是熬过了期末周，可以好好地迎接暑假了——虽然还有很多事情需要处理，但最近几天还是先给自己放放假吧。</p>
+<p>回到宿舍后，何逸把用不到的课本和笔记收了起来。看着空荡荡的桌面，一股茫然感涌上心头。</p>
+<p>他突然很想回307实验室看看。</p>
+<p>再度踏入307实验室的大门，这里和一个月前几乎没什么变化。</p>
+<p>“哟，这是谁啊？”一个熟悉的声音在背后响起。</p>
+<p>何逸转过头，看到郑宇辰手中端着一碗泡面，从门口走了进来。</p>
+<p>“好久不见啊，辰哥。”</p>
+<p>“怎么突然回来了？”</p>
+<p>“就是……想看看你们。”</p>
+<p>郑宇辰把泡面放在桌上，笑了起来。</p>
+<p>“我们有啥好看的，你得看看它们！”</p>
+<p>郑宇辰一遍说着，一边打开了负子机器的铁皮大门。透过玻璃舷窗，何逸看到一只小白鼠正在穿梭舱内跑来跑去。</p>
+<p>郑宇辰打开穿梭舱的阀门，把小白鼠取了出来，放进一个小笼子里。</p>
+<p>“下午让莹莹把它送到生物学院检查一下健康状况，如果没问题的话，就证明我们成功了。”</p>
+<p>“你们……已经进行到这一步了吗？”</p>
+<p>何逸的表情非常震惊。</p>
+<p>“是，进展简直飞速！昨天的小白鼠全死了，今天这只是第一只活下来的。”</p>
+<p>“它去了多远的宇宙线？”</p>
+<p>“大约0.02”</p>
+<p>“天哪……”</p>
+<p>“这个不关键！让哺乳动物穿越0.04以上的宇宙线都有人做过！我们的成功不在这里！”</p>
+<p>郑宇辰突然抓住了何逸的肩膀。</p>
+<p>何逸被郑宇辰的举动吓到了，一瞬间不知道该说什么。</p>
+<p>“你还意识不到吗？真正关键的地方在哪里？”郑宇辰的语速越来越快。</p>
+<p>何逸歪着头，看着笼子里活蹦乱跳的小白鼠。他突然意识到了。</p>
+<p>“它……回来了？”</p>
+<p>“对！它回来了！它回来了！活着回来了！”</p>
+<p>郑宇辰激动地大喊了起来。</p>
+<p>“它回来了！和美国佬的单程票不一样！它是往返！”</p>
+<p>“你声音小点……”</p>
+<p>“我，我太激动了。”郑宇辰松开了何逸的肩膀，转身提起了装着小白鼠的笼子，“这只小不点已经让人类前进了一大步！它是我们这个宇宙里，第一个见到了其他平行宇宙，并且活着回来的动物！只可惜它不能告诉我外面的世界是什么样子……”</p>
+<p>何逸的心脏剧烈地颤动了一下，他看到了一个可怕的恶魔。</p>
+<p>“你们……就到这了吧？”</p>
+<p>郑宇辰没有听懂何逸的话。</p>
+<p>“什么意思？”</p>
+<p>“我是说，让小白鼠进行往返……后面，还有别的吗？”</p>
+<p>“别的？你想让我把老庄的猫送进去吗？”</p>
+<p>“猫无所谓，我是说……人。”</p>
+<p>郑宇辰没有回答，整个实验室陷入了沉默。</p>
+<p>一秒，十秒，六十秒。</p>
+<p>两个人就这样对视着。</p>
+<p>何逸的瞳孔中逐渐出现了恐惧。</p>
+<p>“你……你犹豫了。”何逸率先打破了沉默，语气异常紧张。</p>
+<p>郑宇辰则是看着负子机器的铁皮大门。</p>
+<p>“怎么可能呢？这个穿梭舱这么小，老庄的肥猫都塞不进去。”</p>
+<p>“你如果真的想去做的话，一个穿梭舱的大小怎么可能是问题……”</p>
+<p>郑宇辰转过头，直视着何逸的眼睛，眼神中满是自信。</p>
+<p>“你还不相信我吗？”</p>
+<p>何逸不知道这句话意味着什么。郑宇辰是在让他相信自己会遵守诺言，还是相信负子机器能让他活着回来？</p>
+<p>​     </p>
+<p>一个星期后，柳莹莹约何逸出去吃饭，两人来到了学校南门外的“金谷门”——这里是何逸最喜欢的饺子店。</p>
+<p>“考试怎么样？”柳莹莹一边在小盘中倒醋，一边发问。</p>
+<p>“还行吧……考完了就不想多思考了。”</p>
+<p>“是不是能保研啊？”</p>
+<p>“……当然不可能。”</p>
+<p>“那下半年打算怎么样？考研还是找工作？”</p>
+<p>“不知道，再说吧。”</p>
+<p>何逸漫不经心地应付着对方的问题。</p>
+<p>“有件事……我思来想去，还是想跟你说一下。”</p>
+<p>“说。”</p>
+<p>柳莹莹手中紧紧地攥着筷子，似乎很紧张。</p>
+<p>“那个……辰哥，他说他想去看看……其他宇宙。”</p>
+<p>何逸不等对方说完，便起身要走。柳莹莹赶紧拉住了他。</p>
+<p>“你，你先别急……先吃饭好吗？”</p>
+<p>“这还能不急？你怎么不劝劝他？”</p>
+<p>“我劝过了，但是月姐……就是，他俩都很想……”</p>
+<p>柳莹莹快要哭了出来。</p>
+<p>看到柳莹莹这副样子，何逸连忙重新坐了下来。</p>
+<p>“这可不行，他俩真的是鬼迷心窍了。我必须拦住他们。”</p>
+<p>“那，那先吃饺子，吃完我们就去……”</p>
+<p>何逸一口吞下了一个热气腾腾的饺子，差点烫到舌头。</p>
+<p>但他的大脑远比口腔要更加灼热。</p>
+<p>​     </p>
+<p>两人回到学校的时候，天色已经暗了下来。</p>
+<p>这次何逸没有敲门，而是直接推开了307实验室的大门。</p>
+<p>他看到了一个比之前的负子机器大十倍的巨大胶囊舱，体积正好与一个成年人相当。</p>
+<p>在胶囊舱旁，秦月正在飞速地操作着电脑。</p>
+<p>何逸走到秦月身后，看着显示器上一行行红色字体——</p>
+<p><code>ERROR: universe line loss</code></p>
+<p><code>ERROR: trace object not defined</code></p>
+<p>……</p>
+<p>秦月注意到了进门的两人，停下了敲击键盘的手。</p>
+<p>“郑宇辰呢？”何逸问道。</p>
+<p>“他……他进去了……”秦月用微弱的声音回答道。</p>
+<p>仿佛有一桶滚烫的岩浆在瞬间从何逸的头顶浇了下去。虽然早有预料，但最坏的事情还是发生了——他甚至晚了一步。</p>
+<p>“我进来的时候，负子机器已经启动了……郑宇辰自己一个人进了胶囊，程序是定时启动……”秦月的声音愈发颤抖。</p>
+<p>“他去了哪条宇宙？”</p>
+<p>“不知道……机器……出故障了……”</p>
+<p>“故障？”</p>
+<p>“宇宙线追踪失效……怎么可能……以前可从来没有过……”</p>
+<p>何逸强忍着内心的怒火，尽管他很想破口大骂，但现在尽快想办法挽救郑宇辰才是关键。</p>
+<p>“能把他送回来吗？”</p>
+<p>“不能……宇宙线都找不到……”</p>
+<p>柳莹莹一言不发地走到了那个巨大的胶囊舱前，打开了舱门。里面空荡荡的，什么都没有。</p>
+<p>“他……在这个世界上完全失踪了。”</p>
+<p>三人在实验室内忙碌了一整晚，但依旧毫无头绪。负子机器的启动程序只会一遍又一遍地报错。</p>
+<p>凌晨四点，何逸趴在桌子上睡着了。他甚至做了一个梦，梦见郑宇辰独自一人在一座废弃的城市中行走，一边走，一边呼救……</p>
+<p>何逸被摇醒了。</p>
+<p>“阿逸，你看这个。”柳莹莹站在何逸身侧，递给他一张信纸。</p>
+<p>何逸揉了揉眼睛，拿过了信纸。</p>
+<p>​     </p>
+<blockquote>
+<p>亲爱的秦月、何逸、柳莹莹，以及敬爱的庄老师：</p>
+<p>请原谅我私自做出这样的决定。</p>
+<p>最近这段时间，我一直在思考，我活在这个世界上的意义是什么？</p>
+<p>一年前，我放弃了热门又高薪的计算机专业，选择了赤文大学物理学的研究生。因为这是我的梦想，研究理论物理学一直都是我的梦想。</p>
+<p>我很幸运能在三年前加入307实验室，能和你们一起钻研负子课题，能制造出我们的宇宙穿梭机器……这一路走下来，我觉得我的人生非常圆满。说得夸张一点，我在22岁的年龄就已经达到了很多人一辈子都无法企及的高度——虽然全世界只有我们五个人知道这些成就。</p>
+<p>完成了小白鼠往返平行宇宙实验的那个晚上，我想了很多。如果按我们三年前划下的红线，这个负子机器的研究课题便需要到此为止了。但我却觉得欲罢不能，正如何逸之前所说的，对于我们这些即将窥视到宇宙的奥秘的人来说，没有人能抵挡住求知的诱惑。</p>
+<p>平行宇宙是什么样子？在不同的宇宙间穿越是怎样的体验？负子究竟是什么？伦加效应的底层原理是什么？我渴望知道这一切，非常渴望。正如我的名字一般，我的目标是宇宙星辰。</p>
+<p>我已经明白了，我活在这个世界上的意义，就是为了物理学。</p>
+<p>更何况，我们已经买到了往返票。我觉得这值得去赌一把。</p>
+<p>“朝闻道，夕死可矣。”——《论语·里仁第四》</p>
+<p>郑宇辰</p>
+<p>2022年6月26日</p>
+</blockquote>
+<p>​     </p>
+<p>何逸把信纸放在桌上，内心久久不能平静。</p>
+<p>“可你买的票，是单程票。”</p>
+<p>​     </p>
+<hr>
+<p>​     </p>
+<h2 id="第三章-遗书"><a href="#第三章-遗书" class="headerlink" title="第三章 遗书"></a>第三章 遗书</h2><p>6月27日，下午3点。距离郑宇辰进入宇宙穿梭机已经过去了21个小时，307实验室的救人行动依然毫无进展。</p>
+<p>宇宙线系数追踪失败——这台负子机器在三年内第一次出现这样的故障。</p>
+<p>早在60多年前平行宇宙被证实存在时，为了标识不同宇宙的坐标，“宇宙线系数”被首次提出。随后在无数宇宙穿梭实验的验证中，这个概念也被应用得越来越广。</p>
+<p>在伦加的构想中，不同宇宙间拥有可量化的恒定不变的“距离”，且根据不同宇宙间距离的测算，他发现平行宇宙的坐标呈线状分布。伦加提出，可以使用一条数轴标记不同宇宙的坐标，一个个宇宙便是落在数轴上的一个个点——这就是宇宙线系数，一个0至1之间的数。</p>
+<p>目前学界普遍认为宇宙线系数是一个绝对的坐标值。虽然这看似不符合相对论的思想，但在人类对宇宙婴儿般的理解力中，目前来说绝对坐标的表示方法更符合大部分观测结果。</p>
+<p>在平行宇宙往返穿梭实验中，追踪宇宙线是最重要的一环。它从根本上决定了被送往其他宇宙的物体能否原路返回。</p>
+<p>何逸提着两袋包子走进实验室：“先吃点东西吧。”</p>
+<p>柳莹莹接过包子，默不作声地咬下一口。</p>
+<p>“我们也要和剑桥的麦里克斯一样了吗……”秦月的精神看起来非常差。</p>
+<p>“要不先联系庄老师？问问他怎么办。”柳莹莹说。</p>
+<p>何逸打开手机，给庄墨城发送了微信。</p>
+<p>​     </p>
+<p>一个小时后，庄墨城坐在实验室里，双目直勾勾地注视着眼前的穿梭舱，一言不发。</p>
+<p>三个学生则是在老师的身旁站着，都低着头，也不敢说一句话。这个场景让何逸想起自己小学时候，因为和同学打闹而被班主任叫去在办公室罚站。</p>
+<p>“你们先回去吧。”庄墨城说。</p>
+<p>没有人行动。</p>
+<p>“庄老师……您不查查吗？”秦月说。</p>
+<p>“查什么？”</p>
+<p>“再查查，宇宙线系数。”</p>
+<p>“没用的。”</p>
+<p>“可是郑宇辰……”</p>
+<p>“没用的。郑宇成现在就是一个在汪洋大海上漂泊的独木舟，没有任何导航。”</p>
+<p>“为什么不再试试？”</p>
+<p>“你们不是试了一天了吗？”</p>
+<p>“才一天为什么要放弃？”</p>
+<p>“再找一百年都没用，无异于大海捞针。”</p>
+<p>秦月哽住了，何逸看到她的眼里沁出了泪水。</p>
+<p>“不找人的话……之后怎么办？”柳莹莹小声发问。</p>
+<p>“不知道。你们先回去吧。”</p>
+<p>“庄老师您……别生气，我们总要找解决办法。”</p>
+<p>“我没生气。你们赶快回去就是现在最正确的办法。”</p>
+<p>​     </p>
+<p>三人走出实验室，走到了物理学院楼后的草坪旁。太阳快要下山了，落日的余晖斜照着草坪正中的牛顿雕像，将牛顿的身体与腿分割为了阴阳两块。</p>
+<p>“郑宇辰的失踪，迟早会被人发现的。”何逸焦灼地在原地踱步。</p>
+<p>柳莹莹蹲在草坪旁，用双手抱着膝盖：“接下来会怎样？会有警察来吧？”</p>
+<p>“很有可能。警察要是开始调查，那我们就都……麻烦了。”</p>
+<p>听到这句话的秦月立刻被激怒了，她朝着何逸大吼：“这个时候了，你还在想自己有没有麻烦？”</p>
+<p>“那你说怎么办？你能找到他？”何逸看起来也非常生气，“在这么大个地球上找一个失踪的人都有多困难，你还想在宇宙里找？在平行宇宙里找？就靠我们几个人？和一个坏掉的机器？”</p>
+<p>秦月没有回答，她哭了出来。</p>
+<p>“我早就说过实验该停下来了，你们都魔怔了……”</p>
+<p>“好了好了阿逸，别说了。”柳莹莹赶忙打断何逸。</p>
+<p>“我会找到他的。”秦月转过身，消失在了小路的尽头。</p>
+<p>​     </p>
+<p>何逸回到宿舍，只感到浑身疲惫。他在床上躺下，闭上双眼。眼睛的干涩和胀痛得到了一些缓解，但一整晚的通宵让他的大脑昏昏沉沉，思绪一团乱麻。他不知道该做什么，干脆放空自己，逐渐睡了过去。</p>
+<p>不知睡了多久，何逸被手机铃声吵醒了。</p>
+<p>他迷迷糊糊地从床上爬起来，拿起手机，顺便瞟了一眼时间——已经是早上了。</p>
+<p>“喂？”</p>
+<p>“你在学校吗？”电话对面是柳莹莹，声音听起来非常焦急。</p>
+<p>“在……我在，宿舍。”</p>
+<p>“你出来一下，来家属院这边。”</p>
+<p>说完这句话，对方就挂了电话。</p>
+<p>​     </p>
+<p>从学校南门走出，就来到了赤文大学家属院，一个老旧的小区。敞开的铁门前，一排排自行车和电动车歪歪斜斜地停靠在一起，刚好留下一辆汽车可以通过的宽度。</p>
+<p>何逸感到略微疑惑。这个小区的大门平日里都被铁链紧紧锁着，只有一个供人行走的小门可以通过。但今天，何逸第一次见到这扇门被完全打开，锁门的铁链被随意地仍在一边，锈蚀的门闸在水泥地上留下了一个半圆的拖痕。</p>
+<p>走进家属院，何逸终于明白了铁门为什么被打开——两辆警车，一辆救护车，此刻正停在两栋拥挤的居民楼之间。</p>
+<p>“阿逸！”</p>
+<p>何逸循着声音的方向看去，柳莹莹和秦月正站在警戒线外，旁边还有一个中年男人在和警察交流。</p>
+<p>“这是怎么了？”何逸的疑惑更深了。</p>
+<p>秦月注意到了走近的何逸，扭过了头，一言不发。</p>
+<p>柳莹莹犹豫了很久才缓缓开口，声音颤抖。</p>
+<p>“庄老师他……自杀了。”</p>
+<p>这句话宛如一道落雷劈在了何逸的头上。他一瞬间没有反应过来，只觉得自己一定是听错了。</p>
+<p>“什么？”</p>
+<p>“警察说的，我不知道……”柳莹莹的声音越来越小。</p>
+<p>何逸转过头看着不远处的居民楼，警察和医生正在单元门口进进出出。警戒线外站着一大群围观的群众，窃窃私语。旁边的中年男人还在向警察追着问什么，神情焦虑。</p>
+<p>伴随着警铃的啸叫，何逸感到一阵天旋地转。</p>
+<p>​     </p>
+<p>在何逸的印象中，这是他这辈子第二次来到派出所。第一次是很小很小的时候，父母和一个不认识的人打官司，当时的何逸站在派出所门口，静静地听着里面的吵闹。而这次不同，派出所里非常安静，只有一些细微的交谈声和凝重到难以呼吸的空气。</p>
+<p>“你好，我是庄教授的侄子。我叫庄铭。”刚才见过的中年男人走了过来，对着何逸说，“我听说你是庄教授的学生？”</p>
+<p>“是的，我叫何逸。”何逸和对方握了手，“您节哀。”</p>
+<p>庄铭苦笑了一下，他看了看何逸周围，似乎在寻找什么。</p>
+<p>“和你一起的那两个女同学呢？”</p>
+<p>“她们先回去了。”</p>
+<p>“嗯……是这样的，你中午有空吗？有些事我想聊聊，我请你吃顿饭怎样？”</p>
+<p>何逸点了点头，他也很想了解一些情况。</p>
+<p>在短短两天内连续经历了这样两件大事，何逸的心情此刻却异常冷静。他不知道事情为什么会变成这个样子，不知道接下来还会发生什么……他也不想知道。或许是因为自己的大脑在短时间之内受到了太过频繁的冲击，已经快要宕机了。</p>
+<p>“我每周都会来探望他几次。除了我之外，二叔……庄教授身边没几个亲人了。”</p>
+<p>庄铭点完菜，把菜单放在桌子上，叹了一口气。</p>
+<p>“我只知道庄老师一个人独居很久了。但不是很清楚他的家庭情况。”何逸怯生生地回应。</p>
+<p>“有点复杂。”庄铭砸吧了一下嘴，“庄教授在学校工作的时间不是很固定，不知道什么时候在家。所以他家的钥匙我也有一把，他要是不在的话，我也能进去打扫一下卫生什么的。今天早上，就是我发现了他……躺在床上，我还以为是没睡醒呢。但是桌子上摆着遗书和安眠药瓶子……”</p>
+<p>“……”</p>
+<p>“我听警察说，你们昨天见过庄教授？”</p>
+<p>“嗯，昨天下午我们见过。”</p>
+<p>“警察也不告诉我其他的事情，只说还要调查……”</p>
+<p>何逸紧张了起来。现在应该还没有人发现郑宇辰失踪的事情，但他估计警方很快就会发现异常并开始调查。到时候会发生什么？</p>
+<p>庄老师为什么要自杀？是对郑宇辰失踪的愧疚吗？还是害怕私自研究负子机器被发现？何逸想不通。在他眼中，庄老师是一个不论经历了什么，都能淡然自若的老先生。庄老师也常常教导他，遇到困难和麻烦，要用平静的心态去面对和解决……他想象不到这样一个人会做出轻生的举动。</p>
+<p>庄铭从手提包里拿出一叠纸，交给了何逸：“这是庄教授的遗书，你看看。”</p>
+<p>何逸结果了遗书，是两张崭新的A4纸。</p>
+<p>“这个是复印件。原件在警察那里，可能要查指纹什么的吧。”庄铭解释说。</p>
+<p>“这是庄老师的笔迹。”何逸心想。一行行苍劲的手写字映入眼帘。</p>
+<p>​     </p>
+<blockquote>
+<p>我是一个可悲的赌徒，是一个荒唐的唯心主义者，是一个无耻的罪犯。</p>
+<p>我犯下了人类法律所无法想象的罪过。</p>
+<p>我曾妄图救赎我的罪过，但未能成功。我曾对因果律深信不疑，但这一切在上帝的骰子面前都是多么苍白无力。</p>
+<p>唯有死亡，才能永远结束这痛苦的轮回。</p>
+<p>我并非以死赎罪，因为我的罪过根本无法挽回。我只是阻止自己继续在地狱的长阶上愈行愈远。</p>
+<p>但我并不抛弃生的希望。宇宙的法则不可知，人的行动却是可知的。</p>
+<p>愿上帝对人类依然怀有怜悯之情。</p>
+<p>倘若宇宙中有上帝。</p>
+<p>倘若上帝不是一个只会扔骰子的混账赌徒。</p>
+<p>庄墨城</p>
+<p>壬寅年五月廿九</p>
+</blockquote>
+<p>​     </p>
+<p>“后面还有。”庄铭提醒道。</p>
+<p>何逸翻到第二页。字迹比之前潦草了许多。</p>
+<p>​     </p>
+<blockquote>
+<p>混沌之生太初兮，破天地以辟四荒。</p>
+<p>阴阳之分昏晓兮，览河洛以变八卦。</p>
+<p>五行之相生克兮，仰观其命定七星。</p>
+<p>末末前末前末兮，遁入于虚无之后。</p>
+<p>画眉心点一墨兮，成轮回无止无休。</p>
+</blockquote>
+<p>​     </p>
+<p>何逸反复地读着庄墨城的遗书。这两段话都是什么意思？他不理解。</p>
+<p>庄铭见何逸读完了，便开口说道：“这个遗书，我读不懂。所以想来问问你们……他除了学校之外，完全没有什么社交圈子了。我觉得你们是跟他最熟的人。”</p>
+<p>“庄老师他……信上帝吗？”何逸缓缓发问。他想象不到这样一个平日里与各种严谨的公式定理打交道的物理学教授，能在人生结束的前一刻写出如此富有宗教意味的文字，还自称是“唯心主义者”。</p>
+<p>“应该不会吧。他老人家对这些虚无缥缈的东西可一点都不感兴趣。”</p>
+<p>“是啊，毕竟是研究物理学的。”</p>
+<p>“我二叔啊，不光研究物理，还喜欢文学。”庄铭用手托住下巴，似乎陷入了回忆，“他年轻的时候写过不少诗，而且都是古诗，在我家里还存着不少……所以我觉得啊，你要是说他信佛或者信道，我可能还有点怀疑。信上帝？不太可能吧。”</p>
+<p>服务员把菜端了上来。</p>
+<p>“喝酒吗？”庄铭突然问道。</p>
+<p>“啊……能喝一点点。”</p>
+<p>“那来瓶牛栏山。”庄铭对服务员说。</p>
+<p>庄铭拿起筷子，聊起了庄墨城的过去。</p>
+<p>​     </p>
+<hr>
+<p>​     </p>
+<h2 id="第四章-庄墨城"><a href="#第四章-庄墨城" class="headerlink" title="第四章 庄墨城"></a>第四章 庄墨城</h2><p>2012年的春天，庄墨城觉得自己是这个世界上最幸福的人。</p>
+<p>经过多年的努力，他的负子课题终于有了不错的进展。凭借着全新的科研成果，庄墨城也成功评选上了教授职称。</p>
+<p>与此同时，他的女儿庄染要结婚了。</p>
+<p>严振升是庄墨城最喜欢的学生。他聪明伶俐，能说会道，人长得也帅气。从本科开始，到硕士，到博士，严振升一直跟在庄墨城身边，给他帮了不少忙。</p>
+<p>介绍严振升和庄染认识后，两个年轻人对彼此的感觉都很不错。经过几年的恋爱，也逐渐走到了谈婚论嫁的时候。</p>
+<p>这个时候，庄墨城的耳边突然出现了一些闲言碎语。大家似乎都认为，他招揽的这个研究负子的女婿和自己新获得的教授职称之间一定有什么关系。但庄墨城不在意这些，他坚信清者自清。研究是自己做的，女婿是女儿选的，他做人坦坦荡荡，怕什么呢？</p>
+<p>庄墨城拿出了半生的积蓄，在离学校不远的地方买了一个大房子，和妻子、女儿、女婿一起搬了进去。一家人和睦美满，其乐融融。</p>
+<p>庄墨城以为自己的余生都会这样在幸福中度过。</p>
+<p>但他没想到，他的幸福仅仅持续了三年就结束了。</p>
+<p>​     </p>
+<p>2014年的夏天，严振升突然找庄墨城借钱，说要准备创业做生意，张口就是几十万。庄墨城觉得奇怪，一个科研人员，干嘛突然要做生意？但他也没多想，本着对女婿的信任，庄墨城借给了他。</p>
+<p>年底的时候，女儿庄染告诉他，严振升在广州做生意被人骗了，几十万全亏掉了。庄墨城急忙叫女婿先回家，但严振升一直说，等他赚到钱再回来。</p>
+<p>2015年年初的某一天，庄墨城去银行取钱，偶然间遇到了严振升。</p>
+<p>“你不是在广州吗？”</p>
+<p>“昨天刚回来……还没跟家里说。”</p>
+<p>“怎么不说啊？你被骗了多少钱？怎么回事都不跟我讲讲……”庄墨城越问越着急。</p>
+<p>严振升突然哭了起来。</p>
+<p>“爹，我没钱了，我对不起你……”</p>
+<p>看到严振升这幅样子，庄墨城心也软了。</p>
+<p>“先回家吧，马上过年了。”</p>
+<p>严振升回家的这几天，庄墨城逐渐察觉到了不对劲。</p>
+<p>以往跟自己无话不谈的女婿突然间像是变了个人，整天躺在卧室里，什么都不做。庄墨城每次问他做了什么生意，钱是怎么被骗的，严振升都支支吾吾，回答不上来。</p>
+<p>严振升对家里人一句话不说，每天的电话倒是接个不停。起初，庄墨城以为他只是钱亏掉了，心里愧疚不愿说话，接电话也都是在谈生意的事。便不再多问。</p>
+<p>直到有一天，庄墨城接到了一个电话。</p>
+<p>“你是严振升他家里人啊？”对方是一个东北口音的男子。</p>
+<p>“你是谁？”</p>
+<p>“我这边是欢乐贷。麻烦你转告严振升啊，他在我们这借了六十万，已经逾期一个月了。年前要是还不上这钱，他身份证别想要了！”</p>
+<p>庄墨城吓出了一身冷汗。</p>
+<p>“你在外面欠了多少钱，跟家里说，我们会想办法帮你，为啥要去借高利贷……”</p>
+<p>晚饭后，庄墨城把严振升叫到自己的书房，一脸愁容。</p>
+<p>严振升扑通一声跪在了地上。</p>
+<p>“爹，我对不起你……我欠的太多了，家里也还不上的……”</p>
+<p>“家里能不能还上你也得跟我们说啊？”庄墨城急得大喊起来，“你什么都不说，欠的钱怎么补？”</p>
+<p>严振升低着头，一言不发。</p>
+<p>庄墨城长叹一口气，从书桌上拿起纸和笔：“你欠了多少钱，欠的哪些地方，给我详细写个单子吧。全部算一下，别漏了。”</p>
+<p>严振升接过纸笔，拿出手机，开始写清单。</p>
+<p>整整405万。</p>
+<p>庄墨城看着手中的清单，努力想象四百万是多少钱。</p>
+<p>自己一个月的工资是一万三千元……实验室的科研经费这次批了八万……半年前给严振升借了五十万……买这套房子花了三百二十万……超市的香菜一把是四块五毛……</p>
+<p>“你到底是做的什么生意，能欠这么多……”庄墨城的声音颤颤巍巍。</p>
+<p>严振升只是跪在地上，依然不回答。</p>
+<p>除夕夜，在庄墨城的逼问下，严振升终于说了实话。</p>
+<p>他不是去做生意了，而是去赌博了。</p>
+<p>2014年的世界杯期间，严振升看很多人都在玩赌球，自己也去试了一把。结果一下子就赚了几千块。</p>
+<p>尝到甜头的严振升把更多的钱投了进去，从几千块，到几万，到几十万……起初还是有赚有赔，后来就只剩下赔了。世界杯结束后，严振升欠下了五十万的外债。</p>
+<p>第一次向庄墨城借钱，就是为了还这五十万的欠款。</p>
+<p>在庄染的劝说下，严振升发誓不再赌了。但他还是不知道要怎么还上岳父的这五十万。年底的时候，在一个朋友的介绍下，严振升去了趟澳门。这次，他的欠款从五十万变成了二百万。</p>
+<p>这二百万自然不只是二百万。起初，他只是在银行贷款或者向朋友借，但当严振升的名字逐渐被一家家银行和一个个朋友拉黑后，为了还钱，他只能去借网上的高利贷……一来二去，雪球越滚越大，终于变成了今天这个数字。</p>
+<p>这个除夕夜，严振升跪在地上，跪了一整晚。怀孕的庄染挺着大肚子，一只手拽着严振升，哭了一整晚。庄墨城的妻子被气得不行，大半夜走出了家门。庄墨城则是站在阳台上，看着天空中的烟花，听着电视机里春晚现场的笑声，一根接一根地抽烟。</p>
+<p>大年初七，庄墨城拼拼凑凑，拿出一百万元，交给了严振升，叫他先去还一部分钱。严振升拿着银行卡走出了家门，从此以后再也没有回来。</p>
+<p>庄墨城去派出所报了失踪人口。但实际上，他反而希望严振升不要回来。虽然被拿走了一百五十万，但生活还能继续，自己和妻女还能接着过一个没有负债的日子。</p>
+<p>可庄墨城又被生活愚弄了。时间不长，当催债电话又一次打到庄墨城的手机上时，女儿才告诉他，其实严振升借的钱里，有一半都是用的庄染的名字……</p>
+<p>庄墨城的妻子心脏一直不好。听到这个消息后，她心脏病突发，在赤文大学附属医院里抢救了十个小时后，还是去世了。</p>
+<p>一个星期后，庄染带着六个月的身孕，从21楼跳了下去。</p>
+<p>几乎在一瞬间，庄墨城的天塌了。</p>
+<p>​     </p>
+<p>庄墨城已经不记清那段时间是怎么度过的了。他只记得自己卖了房子，替庄染还清了债务。然后在学校的帮助下，搬进了赤文大学家属院的一间老房子，过上了独居的生活。房租不算贵，更何况自己的工资也没处花。</p>
+<p>庄墨城每天像个机器人一样上下班，除了必须要做的工作外，不多说一句话，不多做一件事。自己的侄子庄铭每周会来两三次，也就是给他带一些食物和生活用品，偶尔打扫一下卫生，庄墨城和他也没有什么交流。</p>
+<p>这样的生活，庄墨城过了两年。这两年间，他也无数次想过结束生命，但都没有行动。生活对他而言已经没有了任何意义，他已经没有什么能获得的了，也没有什么能失去的了。若是自杀的话，多余的痛苦还要让他消耗额外的精力——庄墨城这么想着，甚至感觉自己有些“看破红尘”的感觉。</p>
+<p>直到2017年，他认识了一个新入学的学生——秦月。</p>
+<p>秦月和庄染长得很像，性格更像。一样的勤奋努力、一样的上进要强、甚至是一样的爱哭。庄墨城在秦月身上看到了自己女儿的影子。他那支离破碎的心，在遇见秦月之后，逐渐得到了修补。</p>
+<p>在庄墨城的指导下，秦月也对负子的研究提起了兴趣。2019年，307实验室组建了起来，从那之后，庄墨城把全部的精力都投入到了学术研究中去，除此之外不思考任何一件多余的事情。</p>
+<p>​     </p>
+<p>……</p>
+<p>听完庄铭的叙述，何逸沉默良久。</p>
+<p>“唉……我二叔的事儿啊，都能拍一部电视剧了。”庄铭喝了一口酒，又补充了一句，“还是特狗血的那种。”</p>
+<p>“我从来不知道，庄老师还有这样的过去……”</p>
+<p>“15、16年的时候啊，在我们这一片儿还是闹得沸沸扬扬的。那时候你还没上大学吧？现在也都好些年过去了，早就没人提了。”</p>
+<p>“他自己肯定也不愿提吧。”</p>
+<p>“其实也不是，二叔早看开了。这些事儿我本来知道的不多，大部分还都是他自己给我讲的。所以我才想，要是放在刚出事那两年，以那种精神状态，他突然自杀了还不算奇怪……”庄铭咽下了一口菜，“唉这么说不太好听……但当时确实是这样的。可现在呢，自从他遇见那个叫秦月的学生之后，整个人都变了。”</p>
+<p>“秦月知道这些吗？”</p>
+<p>“不知道……嗯……我是说，我不知道她知不知道。”</p>
+<p>何逸若有所思地点了点头，问道：“所以你是想说，他现在拿秦月当女儿，也有科研这些事在忙，没什么理由自杀了？”</p>
+<p>“是啊，那么难熬的坎都熬过来了，现在这段时间，我看他各方面都还挺好的，却又突然走了……留下的遗书也看不懂。不知道是出了什么事……”</p>
+<p>何逸把庄墨城的遗书重新看了一遍，注意到了一个词——赌徒。</p>
+<p>让庄墨城家破人亡的，正是严振升这个赌徒。在遗书中，他又提及了两个赌徒：一个是自己，一个是“上帝”……这究竟是什么意思？</p>
+<p>“这封遗书，我等会可以带走吗？”</p>
+<p>“当然可以啊，反正是复印件。回头给你的同学也看看吧，尤其是秦月。”</p>
+<p>庄铭说着，给何逸倒上了一杯酒。</p>
+<p>​     </p>
+<hr>
+<p>​     </p>
+<h2 id="第五章-二次坠落"><a href="#第五章-二次坠落" class="headerlink" title="第五章 二次坠落"></a>第五章 二次坠落</h2><p>庄铭显然是喝多了，逐渐开始喋喋不休起来。他从庄墨城，聊到庄染，聊到赤文大学，又讲起自己，再把严振升臭骂一通……</p>
+<p>分别的时候，两人交换了联系方式。庄铭再三叮嘱何逸，一定要让庄墨城熟悉的学生都看看这封遗书，最好能解读出他想表达的意思。</p>
+<p>回到学校后，何逸直接去了307实验室，果然秦月和柳莹莹都在。两人正坐在桌前忙碌，甚至没有注意到何逸进来了。</p>
+<p>何逸忍不住开口：“你们……有进展吗？”</p>
+<p>“我不知道，只能试一试。”秦月回答道。</p>
+<p>何逸把庄墨城的遗书轻轻放在秦月手边，他看向秦月的侧脸，似乎还挂着泪痕。</p>
+<p>“这是……？”</p>
+<p>“庄老师的遗书。”</p>
+<p>秦月愣了一下，停下了敲击键盘的手，拿起遗书。一旁的柳莹莹也凑了过来。</p>
+<p>一段时间后，两人读完了遗书。</p>
+<p>“我并不认为，第一封遗书有什么宗教意味。”秦月开口说道，“‘上帝不会扔骰子’这句话是爱因斯坦说的，大概只是一句用来维护决定论的比喻罢了。”</p>
+<p>柳莹莹用手指着遗书上的一句话：“看这句。‘我曾对因果律深信不疑’，也是这个意思吧。”</p>
+<p>秦月点了点头：“嗯。他可能想表达的是：他原本是一个坚定的决定论者，但却遇到了一个‘上帝扔骰子’的事情，打破了他的认知……”</p>
+<p>“所以这里还有‘唯心主义者’，他认为这件事是唯心的？”柳莹莹用手指向了另一句话。</p>
+<p>“可能……但我觉得非决定论和唯心没什么关系。”</p>
+<p>“庄老师的思想会这么陈旧吗？”何逸提出了质疑。</p>
+<p>“我也觉得奇怪。量子论都提出这么多年了，谁还坚持拉普拉斯那一套啊……你要是说一个不研究物理学的人，那还无可厚非。”</p>
+<p>秦月说罢，翻开了第二封遗书。</p>
+<p>……</p>
+<p>“庄铭说过，庄老师很喜欢读古文，也喜欢自己写古诗。”何逸说，“他甚至觉得庄老师可能信佛或者信道。”</p>
+<p>柳莹莹似乎想到了什么：“信道……嗯，这首诗倒是很像《易经》的风格呢。”</p>
+<p>“易经？”</p>
+<p>“是啊。你看看，阴阳、八卦……太初和四荒，也对应太极和四象吧。”</p>
+<p>“这首诗读下来，好像是在介绍——宇宙的开端？”秦月眉头紧锁。</p>
+<p>何逸感到更迷惑了：“用道家的那一套文化讲述宇宙开端……是这样吗？”</p>
+<p>柳莹莹摇了摇头：“但感觉也不像。最后一句说‘成轮回无止无休’，道教会宣扬轮回吗？”</p>
+<p>秦月沉思了一会，站了起来，用手机拍下了两封遗书的照片。</p>
+<p>“我去图书馆看看。”</p>
+<p>​     </p>
+<p>当晚，何逸的宿舍门口来了一个陌生人。</p>
+<p>“不好意思啊，这么晚打扰了。你是物理学院307实验室的？”</p>
+<p>“我是。”</p>
+<p>“是这样，我是郑宇成的室友。郑宇成他已经三天没回宿舍了，微信和电话都联系不上，我们有点担心……”</p>
+<p>何逸瞬间慌了，但很快又镇定下来。</p>
+<p>“他是不是已经回家了？”</p>
+<p>“回家？”</p>
+<p>“你们研究生也应该放暑假了吧？”</p>
+<p>“啊……是，但他宿舍的行李完全没有收拾。而且我记得，之前他说暑假要留校的。”</p>
+<p>何逸不敢继续撒谎了，他害怕出现更大的漏洞。</p>
+<p>“我也不知道，我好几天没见过他了。”</p>
+<p>“那好吧。如果你有郑宇成的消息的话，麻烦跟我说一声。”</p>
+<p>郑宇成的室友走后，何逸立刻在微信群聊“307快递站”里发送了消息：</p>
+<p>“郑宇成的室友刚才来找我，问我他去哪了。我姑且搪塞过去了，但以后肯定瞒不住。咱们得准备一下，迟早要应付警察。”</p>
+<p>十分钟后，柳莹莹回复了一句：“我也不知道怎么办，明天一起想办法吧。”</p>
+<p>秦月则没有回复。</p>
+<p>​     </p>
+<blockquote>
+<p> 未完待续……</p>
+</blockquote>
+
+    </article>
+    <!-- license -->
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2077/07/08/%E6%AD%8C%E5%A1%94/" title="歌塔">
+                    <div class="nextTitle">歌塔</div>
+                </a>
+        </li>
+        <li class="previous">
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2025/01/31/%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E7%9A%84Python%E5%BA%93/" title="关于工作中常用的一些操作文件的Python库">
+                    <div class="prevTitle">关于工作中常用的一些操作文件的Python库</div>
+                </a>
+        </li>
+    </ul>
+    <!-- comment -->
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+            
+            
+            
+            <!-- utteranc评论 -->
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+            
+            
+                <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+    <link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet' />
+    <div id="comment"></div>
+    <script>
+    Waline.init({
+        el: '#comment' ,
+        serverURL: "https://blog-api-48sc2v2e6-sherroe.vercel.app",
+        locale: {
+            placeholder: "讲两句"
+        },
+        login: ""
+    });
+    </script>
+
+        </div>
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    <!-- Mathjax -->
+</main>
+
+                <!-- profile -->
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+        <div class="social">
+                            <a href="mailto:sherroe@163.com" class="iconfont-archer email" title="email" ></a>
+                <a href="//github.com/Sherroe" class="iconfont-archer github" target="_blank" title="github"></a>
+                <a href="//twitter.com/Sherroe_XD" class="iconfont-archer twitter" target="_blank" title="twitter"></a>
+                <a href="//space.bilibili.com/57427709" class="iconfont-archer bilibili" target="_blank" title="bilibili"></a>
+                <a href="//weibo.com/u/5992045682" class="iconfont-archer weibo" target="_blank" title="weibo"></a>
+
+        </div>
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+        <div class="website-approve">
+        </div>
+    <!-- 不蒜子  -->
+        <div class="busuanzi-container">
+                <span id="busuanzi_container_site_pv">访问量: <span id="busuanzi_value_site_pv"></span> ——也许实际上并没有这么多？</span>
+        </div>
+</footer>
+
+        </div>
+        <!-- toc -->
+            <div class="toc-wrapper toc-wrapper-loding" style=    top:50vh;
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E8%B4%9F%E5%AD%90"><span class="toc-number">1.</span> <span class="toc-text">第一章 负子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8D%95%E7%A8%8B%E7%A5%A8"><span class="toc-number">2.</span> <span class="toc-text">第二章 单程票</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%81%97%E4%B9%A6"><span class="toc-number">3.</span> <span class="toc-text">第三章 遗书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%BA%84%E5%A2%A8%E5%9F%8E"><span class="toc-number">4.</span> <span class="toc-text">第四章 庄墨城</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E4%BA%8C%E6%AC%A1%E5%9D%A0%E8%90%BD"><span class="toc-number">5.</span> <span class="toc-text">第五章 二次坠落</span></a></li></ol>
+            </div>
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 22
+        </div>
+        <!-- search  -->
+            <div class="site-search site-search-loading popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+    </div>
+    <div class="post-archive">
+            <div class="archive-year"> 2077 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span>
+            <a class="archive-post-title" href="/2077/07/08/%E6%AD%8C%E5%A1%94/">歌塔</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/07</span>
+            <a class="archive-post-title" href="/2077/07/07/%E5%BC%82%E6%AC%A1%E5%85%83%E7%9A%84%E5%B9%B8%E5%AD%98%E8%80%85/">异次元的幸存者</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span>
+            <a class="archive-post-title" href="/2025/01/31/%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E7%9A%84Python%E5%BA%93/">关于工作中常用的一些操作文件的Python库</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2023/08/18/%E6%AF%9B%E9%9B%A8%E6%98%9F/">毛雨星</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/20</span>
+            <a class="archive-post-title" href="/2023/07/20/%E9%80%9A%E6%81%92%E9%9B%86/">通恒集</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2023/02/21/%E9%9D%A2%E8%AF%95/">面试</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span>
+            <a class="archive-post-title" href="/2022/12/16/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/">新年快乐</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span>
+            <a class="archive-post-title" href="/2022/11/20/%E5%A6%84%E6%83%B3%E5%BD%95%20%E5%A4%96%E7%AF%87%20%E6%A0%B8%E9%85%B8%E6%97%A5%E8%AE%B0/">妄想录 外篇 核酸日记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/19</span>
+            <a class="archive-post-title" href="/2022/09/19/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%B8%80/">妄想录 篇一</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span>
+            <a class="archive-post-title" href="/2022/09/10/%E7%BB%9D%E4%B8%96%E5%94%90%E9%97%A8/">绝世唐门</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2022/08/10/%E5%BE%B7%E5%A1%94/">德塔</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span>
+            <a class="archive-post-title" href="/2022/05/03/%E7%95%AA%E8%8C%84%E6%B1%A4/">番茄汤</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span>
+            <a class="archive-post-title" href="/2022/04/13/%E7%88%86%E7%82%B8%E3%80%81%E5%91%8A%E7%99%BD%E3%80%81%E8%89%BA%E6%9C%AF%E5%AE%B6%E4%B8%8E%E5%A4%A7%E4%BE%BF/">爆炸、告白、艺术家与大便</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2022/04/12/%E6%9D%A8%E5%A4%8F%E7%9A%84%E6%97%A5%E8%AE%B0/">杨夏的日记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2022/04/11/%E4%B8%80%E7%99%BD%E7%9A%84%E5%AE%87%E5%AE%99/">一白的宇宙</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2022/04/07/Linux%E4%BD%9C%E4%B8%9A%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">Linux作业 正则表达式</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/28</span>
+            <a class="archive-post-title" href="/2022/03/28/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%BA%8C/">妄想录 篇二</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span>
+            <a class="archive-post-title" href="/2022/03/27/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Linux学习笔记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span>
+            <a class="archive-post-title" href="/2022/03/17/%E4%BD%BF%E7%94%A8Github%E4%B8%8Ehexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用GitHub与Hexo搭建个人博客</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2022/03/16/HelloWorld/">Hello World</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2020 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span>
+            <a class="archive-post-title" href="/2020/09/03/%E8%9B%87/">蛇</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 1970 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/1970/01/01/%E8%B5%9E%E8%B5%8F/">赞赏</a>
+        </li>
+            </ul>
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+            <span class="sidebar-tag-name" data-tags="呓语">
+                <span class="iconfont-archer">&#xe606;</span>
+                呓语
+            </span>
+            <span class="sidebar-tag-name" data-tags="学习">
+                <span class="iconfont-archer">&#xe606;</span>
+                学习
+            </span>
+            <span class="sidebar-tag-name" data-tags="作业">
+                <span class="iconfont-archer">&#xe606;</span>
+                作业
+            </span>
+            <span class="sidebar-tag-name" data-tags="Linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                Linux
+            </span>
+            <span class="sidebar-tag-name" data-tags="笔记">
+                <span class="iconfont-archer">&#xe606;</span>
+                笔记
+            </span>
+            <span class="sidebar-tag-name" data-tags="随笔">
+                <span class="iconfont-archer">&#xe606;</span>
+                随笔
+            </span>
+            <span class="sidebar-tag-name" data-tags="短篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                短篇
+            </span>
+            <span class="sidebar-tag-name" data-tags="妄想录">
+                <span class="iconfont-archer">&#xe606;</span>
+                妄想录
+            </span>
+            <span class="sidebar-tag-name" data-tags="教程">
+                <span class="iconfont-archer">&#xe606;</span>
+                教程
+            </span>
+            <span class="sidebar-tag-name" data-tags="GitHub">
+                <span class="iconfont-archer">&#xe606;</span>
+                GitHub
+            </span>
+            <span class="sidebar-tag-name" data-tags="Hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                Hexo
+            </span>
+            <span class="sidebar-tag-name" data-tags="小说">
+                <span class="iconfont-archer">&#xe606;</span>
+                小说
+            </span>
+            <span class="sidebar-tag-name" data-tags="Python">
+                <span class="iconfont-archer">&#xe606;</span>
+                Python
+            </span>
+            <span class="sidebar-tag-name" data-tags="长篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                长篇
+            </span>
+            <span class="sidebar-tag-name" data-tags="连载">
+                <span class="iconfont-archer">&#xe606;</span>
+                连载
+            </span>
+            <span class="sidebar-tag-name" data-tags="杂谈">
+                <span class="iconfont-archer">&#xe606;</span>
+                杂谈
+            </span>
+            <span class="sidebar-tag-name" data-tags="通恒集">
+                <span class="iconfont-archer">&#xe606;</span>
+                通恒集
+            </span>
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+        <span class="sidebar-category-name" data-categories="呓语">
+            <span class="iconfont-archer">&#xe60a;</span>
+            呓语
+        </span>
+        <span class="sidebar-category-name" data-categories="学习">
+            <span class="iconfont-archer">&#xe60a;</span>
+            学习
+        </span>
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "http://sherroe.github.io",
+        root: siteMetaRoot,
+        author: "Sherroe Huang"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+        <!-- main func -->
+        <script src="/scripts/main.js"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
+        <!-- algolia -->
+            <div class="site-search site-search-loading">
+    <div class="algolia-popup popup">
+        <div class="algolia-search">
+            <div class="algolia-search-input-icon">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="algolia-search-input" id="algolia-search-input"></div>
+            <div class="popup-btn-close">
+                <i class="iconfont-archer">&#xe609;</i>
+            </div>
+        </div>
+
+        <div class="algolia-results">
+            <div id="algolia-stats" class="algolia-stats"></div>
+            <div id="algolia-hits"></div>
+            <div id="algolia-pagination" class="algolia-pagination"></div>
+        </div>
+    </div>
+</div>
+
+            <script src="/scripts/search.js" async></script>
+        <!-- busuanzi -->
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        <!-- async load share.js -->
+            <script src="/scripts/share.js" async></script>
+        <!-- mermaid -->
+    </body>
+</html>

@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
+<!-- keywords -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Sherroe Huang">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Sherroe Huang">
+        <meta name="keywords" content="Sherroe,sherroe,blog,hexo,hexo-theme,hexo-blog">
+    <meta name="description" content="">
+    <meta name="description" content="“老师，我们为什么要在三维教室里上课呢？” 夕老师刚走进门，一个稚嫩的声音就在教室后排响起。一白，这个班里最调皮的孩子又没经过老师的同意就发言了。 “这节实验课的内容是创造一个三维的宇宙。”夕老师把课本放在讲台上，慢慢地说，“大家在三维空间里操作可以更好地理解实验过程。” “可是三维空间好挤啊……”一白伸出脚，踢到了桌子腿。 “那么，给大家一个奖励怎么样？”夕老师露出一个微笑，“这节课表现好的同学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一白的宇宙">
+<meta property="og:url" content="http://sherroe.github.io/2022/04/11/%E4%B8%80%E7%99%BD%E7%9A%84%E5%AE%87%E5%AE%99/index.html">
+<meta property="og:site_name" content="妄想录">
+<meta property="og:description" content="“老师，我们为什么要在三维教室里上课呢？” 夕老师刚走进门，一个稚嫩的声音就在教室后排响起。一白，这个班里最调皮的孩子又没经过老师的同意就发言了。 “这节实验课的内容是创造一个三维的宇宙。”夕老师把课本放在讲台上，慢慢地说，“大家在三维空间里操作可以更好地理解实验过程。” “可是三维空间好挤啊……”一白伸出脚，踢到了桌子腿。 “那么，给大家一个奖励怎么样？”夕老师露出一个微笑，“这节课表现好的同学">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-08-29T15:34:41.125Z">
+<meta property="article:author" content="Sherroe Huang">
+<meta property="article:tag" content="呓语">
+<meta property="article:tag" content="短篇">
+<meta property="article:tag" content="小说">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/img/favicon.png">
+    <title>一白的宇宙 · 妄想录 | Sherroe&#39;s Blog</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .footer-fixed-btn,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(
+            -45deg,
+            #444 0,
+            #444 80px,
+            #333 80px,
+            #333 160px
+        );
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="/css/dark.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+        <script>
+            var hits = JSON.parse('{"per_page":10}')
+            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
+
+            var algolia = {
+                applicationID: 'GEEDN46CDJ',
+                apiKey: '8d3c584ac83bd68b3e1b07c68e0404e6',
+                indexName: 'Sherroe Huang',
+                hits: hits,
+                labels: labels
+            }
+        </script>
+    <!-- 百度统计  -->
+    <!-- 谷歌统计  -->
+    <!-- Google tag (gtag.js) -->
+<link rel="alternate" href="/atom.xml" title="妄想录" type="application/atom+xml">
+</head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+        <body class="post-body">
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress read-progress-feature"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        <div class="header-sidebar-menu header-sidebar-menu-rounded">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href="/">Sherroe's Blog</a>
+        </span>
+    </div>
+    <!-- toggle banner -->
+    <div class="banner banner-clean">
+        <div class="blog-title header-element">
+            <a href="/">Sherroe&#39;s Blog</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name">一白的宇宙</a>
+        </div>
+    </div>
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- donate button -->
+
+    <!-- back to top button -->
+    <div class="footer-fixed-btn footer-fixed-btn--hidden footer-fixed-btn--rounded back-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="    height:50vh;
+">
+    <!-- 主页  -->
+    <!-- 404页  -->
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/img/cover.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+                一白的宇宙
+            <!-- 404 -->
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            <!-- 404 -->
+        </p>
+        <!-- 文章页 meta -->
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                    <div class="post-intro-tags" >
+        <span class="post-category" data-categories="呓语">
+            <i class="fas fa-folder post-category-icon"></i>
+            <span class="post-category-text">
+                呓语
+            </span>
+        </span>
+        <a class="post-tag" href="javascript:void(0);" data-tags="呓语">呓语</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="短篇">短篇</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="小说">小说</a>
+</div>
+
+                <!-- 文章字数统计 -->
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">3.5k</span>阅读时长: <span class="post-count reading-time">11 min</span></span>
+                    </div>
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2022/04/11</span>
+                    <!-- busuanzi -->
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <p>“老师，我们为什么要在三维教室里上课呢？”</p>
+<p>夕老师刚走进门，一个稚嫩的声音就在教室后排响起。一白，这个班里最调皮的孩子又没经过老师的同意就发言了。</p>
+<p>“这节实验课的内容是创造一个三维的宇宙。”夕老师把课本放在讲台上，慢慢地说，“大家在三维空间里操作可以更好地理解实验过程。”</p>
+<p>“可是三维空间好挤啊……”一白伸出脚，踢到了桌子腿。</p>
+<p>“那么，给大家一个奖励怎么样？”夕老师露出一个微笑，“这节课表现好的同学，明天的体育课可以去六维体育馆。” </p>
+<p>孩子们的情绪瞬间高涨了起来。</p>
+<p>“太棒了！”</p>
+<p>“明天我要去玩六维弹球！”</p>
+<p>……</p>
+<p>“安静。”夕老师拍了拍讲桌，“但是，有奖励就有惩罚。表现不好的同学只能去四维教室做义务劳动。”</p>
+<p>班里几个成绩不太好的孩子立刻泄下了气，一白看起来似乎也不太高兴。</p>
+<p>“好了好了。现在我们开始上课，请大家把自己的三维创生仪拿出来。”</p>
+<p>一白缓缓地从书包里掏出那个脏兮兮的创生仪，上面的刮痕证明它已经被摔过了很多次。</p>
+<p>夕老师开始讲课了，一白的眼睛却一直盯着窗外。夕老师不时把目光投向一白，提醒他认真听课。</p>
+<p>“现在大家可以自己操作了。”</p>
+<p>夕老师抬起手腕，看了看表。讲课时间比预计短了五时，离下课还有七十五时，夕老师对自己的课堂还算满意。</p>
+<p>实验开始了，同学们都认真地在自己的创生仪上操作着。夕老师则沿着过道在教室里徘徊，依次看着每个同学的作品。</p>
+<p>“舟十，你的宇宙是什么样的呢？”夕老师停在了舟十的课桌前，温柔地询问这个内向的小女孩。</p>
+<p>“嗯……它是……”舟十用手指向自己的创生仪，显然有些紧张，“中间的这个，这个矩形固体叫做‘地’，在‘地’外层的球形遮罩叫做‘天’。然后，‘地’就拥有了静止与永恒，‘天’就拥有了运动与变化。宇宙间的人们呀，就生活在‘地’上，‘天’则围绕在他们头顶，包裹着整个宇宙。”</p>
+<p>“那这两颗小球是什么？”</p>
+<p>“这是‘日’和‘月’，它们会沿着‘天’的圆形轨道运动。‘日’提供‘火’和‘热’，‘月’提供‘水’和‘气’……”</p>
+<p>“还有吗？”</p>
+<p>“还有还有！在‘天’上，有‘风’、‘云’、‘雨’、‘雾’；在‘地’上，有‘山’、‘川’、‘海’、‘原’……”舟十兴致勃勃地介绍着自己的宇宙，脸颊因为激动而泛红。</p>
+<p>“很不错！我很喜欢你给这些宇宙元素起的名字。”夕老师拍了拍舟十的头，舟十的脸瞬间变得更红了。</p>
+<p>坐在在舟十后面的男生叫亚托，是班里成绩最好的学生，此刻他正在草稿纸上演算着什么。夕老师看向亚托的创生仪——只有一些大小不一的球体，静静地悬浮在空旷的宇宙中，一动不动。这样的宇宙看起来非常普通，简直不像是班级第一的作品。</p>
+<p>“亚托。”夕老师忍不住打扰他，“这是你的宇宙吗？”</p>
+<p>“嗯。”亚托抬起头，停下了手中的计算，将创生仪上的时间速度旋钮调整了一个角度。</p>
+<p>“但这只是我静止的宇宙。”</p>
+<p>大大小小的球体立刻动了起来，它们整体上绕着正中间的蓝色小球旋转，但运动速度和轨迹又十分不规则，时而快，时而慢，时而前进，时而逆行……各个球体在运动中彼此交叉相错，又总能在快要撞到一起时巧妙地避开，仿佛在表演一段混乱而奇异的舞蹈。这让夕老师想到了封闭空间中粒子的随机运动——但这些球体的运动并不随机，他们在整体上依然有着明显的规律性。</p>
+<p>“正中间的小球叫做‘地球’，固定不动。向外依次是‘月球’、‘水星’、‘金星’、‘太阳’……每颗球体都按照各自的‘本轮’轨道和‘均轮’轨道运动，整个宇宙最外层的是‘恒星天’。我知道这看起来很乱，但都是遵循规律的。”</p>
+<p>亚托按下了创生仪的轨道线显示按钮，一条条密密麻麻的轨道线瞬间布满了整个创生仪。</p>
+<p>“你的轨道线有好多相交的情况，这些球体不会相撞吗？”</p>
+<p>“不会，我现在正在解决这件事。”亚托停顿了一下，用笔指着草稿纸上没有完成的计算：“这是最后一部分的计算，大约还需要验证一下42个新增的小本轮。不过很快就能完成了，只要确定好了每颗球体的轨道和速度，就可以保证整个宇宙精确无误地运行。”</p>
+<p>“非常棒！”夕老师满意地点了点头，这才是第一名该有的样子。</p>
+<p>转过身，夕老师注意到了不远处的卉。这个古灵精怪的小女孩经常会做出一些奇奇怪怪的举动。</p>
+<p>“卉，你的宇宙……”夕老师走近卉的课桌，看向卉的创生仪——那里面有几只叠在一起的乌龟。</p>
+<p>“这些乌龟是什么？”</p>
+<p>“是乌龟塔哟！”</p>
+<p>“乌龟塔？”</p>
+<p>卉旋动空间尺度旋钮，调大了整体视野。于是夕老师看到了一座巨大无比的乌龟塔——无数只乌龟一个接一个地摞在一起，看不到尽头。</p>
+<p>“我是用Y轴上的‘平铺’让他们堆叠起来的！世界建立在乌龟塔上！”</p>
+<p>“没有其他的了吗？”</p>
+<p>“其他的？乌龟塔顶就是整个世界。”</p>
+<p>夕老师哭笑不得，卉的思维总是让人捉摸不透。这样的作业明显是没有办法得高分的，但夕老师还是放弃了批评。</p>
+<p>“想象力很奇特呢……但如果你能多参考课本上的示范宇宙，作品会更棒的。”</p>
+<p>卉若有所思地点了点头，但夕老师知道她根本不会把自己的话放在心上。</p>
+<p>接下来是一白……夕老师想着，走到了一白的桌前。一白和亚托一样，埋头在草稿纸上演算着。但他的创生仪上空空的，什么都没有。</p>
+<p>夕老师似乎有些生气：“一白，你这节课都在做什么？”</p>
+<p>“计算。”一白头也不抬地回答。随后他伸出手，拉开了创生仪上的数模抽屉。</p>
+<p>小小的数模抽屉被一大堆数学公式占满，夕老师仔细看了看——都是用来表达各种基本概念的公式，有熵增、守恒、相互作用……</p>
+<p>“你为什么不按照课本上的顺序，先构建物理模型，再构建数学模型呢？”</p>
+<p>“数学模型有了，物理模型自然会出现。”一白依然没有抬头，只是继续着自己的计算。</p>
+<p>“你的数学模型未免也太复杂了。广义相对论和量子场……这是六年级才学的东西，你能搞懂吗？”</p>
+<p>“我预习了。”</p>
+<p>“这样复杂的宇宙很难保持稳定。稍有不慎，就会立即爆炸或者坍塌。”</p>
+<p>“所以我一直在完善它。”</p>
+<p>夕老师叹了口气，不耐烦地用手指敲击着一白的课桌：“不管你把作业做成什么样子，明天早上必须交上来一个完整的宇宙。如果交不上的话，我可是会让你在体育课上补作业的。”</p>
+<p>“知道。”一白的手继续在草稿纸上飞舞。</p>
+<p>​     </p>
+<p>晚上回到家后，为了做作业，一白甚至把自己的房间降成了三维空间。</p>
+<p>九十六时过去，一白终于停下了笔，再仔细检查了一遍数模抽屉里的公式和定律，他终于开始构建这个伟大宇宙的物理模型——</p>
+<p>那就是一个点。一白在创生仪正中间画了一个点。</p>
+<p>“舟十的宇宙太简单了。”一白自言自语道，“只有两个发光的球在做圆周运动，真是一点创意都没有……</p>
+<p>“亚托确实会讨老师欢心。那些同时拥有多个轨道的运动方式，也不过是课本上例题的变形罢了。怪不得他总能拿高分。</p>
+<p>“卉那家伙，真是什么都想得出来……拿乌龟塔当宇宙，可真是个小孩子。”</p>
+<p>而他，一白，则不同于以上所有人。</p>
+<p>“我要创造一个会进化的宇宙。”</p>
+<p>按照他的设想——在大量数学定律的相互作用下，这一个简单的点，会很快发生“进化”。在自己仔细严谨的计算下，宇宙并不会像夕老师说的那样爆炸或者坍塌。</p>
+<p>可是，这个点像他自己一样倔强。十二时过去了，点没有发生丝毫变化。</p>
+<p>一白不耐烦地用笔尖戳了一下这个点。</p>
+<p>瞬间，点开始快速膨胀，体积立刻占满了半个创生仪。凝结在点中的大量热量也在一瞬之间迸发出来，与膨胀的点一同扩散。随着热量的弥漫，创生仪中被点禁锢的粒子开始了高速随机运动，它们彼此撞击，融合，分裂，湮灭……</p>
+<p>这个过程进行得太快了，一白赶紧调慢了时间速度旋钮，细细观察他的宇宙。</p>
+<p>他的宇宙果真发生了进化。</p>
+<p>波与粒子在变化，物质与能量在变化，时间与空间在变化……在一个复杂而庞大的数学模型的作用下，这些元素相互制约同时也相互促进。大量物质在各自引力的影响下聚集起来，形成各种各样的新的物质团。随着宇宙体积的不断扩大，物质团开始相互远离，并逐渐趋于稳定。光在宇宙间传播，而暗物质则隐藏于宇宙的每一个角落……</p>
+<p>一白被眼前的景象惊呆了，他睁大了眼睛，一动不动地盯着创生仪。</p>
+<p>大约过了三十时，宇宙终于停止膨胀，在短暂的稳定后，宇宙的体积开始缩小，物质团不断地撞在一起，相互挤压……宇宙的密度越来越大，最终，整个宇宙坍缩成一个点，与最初的点一模一样。</p>
+<p>好一会儿，一白才回过神来。</p>
+<p>这个会进化的宇宙，太精彩了！</p>
+<p>一白激动地拿起笔，再次用笔尖戳了一下那个点，他想再看一次整个宇宙的进化过程。</p>
+<p>然而，这次创生仪却没有展现出他所希望的图景。点只是微微抖动了一下，便立即恢复了静止。</p>
+<p>一白感到有些奇怪，又戳了它一下。</p>
+<p>这一次，点瞬间化为六条波，向六个方向射去，在碰到创生仪内壁后被反射回来，重新聚集成一个静止的点。</p>
+<p>一白急了起来。接下来的一整晚，他用笔尖戳了那个点无数次，却再也没能看到那个能持续整整六十时的“进化的宇宙”。这个点每次都会呈现出不同的变化状态，却都是很快就变回了原来那个静止的点。</p>
+<p>许久之后，一白放下了笔，仰面靠在椅子上。</p>
+<p>​     </p>
+<p>夕老师的办公桌上放着各式各样的宇宙模型，有天圆地方、地心宇宙、乌龟塔……而其中最特殊的一个——一白的宇宙模型，则是一个静止的点。</p>
+<p>“所以说，一白，”夕老师推了一下眼镜，“你只是戳了一下？”</p>
+<p>“是的。但之后再戳就没效果了。”</p>
+<p>夕老师从笔筒里抽出一支漂亮的钢笔，拔开笔帽，用笔尖轻轻戳了一下那个点。点分裂成了三个小球，它们围绕彼此进行着毫无规则的运动，随后撞击在一起，融合成一个与原来相同的点。</p>
+<p>“不对不对，我来！”一白手中紧紧攥着自己的笔，从另一个方向戳了一下。这一次，点膨胀了，就像昨天晚上那样。</p>
+<p>“你看你看！”一白激动地喊了起来，“我就说是这个样子！它马上就可以……”</p>
+<p>然而没等一白说完，膨胀的点就立刻收缩了回去。</p>
+<p>一白愣住了。夕老师则是微笑着，没有开口。</p>
+<p>“我想，只有用和我昨晚完全一模一样的力度和方向，才能看到那个宇宙。”一白嘟着嘴，“稍微差一点都不行。”</p>
+<p>“我早就说过这样的宇宙很不稳定。初始条件有任何一点细微的不同，都会导致它产生不同方向的演化。而且最终也会坍塌。”</p>
+<p>“但我昨天晚上看到的宇宙，确实是最完美的宇宙。”一白依旧不愿服输。</p>
+<p>夕老师转过身，把钢笔放回了笔筒。</p>
+<p>“你觉得我会给你的作业多少分呢？”</p>
+<p>“我不知道……”一白的声音逐渐变得微弱，“我猜你会给我零分，然后让我在体育课上补作业。”</p>
+<p>“不，我会给你满分。”</p>
+<p>一白的瞳孔颤动了一下。</p>
+<p>“一个会在不同初始条件下展现出不同图景的宇宙，我相信它拥有无限种可能性。”夕老师把一白的宇宙模型摆在了所有模型的最前面，微笑着说，“所以，今天的体育课，你可以去六维体育馆上课了。”</p>
+
+    </article>
+    <!-- license -->
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2022/04/12/%E6%9D%A8%E5%A4%8F%E7%9A%84%E6%97%A5%E8%AE%B0/" title="杨夏的日记">
+                    <div class="nextTitle">杨夏的日记</div>
+                </a>
+        </li>
+        <li class="previous">
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2022/04/07/Linux%E4%BD%9C%E4%B8%9A%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="Linux作业 正则表达式">
+                    <div class="prevTitle">Linux作业 正则表达式</div>
+                </a>
+        </li>
+    </ul>
+    <!-- comment -->
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+            
+            
+            
+            <!-- utteranc评论 -->
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+            
+            
+                <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+    <link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet' />
+    <div id="comment"></div>
+    <script>
+    Waline.init({
+        el: '#comment' ,
+        serverURL: "https://blog-api-48sc2v2e6-sherroe.vercel.app",
+        locale: {
+            placeholder: "讲两句"
+        },
+        login: ""
+    });
+    </script>
+
+        </div>
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    <!-- Mathjax -->
+</main>
+
+                <!-- profile -->
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+        <div class="social">
+                            <a href="mailto:sherroe@163.com" class="iconfont-archer email" title="email" ></a>
+                <a href="//github.com/Sherroe" class="iconfont-archer github" target="_blank" title="github"></a>
+                <a href="//twitter.com/Sherroe_XD" class="iconfont-archer twitter" target="_blank" title="twitter"></a>
+                <a href="//space.bilibili.com/57427709" class="iconfont-archer bilibili" target="_blank" title="bilibili"></a>
+                <a href="//weibo.com/u/5992045682" class="iconfont-archer weibo" target="_blank" title="weibo"></a>
+
+        </div>
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+        <div class="website-approve">
+        </div>
+    <!-- 不蒜子  -->
+        <div class="busuanzi-container">
+                <span id="busuanzi_container_site_pv">访问量: <span id="busuanzi_value_site_pv"></span> ——也许实际上并没有这么多？</span>
+        </div>
+</footer>
+
+        </div>
+        <!-- toc -->
+            <div class="toc-wrapper toc-wrapper-loding" style=    top:50vh;
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                
+            </div>
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 22
+        </div>
+        <!-- search  -->
+            <div class="site-search site-search-loading popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+    </div>
+    <div class="post-archive">
+            <div class="archive-year"> 2077 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span>
+            <a class="archive-post-title" href="/2077/07/08/%E6%AD%8C%E5%A1%94/">歌塔</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/07</span>
+            <a class="archive-post-title" href="/2077/07/07/%E5%BC%82%E6%AC%A1%E5%85%83%E7%9A%84%E5%B9%B8%E5%AD%98%E8%80%85/">异次元的幸存者</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span>
+            <a class="archive-post-title" href="/2025/01/31/%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E7%9A%84Python%E5%BA%93/">关于工作中常用的一些操作文件的Python库</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2023/08/18/%E6%AF%9B%E9%9B%A8%E6%98%9F/">毛雨星</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/20</span>
+            <a class="archive-post-title" href="/2023/07/20/%E9%80%9A%E6%81%92%E9%9B%86/">通恒集</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2023/02/21/%E9%9D%A2%E8%AF%95/">面试</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span>
+            <a class="archive-post-title" href="/2022/12/16/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/">新年快乐</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span>
+            <a class="archive-post-title" href="/2022/11/20/%E5%A6%84%E6%83%B3%E5%BD%95%20%E5%A4%96%E7%AF%87%20%E6%A0%B8%E9%85%B8%E6%97%A5%E8%AE%B0/">妄想录 外篇 核酸日记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/19</span>
+            <a class="archive-post-title" href="/2022/09/19/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%B8%80/">妄想录 篇一</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span>
+            <a class="archive-post-title" href="/2022/09/10/%E7%BB%9D%E4%B8%96%E5%94%90%E9%97%A8/">绝世唐门</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2022/08/10/%E5%BE%B7%E5%A1%94/">德塔</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span>
+            <a class="archive-post-title" href="/2022/05/03/%E7%95%AA%E8%8C%84%E6%B1%A4/">番茄汤</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span>
+            <a class="archive-post-title" href="/2022/04/13/%E7%88%86%E7%82%B8%E3%80%81%E5%91%8A%E7%99%BD%E3%80%81%E8%89%BA%E6%9C%AF%E5%AE%B6%E4%B8%8E%E5%A4%A7%E4%BE%BF/">爆炸、告白、艺术家与大便</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2022/04/12/%E6%9D%A8%E5%A4%8F%E7%9A%84%E6%97%A5%E8%AE%B0/">杨夏的日记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2022/04/11/%E4%B8%80%E7%99%BD%E7%9A%84%E5%AE%87%E5%AE%99/">一白的宇宙</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2022/04/07/Linux%E4%BD%9C%E4%B8%9A%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">Linux作业 正则表达式</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/28</span>
+            <a class="archive-post-title" href="/2022/03/28/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%BA%8C/">妄想录 篇二</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span>
+            <a class="archive-post-title" href="/2022/03/27/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Linux学习笔记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span>
+            <a class="archive-post-title" href="/2022/03/17/%E4%BD%BF%E7%94%A8Github%E4%B8%8Ehexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用GitHub与Hexo搭建个人博客</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2022/03/16/HelloWorld/">Hello World</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2020 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span>
+            <a class="archive-post-title" href="/2020/09/03/%E8%9B%87/">蛇</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 1970 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/1970/01/01/%E8%B5%9E%E8%B5%8F/">赞赏</a>
+        </li>
+            </ul>
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+            <span class="sidebar-tag-name" data-tags="呓语">
+                <span class="iconfont-archer">&#xe606;</span>
+                呓语
+            </span>
+            <span class="sidebar-tag-name" data-tags="学习">
+                <span class="iconfont-archer">&#xe606;</span>
+                学习
+            </span>
+            <span class="sidebar-tag-name" data-tags="作业">
+                <span class="iconfont-archer">&#xe606;</span>
+                作业
+            </span>
+            <span class="sidebar-tag-name" data-tags="Linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                Linux
+            </span>
+            <span class="sidebar-tag-name" data-tags="笔记">
+                <span class="iconfont-archer">&#xe606;</span>
+                笔记
+            </span>
+            <span class="sidebar-tag-name" data-tags="随笔">
+                <span class="iconfont-archer">&#xe606;</span>
+                随笔
+            </span>
+            <span class="sidebar-tag-name" data-tags="短篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                短篇
+            </span>
+            <span class="sidebar-tag-name" data-tags="妄想录">
+                <span class="iconfont-archer">&#xe606;</span>
+                妄想录
+            </span>
+            <span class="sidebar-tag-name" data-tags="教程">
+                <span class="iconfont-archer">&#xe606;</span>
+                教程
+            </span>
+            <span class="sidebar-tag-name" data-tags="GitHub">
+                <span class="iconfont-archer">&#xe606;</span>
+                GitHub
+            </span>
+            <span class="sidebar-tag-name" data-tags="Hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                Hexo
+            </span>
+            <span class="sidebar-tag-name" data-tags="小说">
+                <span class="iconfont-archer">&#xe606;</span>
+                小说
+            </span>
+            <span class="sidebar-tag-name" data-tags="Python">
+                <span class="iconfont-archer">&#xe606;</span>
+                Python
+            </span>
+            <span class="sidebar-tag-name" data-tags="长篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                长篇
+            </span>
+            <span class="sidebar-tag-name" data-tags="连载">
+                <span class="iconfont-archer">&#xe606;</span>
+                连载
+            </span>
+            <span class="sidebar-tag-name" data-tags="杂谈">
+                <span class="iconfont-archer">&#xe606;</span>
+                杂谈
+            </span>
+            <span class="sidebar-tag-name" data-tags="通恒集">
+                <span class="iconfont-archer">&#xe606;</span>
+                通恒集
+            </span>
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+        <span class="sidebar-category-name" data-categories="呓语">
+            <span class="iconfont-archer">&#xe60a;</span>
+            呓语
+        </span>
+        <span class="sidebar-category-name" data-categories="学习">
+            <span class="iconfont-archer">&#xe60a;</span>
+            学习
+        </span>
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "http://sherroe.github.io",
+        root: siteMetaRoot,
+        author: "Sherroe Huang"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+        <!-- main func -->
+        <script src="/scripts/main.js"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
+        <!-- algolia -->
+            <div class="site-search site-search-loading">
+    <div class="algolia-popup popup">
+        <div class="algolia-search">
+            <div class="algolia-search-input-icon">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="algolia-search-input" id="algolia-search-input"></div>
+            <div class="popup-btn-close">
+                <i class="iconfont-archer">&#xe609;</i>
+            </div>
+        </div>
+
+        <div class="algolia-results">
+            <div id="algolia-stats" class="algolia-stats"></div>
+            <div id="algolia-hits"></div>
+            <div id="algolia-pagination" class="algolia-pagination"></div>
+        </div>
+    </div>
+</div>
+
+            <script src="/scripts/search.js" async></script>
+        <!-- busuanzi -->
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        <!-- async load share.js -->
+            <script src="/scripts/share.js" async></script>
+        <!-- mermaid -->
+    </body>
+</html>

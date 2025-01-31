@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
+<!-- keywords -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Sherroe Huang">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Sherroe Huang">
+        <meta name="keywords" content="Sherroe,sherroe,blog,hexo,hexo-theme,hexo-blog">
+    <meta name="description" content="">
+    <meta name="description" content="[TOC]  本学习笔记基于北京邮电大学蒋砚军老师的《Linux开发环境及应用》课程  登陆1ssh name@ip    一些基本Linux命令man：查阅手册可以查询各种命令的说明书，系统调用的使用手册，c语言和其他语言的库函数，系统配置文件格式。  man（取自manual）  man name    查询 man 1 name    指定章节号的查询">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux学习笔记">
+<meta property="og:url" content="http://sherroe.github.io/2022/03/27/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="妄想录">
+<meta property="og:description" content="[TOC]  本学习笔记基于北京邮电大学蒋砚军老师的《Linux开发环境及应用》课程  登陆1ssh name@ip    一些基本Linux命令man：查阅手册可以查询各种命令的说明书，系统调用的使用手册，c语言和其他语言的库函数，系统配置文件格式。  man（取自manual）  man name    查询 man 1 name    指定章节号的查询">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-24T01:16:22.257Z">
+<meta property="article:author" content="Sherroe Huang">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="作业">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/img/favicon.png">
+    <title>Linux学习笔记 · 妄想录 | Sherroe&#39;s Blog</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .footer-fixed-btn,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(
+            -45deg,
+            #444 0,
+            #444 80px,
+            #333 80px,
+            #333 160px
+        );
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="/css/dark.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+        <script>
+            var hits = JSON.parse('{"per_page":10}')
+            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
+
+            var algolia = {
+                applicationID: 'GEEDN46CDJ',
+                apiKey: '8d3c584ac83bd68b3e1b07c68e0404e6',
+                indexName: 'Sherroe Huang',
+                hits: hits,
+                labels: labels
+            }
+        </script>
+    <!-- 百度统计  -->
+    <!-- 谷歌统计  -->
+    <!-- Google tag (gtag.js) -->
+<link rel="alternate" href="/atom.xml" title="妄想录" type="application/atom+xml">
+</head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+        <body class="post-body">
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress read-progress-feature"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        <div class="header-sidebar-menu header-sidebar-menu-rounded">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href="/">Sherroe's Blog</a>
+        </span>
+    </div>
+    <!-- toggle banner -->
+    <div class="banner banner-clean">
+        <div class="blog-title header-element">
+            <a href="/">Sherroe&#39;s Blog</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name">Linux学习笔记</a>
+        </div>
+    </div>
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- donate button -->
+
+    <!-- back to top button -->
+    <div class="footer-fixed-btn footer-fixed-btn--hidden footer-fixed-btn--rounded back-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="    height:50vh;
+">
+    <!-- 主页  -->
+    <!-- 404页  -->
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/img/cover.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+                Linux学习笔记
+            <!-- 404 -->
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            <!-- 404 -->
+        </p>
+        <!-- 文章页 meta -->
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                    <div class="post-intro-tags" >
+        <span class="post-category" data-categories="学习">
+            <i class="fas fa-folder post-category-icon"></i>
+            <span class="post-category-text">
+                学习
+            </span>
+        </span>
+        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="作业">作业</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Linux">Linux</a>
+</div>
+
+                <!-- 文章字数统计 -->
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">3.2k</span>阅读时长: <span class="post-count reading-time">12 min</span></span>
+                    </div>
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2022/03/27</span>
+                    <!-- busuanzi -->
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <p>[TOC]</p>
+<blockquote>
+<p>本学习笔记基于北京邮电大学蒋砚军老师的《Linux开发环境及应用》课程</p>
+</blockquote>
+<h2 id="登陆"><a href="#登陆" class="headerlink" title="登陆"></a>登陆</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh name@ip</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="一些基本Linux命令"><a href="#一些基本Linux命令" class="headerlink" title="一些基本Linux命令"></a>一些基本Linux命令</h2><h3 id="man：查阅手册"><a href="#man：查阅手册" class="headerlink" title="man：查阅手册"></a>man：查阅手册</h3><p>可以查询各种命令的说明书，系统调用的使用手册，c语言和其他语言的库函数，系统配置文件格式。</p>
+<blockquote>
+<p>man（取自manual）</p>
+</blockquote>
+<p><code>man name</code>    查询</p>
+<p><code>man 1 name</code>    指定章节号的查询</p>
+<p>​    章节编号：1 命令；2 系统调用；3 库函数；5 配置文件；</p>
+<p><code>man -k regexp</code>    列出关键字与正则表达式（regexp）匹配的手册项目录</p>
+<p><code>q</code>    退出</p>
+<hr>
+<h3 id="date：日期与时间"><a href="#date：日期与时间" class="headerlink" title="date：日期与时间"></a>date：日期与时间</h3><blockquote>
+<p><code>man date</code>    即可查阅关于时间的联机手册。</p>
+</blockquote>
+<p><code>date</code>    查询时间</p>
+<p><code>date &quot;+%Y-%m-%d&quot;</code>    格式化输出时间，引号内第一个字符必须为+</p>
+<p><code>%Y</code>年；<code>%m</code>月；<code>%d</code>日；<code>%H</code>小时；<code>%M</code>分钟；<code>%S</code>秒；<code>%s</code>秒坐标（自1970年开始）；<code>%j</code>今年的第几天；</p>
+<hr>
+<p><code>ntpdate</code>    校准系统时间</p>
+<p><code>ntpdate -q 0.pool.ntp.org</code>    查询当前时间与标准时间之差</p>
+<hr>
+<p><code>cal</code>    打印当前月份的日历</p>
+<p><code>cal 2022</code>    打印2022年的日历</p>
+<p><code>cal 3 2022</code>    打印2022年3月的日历</p>
+<hr>
+<h3 id="bc：计算器"><a href="#bc：计算器" class="headerlink" title="bc：计算器"></a>bc：计算器</h3><p>可以使用c语言语法进行编程（设定变量，循环等）</p>
+<p><code>bc</code>    进入计算器，缺省精度为小数点后0位</p>
+<p><code>bc -l</code>     进入计算器，缺省精度为小数点后20位</p>
+<p><code>quit</code>    退出</p>
+<hr>
+<h3 id="passwd：更换口令"><a href="#passwd：更换口令" class="headerlink" title="passwd：更换口令"></a>passwd：更换口令</h3><p><code>passwd</code>    系统不存储口令明文，而是通过哈希算法加密，且无法由哈希值倒推出原文。</p>
+<hr>
+<h3 id="系统状态相关"><a href="#系统状态相关" class="headerlink" title="系统状态相关"></a>系统状态相关</h3><p><code>who</code>    列出当前系统中已经登陆的用户</p>
+<p>​    第一列为用户名，第二列为终端设备文件名</p>
+<p><code>tty</code>    打印出当前终端的设备文件名</p>
+<p><code>who am i</code>    列出当前终端上的登陆用户（包括用户名，终端设备文件名等）</p>
+<p><code>whoami</code>    仅列出当前终端上的登录用户的用户名</p>
+<hr>
+<p><code>uptime</code>    返回当前时间，系统已开机时间，当前登陆入的用户数，系统负载平均数</p>
+<hr>
+<p><code>top</code>    列出资源占用排名考前的进程</p>
+<hr>
+<p><code>ps</code>    查阅当前终端上启动的进程状态</p>
+<p><code>ps -e</code>    查阅所有进程状态</p>
+<p>ps命令的其他 - 选项：</p>
+<p><code>-f</code> 以full格式列出；<code>-l</code> 以long格式列出</p>
+<hr>
+<p><code>free</code>    了解内存使用情况</p>
+<hr>
+<p><code>vmstat</code>    了解系统负载</p>
+<p><code>vmstat 1</code>    每隔一秒打印信息</p>
+<p>使用 Ctrl+C 以停止vmstat采集数据</p>
+<hr>
+<h2 id="处理文本文件"><a href="#处理文本文件" class="headerlink" title="处理文本文件"></a>处理文本文件</h2><p>标准输入输出：键盘输入，屏幕输出</p>
+<h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><p><code> &gt; file.txt</code>    输出到file.txt</p>
+<p><code> &lt; file.txt</code>    从file.txt获取输入</p>
+<hr>
+<h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p><code>ls - l | sort</code>    将 ls -l 与 sort 两个命令连接在一起</p>
+<hr>
+<h3 id="显示文件"><a href="#显示文件" class="headerlink" title="显示文件"></a>显示文件</h3><p>more&#x2F;less：逐屏显示文件</p>
+<p>显示一个文件，每显示满一屏幕后停下来。</p>
+<p><code>more file.txt</code>    指定一个文件</p>
+<p><code>more *.[ch]</code>    指定多个文件</p>
+<table>
+<thead>
+<tr>
+<th>more命令</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>空格</td>
+<td>显示下一屏（翻页）</td>
+</tr>
+<tr>
+<td>enter</td>
+<td>上滚一行</td>
+</tr>
+<tr>
+<td>q</td>
+<td>退出</td>
+</tr>
+<tr>
+<td>&#x2F;</td>
+<td>搜索指定模式的字符串</td>
+</tr>
+<tr>
+<td>h</td>
+<td>帮助信息</td>
+</tr>
+<tr>
+<td>Ctrl+L</td>
+<td>屏幕刷新</td>
+</tr>
+</tbody></table>
+<p><code>less file.txt</code>    大体上与more命令差不多，多一些功能，例如方向键上键向上选取一行</p>
+<hr>
+<p><code>cat file.txt</code>    打印文件所有内容</p>
+<p><code>cat -n file.txt</code>    打印打印文件所有内容并加上行号</p>
+<hr>
+<p><code>od file.txt</code>    逐字节打印</p>
+<p><code>od -t x1 file.txt</code>    以十六进制打印文件字节</p>
+<p><code>x1</code> 十六进制；<code>d1</code> 十进制；<code>u1</code> 无符号十进制；<code>o1</code> 八进制；</p>
+<p><code>od -c</code>    遇到不可打印字符时打印编码</p>
+<hr>
+<p><code>head file.txt</code>    显示文件头部的10行</p>
+<p><code>head -n 15 file.txt</code>    显示文件头部的15行</p>
+<p><code>tail file.txt</code>    显示文件尾部的10行</p>
+<p><code>tail -f file.txt</code>    实时打印文件尾部被追加的内容</p>
+<hr>
+<h3 id="文件数据处理"><a href="#文件数据处理" class="headerlink" title="文件数据处理"></a>文件数据处理</h3><p><code>tee file.txt</code>    三通：同时将数据输出到屏幕上并存入文件里</p>
+<p><code>wc file.txt</code>    字计数：列出文件行数，词数和字符数</p>
+<p><code>wc -l</code>    只计算行数</p>
+<hr>
+<p><code>sort</code>    将字符串进行排序</p>
+<p><code>sort -n</code>    对数字按照算数值大小排序，而不是比较字符串</p>
+<hr>
+<p><code>tr string1 string2</code>    翻译字符，将string1中的字符替换为string2中的字符</p>
+<p><code>cat file | tr &#39;[a-z]&#39; &#39;[A-Z]&#39;</code>    将小写字母全部换为大写字母</p>
+<p><code>cat file | tr % &#39;\012&#39;</code>    将%改为换行符</p>
+<hr>
+<p><code>uniq</code>    筛去文件中的重复行（上下紧邻的内容相同的两行）</p>
+<p><code>uniq -u</code>    只保留没有重复的行</p>
+<p><code>uniq -d</code>    只保留有重复的行（重复行只打印一次）</p>
+<p><code>uniq -c</code>    计数重复行的行数</p>
+<hr>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>主要用于字符串匹配替换等</p>
+<h3 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h3><h4 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h4><p>元字符 <code>. * [ \ ^ $</code> 具有特殊含义的字符</p>
+<p>使用反斜杠 <code>\</code> 即可进行转义</p>
+<p>圆点 <code>·</code> 可用来匹配任意单字符</p>
+<hr>
+<h4 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h4><p>在方括号<code>[]</code>之内的字符为集合</p>
+<p><code>[abcd]</code>    a或b或c或d</p>
+<p><code>· * \</code>在方括号内时代表他们自己</p>
+<hr>
+<p>使用<code>-</code>表示一个区间</p>
+<p><code>[a-z]</code>    所有小写字母</p>
+<p><code>[a-zA-Z0-9]</code>    所有字母和数字</p>
+<hr>
+<p>使用<code>^</code>表示补集（必须放在开头）</p>
+<p><code>[^A-Z]</code>    任何一个非大写字母</p>
+<hr>
+<h4 id="单字符正则表达式的组合"><a href="#单字符正则表达式的组合" class="headerlink" title="单字符正则表达式的组合"></a>单字符正则表达式的组合</h4><p>串结：将字符进行正常排列即可    <code>abc</code></p>
+<p>单字符后跟星号<code>*</code>表示闭包（0或任意多次该字符）</p>
+<p><code>[a-z][0-9]*</code>    一个小写字母后跟任意数量的数字</p>
+<hr>
+<h4 id="锚点：-与"><a href="#锚点：-与" class="headerlink" title="锚点：$与^"></a>锚点：$与^</h4><p><code>123$</code>    只匹配字符串尾部的<code>123</code>，$符号必须在尾部</p>
+<p><code>^abc</code>    只匹配字符串首部的<code>abc</code>，^符号必须在首部</p>
+<hr>
+<h3 id="扩展正则表达式"><a href="#扩展正则表达式" class="headerlink" title="扩展正则表达式"></a>扩展正则表达式</h3><p>ERE与PCRE</p>
+<blockquote>
+<p>与基本正则表达式不兼容</p>
+</blockquote>
+<p>圆括号<code>()</code>表示分组</p>
+<p><code>(xy)*</code>    字符串xy的闭包</p>
+<p><code>|</code>    或</p>
+<p><code>+</code>    正闭包</p>
+<p><code>?</code>    出现0或1次</p>
+<hr>
+<p>命名的预定义集合：</p>
+<p><code>[[:xdigit:]]</code>    十六进制数字</p>
+<p><code>\d</code>    数字</p>
+<p><code>\D</code>    不是数字</p>
+<hr>
+<h3 id="处理命令"><a href="#处理命令" class="headerlink" title="处理命令"></a>处理命令</h3><h4 id="grep：查找"><a href="#grep：查找" class="headerlink" title="grep：查找"></a>grep：查找</h4><p><code>grep</code>    在文件中查找字符串</p>
+<p><code>egrep</code>    使用扩展正则表达式ERE查找</p>
+<p><code>fgrep</code>    快速搜索指定字符串</p>
+<p>grep选项：</p>
+<p><code>-F</code>    相当于<code>fgrep</code></p>
+<p><code>-G</code>    使用基本正则表达式（BRE）</p>
+<p><code>-E</code>    使用扩展正则表达式（ERE）</p>
+<p><code>-P</code>    与perl兼容的正则表达式（PCRE）</p>
+<p><code>-n</code>    每行前现实行号</p>
+<p><code>-v</code>    现实所有不好含模式的行</p>
+<p><code>-i</code>    忽略字母大小写</p>
+<hr>
+<h4 id="sed：流编辑"><a href="#sed：流编辑" class="headerlink" title="sed：流编辑"></a>sed：流编辑</h4><p><code>sed &#39;命令&#39; 文件名列表</code></p>
+<p><code>sed -e</code>    可使用多个命令，每输完一个命令后输入<code>-e</code></p>
+<p><code>sed -f</code>    使用文件输入命令</p>
+<hr>
+<h4 id="awk：逐行扫描"><a href="#awk：逐行扫描" class="headerlink" title="awk：逐行扫描"></a>awk：逐行扫描</h4><p>符合条件的行，执行相应的动作</p>
+<p><code>awk &#39;程序&#39; 文件名列表</code></p>
+<p><code>awk -f</code>    使用文件输入程序</p>
+<hr>
+<p>每行用空格分开的部分叫做记录的“域”</p>
+<p><code>$1</code>    表示第1域的内容    <code>$2</code>    则表示第2域</p>
+<p><code>$2</code>    表示整行内容</p>
+<hr>
+<h3 id="正则表达式应用"><a href="#正则表达式应用" class="headerlink" title="正则表达式应用"></a>正则表达式应用</h3><p>详见我的另一篇文章：Linux作业 正则表达式</p>
+<hr>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="两文件比较"><a href="#两文件比较" class="headerlink" title="两文件比较"></a>两文件比较</h3><p><code>cmp file1 file2</code>    逐字节比较两个文件是否完全相同</p>
+<p>若完全相同，则不给出提示</p>
+<p>若有不同，则打印出第一个不同之处</p>
+<p>在Windows中也有类似的命令：COMP</p>
+<hr>
+<p><code>md5sum file1 file2</code>    使用MD5算法（散列函数）根据文件内容生成16字节hash值并进行比较</p>
+<p><code>md5sum file1 file2 &gt; files.sum</code>    将生成的值存入文件</p>
+<p>MD5失误率（不同文件生成完全相同的哈希值的概率）：2^-128 &#x3D; 3*10^-38</p>
+<p><code>sha1sum</code>    SHA-1算法：20字节hash值</p>
+<hr>
+<p>diff：比较两个版本的文本文件以寻找两者的差别</p>
+<p><code>diff file1 file2</code></p>
+<p>使用normal格式输出的内容中，a（add）表示新增，c（change）表示修改，d（delete）表示删除</p>
+<p><code>diff -u file1 file2</code></p>
+<p>使用unfined格式输出内容，+表示新增，-表示删除</p>
+<hr>
+<h3 id="vi：文本文件编辑"><a href="#vi：文本文件编辑" class="headerlink" title="vi：文本文件编辑"></a>vi：文本文件编辑</h3><p><code>vi file.txt</code>    通过vi编辑器打开file.txt文件</p>
+<p>配置文件 $HOME&#x2F;.exrc</p>
+<p><code>:set</code>    查看当前偏好设置</p>
+<hr>
+<p>vi启动后进入命令模式，键盘输入解释为命令，此时按键没有回显</p>
+<p><code>i</code>    进入插入文本编辑状态    <code>a</code>    进入追加文本编辑状态</p>
+<p>按下 Esc 以退出文本状态进入命令状态</p>
+<hr>
+<h4 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h4><p><code>h</code>    左移一列；    <code>j</code>    下移一行；    <code>k</code>    上移一行；    <code>l</code>    右移一列；（方向键同样可用）</p>
+<p><code>^</code>    移至行首；    <code>$</code>    移至行尾；</p>
+<p><code>w</code>    移至右一个单词；    <code>b</code>    移至左一个单词</p>
+<p>Ctrl+B    向后翻页；Ctrl+F    向前翻页；（PgUp与PgDn键同样可用）</p>
+<p><code>:476</code>    移至文件第476行；    <code>$</code>    移至文件尾；</p>
+<p><code>%</code>    括号配对：光标在一个括号上时，按下即可定位到其匹配的另一个括号上</p>
+<p>命令前加一行整数，表示命令重复执行多少遍</p>
+<hr>
+<h4 id="剪切板操作"><a href="#剪切板操作" class="headerlink" title="剪切板操作"></a>剪切板操作</h4><p><code>x</code>    删除当前字符；    <code>dd</code>    删除当前行；    <code>r</code>    替换光标处字符；</p>
+<p><code>u</code>    取消上一次操作（撤销）；    <code>.</code>    重复上一次动作；</p>
+<p><code>ZZ</code>    存盘退出；    <code>:wq</code> + Enter    存盘退出；    <code>:w</code> + Enter    仅存盘；    <code>q!</code> + Enter    不存盘退出；</p>
+<p><code>:r file.c</code>    读入文件file.c插入到当前行之下</p>
+<p><code>:50,$w file.c</code>    把第50行到文件尾的内容写到file.c中；    <code>:50,$w! file.c</code>    强制覆盖</p>
+<p><code>:10,50d</code>    删除10到50行（同时复制内容）</p>
+<p><code>:10,40y</code>    复制10到50行</p>
+<p><code>p</code>    粘贴</p>
+<p><code>:7,9CO56</code>    复制7到9行的内容并粘贴到56行下</p>
+<p><code>:8,10m78</code>    移动8到10行的内容到78行下</p>
+<p><code>J</code>    将当前行下一行合并到当前行</p>
+<p>Ctrl+L    屏幕刷新；    Ctrl+G    显示状态</p>
+<hr>
+<h4 id="查找与替换"><a href="#查找与替换" class="headerlink" title="查找与替换"></a>查找与替换</h4><p><code>/</code>    查找命令，后接正则表达式。如：    <code>/[0-9][0-9]*</code></p>
+<p><code>n</code>    查找下一个;    <code>N</code>    查找上一个；</p>
+<p><code>:1,50s/abc/xyz</code>    在1到50行中，将每行的第一个abc替换为xyz（每行只替换一次）</p>
+<p><code>:1,50s/abc/xyz/g</code>    在1到50行中，将所有abc替换为xyz</p>
+<p><code>:50,80s/^/    /</code>    将50到80行右移四列（将每行开头的空字符替换为4个空格）</p>
+<hr>
+<h4 id="文件管理和目录管理"><a href="#文件管理和目录管理" class="headerlink" title="文件管理和目录管理"></a>文件管理和目录管理</h4><p>ls：列出文件目录</p>
+<p>可使用实参列出文件</p>
+<p><code>-F</code>    &#x2F;目录    *可执行文件    @符号连接文件</p>
+<p><code>-l</code>    长格式列表    第1列：文件属性    第2列：文件link数    第3、4列：文件主的名字和小组名字    第5列：文件大小（字节数）（目录：目录表大小）    第6列：最后一次修改时间    第7列：文件名</p>
+<p><code>-h</code>    便于阅读的方式打印数值</p>
+<p><code>-d</code>    列出目录自身信息</p>
+<p><code>-a</code>    列出文件名首字符为圆点的文件（用户偏好设置等）</p>
+<p><code>-A</code>    同上，不列出<code>.</code>和<code>..</code></p>
+<p><code>-s</code>    文件占用磁盘空间</p>
+<p><code>-i</code>    文件的i节点号</p>
+<hr>
+<p>cp：拷贝文件</p>
+<p><code>cp file1 file2</code>    <code>cp file1 file2 dir</code></p>
+<p>file2不存在则创建，存在则覆盖</p>
+<p>mv：移动文件（相当于剪切，效率高于拷贝后再删除）</p>
+<p><code>mv file1 file2</code>    </p>
+<p><code>mv file1 file2 file3 dir</code>    把三个文件移动到目录下</p>
+<p><code>mv dir1 dir2</code></p>
+<p>rm：删除文件</p>
+<p><code>rm file1 file2 file3</code></p>
+<p><code>rm *.o</code>    删除所有.o文件</p>
+<p>​    <code>-r</code>    递归删除</p>
+<p>​    <code>-i</code>    删除前需要确认</p>
+<p><code>    -f</code>    强迫删除（可删除只读文件）</p>
+<p>使用<code>--</code>对命令参数进行转义：<code>rm -i</code>无法删除名为-i的文件，使用<code>rm -- -i</code>命令，让系统不将<code>-</code>开头的部分识别为命令参数。</p>
+<hr>
+<p>Linux系统下目录使用<code>/</code>分割，Windows系统下目录使用<code>\</code>分割</p>
+<p><code>pwd</code>    打印当前工作目录</p>
+<p><code>cd /usr/include</code>    改变当前工作目录    <code>cd</code>    回到主目录</p>
+<p><code>mkdir</code>    创建目录    </p>
+<p>​    <code>-p</code>    自动创建路径中不存在的目录</p>
+<p><code>rmdir</code>    删除目录，要求不存在除.和..之外的文件或目录</p>
+<p>​    <code>-r</code>    递归删除</p>
+<p><code>cp -r</code>    目录复制</p>
+<p>​    <code>-v</code>    冗长方式，实时列出正在复制的文件名</p>
+<p>​    <code>-u</code>    增量拷贝，便于备份目录。不拷贝相同或过时版本（比较时间戳）的文件</p>
+<p><code>touch</code>    将文件最后修改时间变成当前时间</p>
+<p><code>rsync</code>    数据备份工具</p>
+<hr>
+<p><code>find</code>    遍历目录树</p>
+<p><code>find ver1.d ver2.d -name &#39;*.c&#39; -print</code>    在ver1.d和ver2.d中查找.c文件并打印路径</p>
+<p>​    <code>-name</code>    后跟文件名，必须有引号</p>
+<p>​    <code>-regex</code>    整蛊路径名与正则表达式匹配</p>
+<p>​    <code>-type</code>    后跟单个字母：f普通文件，d目录，l符号连接文件，c字符设备文件，b块设备文件，p管道文件</p>
+<p>​    <code>-size</code>    指定文件大小，后跟符号：<code>+</code>表示大于，<code>-</code>表示小于</p>
+<p>​    <code>-mtype</code>    文件最近修改时间</p>
+<p>​    <code>-newer</code>    文件比文件更新</p>
+<p>​    <code>-print</code>    打印文件路径名</p>
+<p>​    <code>-exec</code>    其后到分号之间的内容作为一条施加在查找到的文件上的命令</p>
+<p>​    <code>-ok</code>    同上，多一步确认</p>
+<hr>
+<p><code>xargs</code>    将标准输入组织成命令执行</p>
+<p>​    <code>-n</code>    指定每批处理多少个</p>
+<p><code>tar</code>    文件归档</p>
+<hr>
+
+    </article>
+    <!-- license -->
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2022/03/28/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%BA%8C/" title="妄想录 篇二">
+                    <div class="nextTitle">妄想录 篇二</div>
+                </a>
+        </li>
+        <li class="previous">
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2022/03/17/%E4%BD%BF%E7%94%A8Github%E4%B8%8Ehexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="使用GitHub与Hexo搭建个人博客">
+                    <div class="prevTitle">使用GitHub与Hexo搭建个人博客</div>
+                </a>
+        </li>
+    </ul>
+    <!-- comment -->
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+            
+            
+            
+            <!-- utteranc评论 -->
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+            
+            
+                <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+    <link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet' />
+    <div id="comment"></div>
+    <script>
+    Waline.init({
+        el: '#comment' ,
+        serverURL: "https://blog-api-48sc2v2e6-sherroe.vercel.app",
+        locale: {
+            placeholder: "讲两句"
+        },
+        login: ""
+    });
+    </script>
+
+        </div>
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    <!-- Mathjax -->
+</main>
+
+                <!-- profile -->
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+        <div class="social">
+                            <a href="mailto:sherroe@163.com" class="iconfont-archer email" title="email" ></a>
+                <a href="//github.com/Sherroe" class="iconfont-archer github" target="_blank" title="github"></a>
+                <a href="//twitter.com/Sherroe_XD" class="iconfont-archer twitter" target="_blank" title="twitter"></a>
+                <a href="//space.bilibili.com/57427709" class="iconfont-archer bilibili" target="_blank" title="bilibili"></a>
+                <a href="//weibo.com/u/5992045682" class="iconfont-archer weibo" target="_blank" title="weibo"></a>
+
+        </div>
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+        <div class="website-approve">
+        </div>
+    <!-- 不蒜子  -->
+        <div class="busuanzi-container">
+                <span id="busuanzi_container_site_pv">访问量: <span id="busuanzi_value_site_pv"></span> ——也许实际上并没有这么多？</span>
+        </div>
+</footer>
+
+        </div>
+        <!-- toc -->
+            <div class="toc-wrapper toc-wrapper-loding" style=    top:50vh;
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BB%E9%99%86"><span class="toc-number">1.</span> <span class="toc-text">登陆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%ACLinux%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">一些基本Linux命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#man%EF%BC%9A%E6%9F%A5%E9%98%85%E6%89%8B%E5%86%8C"><span class="toc-number">2.1.</span> <span class="toc-text">man：查阅手册</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#date%EF%BC%9A%E6%97%A5%E6%9C%9F%E4%B8%8E%E6%97%B6%E9%97%B4"><span class="toc-number">2.2.</span> <span class="toc-text">date：日期与时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bc%EF%BC%9A%E8%AE%A1%E7%AE%97%E5%99%A8"><span class="toc-number">2.3.</span> <span class="toc-text">bc：计算器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#passwd%EF%BC%9A%E6%9B%B4%E6%8D%A2%E5%8F%A3%E4%BB%A4"><span class="toc-number">2.4.</span> <span class="toc-text">passwd：更换口令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%8A%B6%E6%80%81%E7%9B%B8%E5%85%B3"><span class="toc-number">2.5.</span> <span class="toc-text">系统状态相关</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">处理文本文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">3.1.</span> <span class="toc-text">重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E9%81%93"><span class="toc-number">3.2.</span> <span class="toc-text">管道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6"><span class="toc-number">3.3.</span> <span class="toc-text">显示文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="toc-number">3.4.</span> <span class="toc-text">文件数据处理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text">正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="toc-number">4.1.</span> <span class="toc-text">基本定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%83%E5%AD%97%E7%AC%A6"><span class="toc-number">4.1.1.</span> <span class="toc-text">元字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E5%90%88"><span class="toc-number">4.1.2.</span> <span class="toc-text">集合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E5%AD%97%E7%AC%A6%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E7%BB%84%E5%90%88"><span class="toc-number">4.1.3.</span> <span class="toc-text">单字符正则表达式的组合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%9A%E7%82%B9%EF%BC%9A-%E4%B8%8E"><span class="toc-number">4.1.4.</span> <span class="toc-text">锚点：$与^</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">4.2.</span> <span class="toc-text">扩展正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4"><span class="toc-number">4.3.</span> <span class="toc-text">处理命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#grep%EF%BC%9A%E6%9F%A5%E6%89%BE"><span class="toc-number">4.3.1.</span> <span class="toc-text">grep：查找</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sed%EF%BC%9A%E6%B5%81%E7%BC%96%E8%BE%91"><span class="toc-number">4.3.2.</span> <span class="toc-text">sed：流编辑</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#awk%EF%BC%9A%E9%80%90%E8%A1%8C%E6%89%AB%E6%8F%8F"><span class="toc-number">4.3.3.</span> <span class="toc-text">awk：逐行扫描</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%BA%94%E7%94%A8"><span class="toc-number">4.4.</span> <span class="toc-text">正则表达式应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E6%96%87%E4%BB%B6%E6%AF%94%E8%BE%83"><span class="toc-number">5.1.</span> <span class="toc-text">两文件比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vi%EF%BC%9A%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91"><span class="toc-number">5.2.</span> <span class="toc-text">vi：文本文件编辑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%89%E6%A0%87%E7%A7%BB%E5%8A%A8"><span class="toc-number">5.2.1.</span> <span class="toc-text">光标移动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%AA%E5%88%87%E6%9D%BF%E6%93%8D%E4%BD%9C"><span class="toc-number">5.2.2.</span> <span class="toc-text">剪切板操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%9B%BF%E6%8D%A2"><span class="toc-number">5.2.3.</span> <span class="toc-text">查找与替换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%92%8C%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86"><span class="toc-number">5.2.4.</span> <span class="toc-text">文件管理和目录管理</span></a></li></ol></li></ol></li></ol>
+            </div>
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 22
+        </div>
+        <!-- search  -->
+            <div class="site-search site-search-loading popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+    </div>
+    <div class="post-archive">
+            <div class="archive-year"> 2077 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span>
+            <a class="archive-post-title" href="/2077/07/08/%E6%AD%8C%E5%A1%94/">歌塔</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/07</span>
+            <a class="archive-post-title" href="/2077/07/07/%E5%BC%82%E6%AC%A1%E5%85%83%E7%9A%84%E5%B9%B8%E5%AD%98%E8%80%85/">异次元的幸存者</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span>
+            <a class="archive-post-title" href="/2025/01/31/%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E7%9A%84Python%E5%BA%93/">关于工作中常用的一些操作文件的Python库</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2023/08/18/%E6%AF%9B%E9%9B%A8%E6%98%9F/">毛雨星</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/20</span>
+            <a class="archive-post-title" href="/2023/07/20/%E9%80%9A%E6%81%92%E9%9B%86/">通恒集</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2023/02/21/%E9%9D%A2%E8%AF%95/">面试</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span>
+            <a class="archive-post-title" href="/2022/12/16/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/">新年快乐</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span>
+            <a class="archive-post-title" href="/2022/11/20/%E5%A6%84%E6%83%B3%E5%BD%95%20%E5%A4%96%E7%AF%87%20%E6%A0%B8%E9%85%B8%E6%97%A5%E8%AE%B0/">妄想录 外篇 核酸日记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/19</span>
+            <a class="archive-post-title" href="/2022/09/19/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%B8%80/">妄想录 篇一</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span>
+            <a class="archive-post-title" href="/2022/09/10/%E7%BB%9D%E4%B8%96%E5%94%90%E9%97%A8/">绝世唐门</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2022/08/10/%E5%BE%B7%E5%A1%94/">德塔</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span>
+            <a class="archive-post-title" href="/2022/05/03/%E7%95%AA%E8%8C%84%E6%B1%A4/">番茄汤</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span>
+            <a class="archive-post-title" href="/2022/04/13/%E7%88%86%E7%82%B8%E3%80%81%E5%91%8A%E7%99%BD%E3%80%81%E8%89%BA%E6%9C%AF%E5%AE%B6%E4%B8%8E%E5%A4%A7%E4%BE%BF/">爆炸、告白、艺术家与大便</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2022/04/12/%E6%9D%A8%E5%A4%8F%E7%9A%84%E6%97%A5%E8%AE%B0/">杨夏的日记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2022/04/11/%E4%B8%80%E7%99%BD%E7%9A%84%E5%AE%87%E5%AE%99/">一白的宇宙</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2022/04/07/Linux%E4%BD%9C%E4%B8%9A%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">Linux作业 正则表达式</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/28</span>
+            <a class="archive-post-title" href="/2022/03/28/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%BA%8C/">妄想录 篇二</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span>
+            <a class="archive-post-title" href="/2022/03/27/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Linux学习笔记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span>
+            <a class="archive-post-title" href="/2022/03/17/%E4%BD%BF%E7%94%A8Github%E4%B8%8Ehexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用GitHub与Hexo搭建个人博客</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2022/03/16/HelloWorld/">Hello World</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2020 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span>
+            <a class="archive-post-title" href="/2020/09/03/%E8%9B%87/">蛇</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 1970 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/1970/01/01/%E8%B5%9E%E8%B5%8F/">赞赏</a>
+        </li>
+            </ul>
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+            <span class="sidebar-tag-name" data-tags="呓语">
+                <span class="iconfont-archer">&#xe606;</span>
+                呓语
+            </span>
+            <span class="sidebar-tag-name" data-tags="学习">
+                <span class="iconfont-archer">&#xe606;</span>
+                学习
+            </span>
+            <span class="sidebar-tag-name" data-tags="作业">
+                <span class="iconfont-archer">&#xe606;</span>
+                作业
+            </span>
+            <span class="sidebar-tag-name" data-tags="Linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                Linux
+            </span>
+            <span class="sidebar-tag-name" data-tags="笔记">
+                <span class="iconfont-archer">&#xe606;</span>
+                笔记
+            </span>
+            <span class="sidebar-tag-name" data-tags="随笔">
+                <span class="iconfont-archer">&#xe606;</span>
+                随笔
+            </span>
+            <span class="sidebar-tag-name" data-tags="短篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                短篇
+            </span>
+            <span class="sidebar-tag-name" data-tags="妄想录">
+                <span class="iconfont-archer">&#xe606;</span>
+                妄想录
+            </span>
+            <span class="sidebar-tag-name" data-tags="教程">
+                <span class="iconfont-archer">&#xe606;</span>
+                教程
+            </span>
+            <span class="sidebar-tag-name" data-tags="GitHub">
+                <span class="iconfont-archer">&#xe606;</span>
+                GitHub
+            </span>
+            <span class="sidebar-tag-name" data-tags="Hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                Hexo
+            </span>
+            <span class="sidebar-tag-name" data-tags="小说">
+                <span class="iconfont-archer">&#xe606;</span>
+                小说
+            </span>
+            <span class="sidebar-tag-name" data-tags="Python">
+                <span class="iconfont-archer">&#xe606;</span>
+                Python
+            </span>
+            <span class="sidebar-tag-name" data-tags="长篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                长篇
+            </span>
+            <span class="sidebar-tag-name" data-tags="连载">
+                <span class="iconfont-archer">&#xe606;</span>
+                连载
+            </span>
+            <span class="sidebar-tag-name" data-tags="杂谈">
+                <span class="iconfont-archer">&#xe606;</span>
+                杂谈
+            </span>
+            <span class="sidebar-tag-name" data-tags="通恒集">
+                <span class="iconfont-archer">&#xe606;</span>
+                通恒集
+            </span>
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+        <span class="sidebar-category-name" data-categories="呓语">
+            <span class="iconfont-archer">&#xe60a;</span>
+            呓语
+        </span>
+        <span class="sidebar-category-name" data-categories="学习">
+            <span class="iconfont-archer">&#xe60a;</span>
+            学习
+        </span>
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "http://sherroe.github.io",
+        root: siteMetaRoot,
+        author: "Sherroe Huang"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+        <!-- main func -->
+        <script src="/scripts/main.js"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
+        <!-- algolia -->
+            <div class="site-search site-search-loading">
+    <div class="algolia-popup popup">
+        <div class="algolia-search">
+            <div class="algolia-search-input-icon">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="algolia-search-input" id="algolia-search-input"></div>
+            <div class="popup-btn-close">
+                <i class="iconfont-archer">&#xe609;</i>
+            </div>
+        </div>
+
+        <div class="algolia-results">
+            <div id="algolia-stats" class="algolia-stats"></div>
+            <div id="algolia-hits"></div>
+            <div id="algolia-pagination" class="algolia-pagination"></div>
+        </div>
+    </div>
+</div>
+
+            <script src="/scripts/search.js" async></script>
+        <!-- busuanzi -->
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        <!-- async load share.js -->
+            <script src="/scripts/share.js" async></script>
+        <!-- mermaid -->
+    </body>
+</html>

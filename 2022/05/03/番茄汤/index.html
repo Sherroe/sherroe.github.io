@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
+<!-- keywords -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Sherroe Huang">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Sherroe Huang">
+        <meta name="keywords" content="Sherroe,sherroe,blog,hexo,hexo-theme,hexo-blog">
+    <meta name="description" content="">
+    <meta name="description" content="“最新一期的《番茄汤》还没有货，可能明后天才能送到。” 突然从背后出现的声音把他吓了一跳，手中正在翻阅的杂志也差点滑落。他回过头，才发觉书店的店主正站在身后。 “那好吧，看来只能明天再来一趟了。” “不过您要是对夏虫老师的作品感兴趣的话，在这边有他的短篇作品集。” 店主把一本《夏虫短篇集》从书架中抽出来，书上的塑封包装略显陈旧。 “哦！原来这里也有……不过这本我已经买过了。” “那他的长篇小说您看">
+<meta property="og:type" content="article">
+<meta property="og:title" content="番茄汤">
+<meta property="og:url" content="http://sherroe.github.io/2022/05/03/%E7%95%AA%E8%8C%84%E6%B1%A4/index.html">
+<meta property="og:site_name" content="妄想录">
+<meta property="og:description" content="“最新一期的《番茄汤》还没有货，可能明后天才能送到。” 突然从背后出现的声音把他吓了一跳，手中正在翻阅的杂志也差点滑落。他回过头，才发觉书店的店主正站在身后。 “那好吧，看来只能明天再来一趟了。” “不过您要是对夏虫老师的作品感兴趣的话，在这边有他的短篇作品集。” 店主把一本《夏虫短篇集》从书架中抽出来，书上的塑封包装略显陈旧。 “哦！原来这里也有……不过这本我已经买过了。” “那他的长篇小说您看">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-08-29T15:31:57.481Z">
+<meta property="article:author" content="Sherroe Huang">
+<meta property="article:tag" content="呓语">
+<meta property="article:tag" content="短篇">
+<meta property="article:tag" content="小说">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/img/favicon.png">
+    <title>番茄汤 · 妄想录 | Sherroe&#39;s Blog</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .footer-fixed-btn,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(
+            -45deg,
+            #444 0,
+            #444 80px,
+            #333 80px,
+            #333 160px
+        );
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="/css/dark.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+        <script>
+            var hits = JSON.parse('{"per_page":10}')
+            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
+
+            var algolia = {
+                applicationID: 'GEEDN46CDJ',
+                apiKey: '8d3c584ac83bd68b3e1b07c68e0404e6',
+                indexName: 'Sherroe Huang',
+                hits: hits,
+                labels: labels
+            }
+        </script>
+    <!-- 百度统计  -->
+    <!-- 谷歌统计  -->
+    <!-- Google tag (gtag.js) -->
+<link rel="alternate" href="/atom.xml" title="妄想录" type="application/atom+xml">
+</head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+        <body class="post-body">
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress read-progress-feature"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        <div class="header-sidebar-menu header-sidebar-menu-rounded">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href="/">Sherroe's Blog</a>
+        </span>
+    </div>
+    <!-- toggle banner -->
+    <div class="banner banner-clean">
+        <div class="blog-title header-element">
+            <a href="/">Sherroe&#39;s Blog</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name">番茄汤</a>
+        </div>
+    </div>
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- donate button -->
+
+    <!-- back to top button -->
+    <div class="footer-fixed-btn footer-fixed-btn--hidden footer-fixed-btn--rounded back-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="    height:50vh;
+">
+    <!-- 主页  -->
+    <!-- 404页  -->
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/img/cover.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+                番茄汤
+            <!-- 404 -->
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            <!-- 404 -->
+        </p>
+        <!-- 文章页 meta -->
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                    <div class="post-intro-tags" >
+        <span class="post-category" data-categories="呓语">
+            <i class="fas fa-folder post-category-icon"></i>
+            <span class="post-category-text">
+                呓语
+            </span>
+        </span>
+        <a class="post-tag" href="javascript:void(0);" data-tags="呓语">呓语</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="短篇">短篇</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="小说">小说</a>
+</div>
+
+                <!-- 文章字数统计 -->
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">5.2k</span>阅读时长: <span class="post-count reading-time">17 min</span></span>
+                    </div>
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2022/05/03</span>
+                    <!-- busuanzi -->
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <p>“最新一期的《番茄汤》还没有货，可能明后天才能送到。”</p>
+<p>突然从背后出现的声音把他吓了一跳，手中正在翻阅的杂志也差点滑落。他回过头，才发觉书店的店主正站在身后。</p>
+<p>“那好吧，看来只能明天再来一趟了。”</p>
+<p>“不过您要是对夏虫老师的作品感兴趣的话，在这边有他的短篇作品集。”</p>
+<p>店主把一本《夏虫短篇集》从书架中抽出来，书上的塑封包装略显陈旧。</p>
+<p>“哦！原来这里也有……不过这本我已经买过了。”</p>
+<p>“那他的长篇小说您看过吗？比如这本《五分钟的时差》。”店主又抽出另一本书。</p>
+<p>“这本也算是我最满意的作品了，嗯……是最喜欢的。”</p>
+<p>店主抬起头，与他对视了一秒，眼神中似乎有一丝疑惑。</p>
+<p>他突然觉得自己的话有些别扭。</p>
+<p>短暂的沉默后，他先开了口：“你怎么知道我喜欢夏虫的文章？”</p>
+<p>店主的脸上露出了浅浅的微笑。</p>
+<p>“因为您每次来买《番茄汤》的时候，总是先把书翻到最后几页。一般夏虫老师的文章都在那儿，对吧？”</p>
+<p>他也跟着笑了起来。没想到自己这些习惯性的小动作都被这个书店店主看在眼里。</p>
+<p>“那看来唯独今天没有番茄汤可以品尝了。”他把手中的杂志放回书架，“121期明天就能到货吗？”</p>
+<p>“说不准。其实本来今天就该到了，不过我可以问问出版社那边……您不去其他书店看看吗？”</p>
+<p>“这附近十条街里只有你这一家书店了。”</p>
+<p>​     </p>
+<p>第二天一大早，他便出现在了书店门口。</p>
+<p>“您来的可真早。”店主小姐手里拎着一串钥匙从远处走了过来。</p>
+<p>“原来书店开门这么晚吗？我还以为八九点就会开始营业……”</p>
+<p>“几年前是的。”店主小姐把钥匙插入锁孔，“但近几年客人越来越少了，早上几乎不会有人的……”</p>
+<p>卷闸门打开了。</p>
+<p>店主小姐把钥匙放进自己的手提包里：“我也偷懒，所以……让您见笑了，现在是我几点钟起床就几点钟来开门。”</p>
+<p>她的语气中带着不少俏皮。</p>
+<p>“这家店只有你一个人吗？”</p>
+<p>“是的呢！自己会稍微累一点，但好在不用花钱养员工。”</p>
+<p>完全没必要的提问。他早就知道这家店是她独自经营的了。</p>
+<p>两人走进书店，油墨的香气扑面而来。</p>
+<p>“我昨天问过出版社了，说是最新一刊遇到了点问题，可能还得等一段时间。”</p>
+<p>“是这样吗……那看来不知道要等到什么时候了。”</p>
+<p>“其实平心而论，我觉得《番茄汤》这本杂志——挺一般的。”</p>
+<p>她一边说着，一边打开了书店的灯。</p>
+<p>“怎么讲？”他走到两排书架中，四处打量。</p>
+<p>“自从前年编辑部大换血以后，作品的质量就开始参差不齐了。”</p>
+<p>“嗯，确实……主要是因为有很多常驻的老作者离开了。”</p>
+<p>“对吧？而且美术设计也变差了不少。”</p>
+<p>“美术这方面我倒是没怎么关注过。”</p>
+<p>她从收银柜台内侧拿出了几本书。</p>
+<p>“您今天不忙别的事情吗？”</p>
+<p>“啊……今天是休假。”</p>
+<p>“我猜也是。不然怎么可能大早上的光临小店呢？”她笑了起来，“您看看这个。”</p>
+<p>她将那几本书递到了他的手里。书看起来很旧，扉页的纸张已经泛黄了。</p>
+<p>“是《推理房间》！”他的神情突然激动了起来，“竟然是创刊号……”</p>
+<p>“您也读过这本？”</p>
+<p>“除了创刊号我都读过。”他轻轻地摩挲着手中的书，“这曾经是我最喜欢的推理小说杂志……”</p>
+<p>“只可惜已经停刊了。”</p>
+<p>“是啊。我一直想收集所有的《推理房间》，只是唯独找不到这第一刊。”</p>
+<p>“《推理房间》的发行量一直蛮少的。”</p>
+<p>“这本卖多少钱？”</p>
+<p>“啊？”他的话把她吓了一跳。</p>
+<p>她拿出这本书可不是为了卖的。</p>
+<p>“呃……其实我只是想让你看看他们家的美术设计，就是……跟《番茄汤》做一个对比。”</p>
+<p>“意思是不卖？”</p>
+<p>“毕竟我手里也只有这一本，算是个人收藏吧……”</p>
+<p>她的声音小了很多，似乎有些不好意思。</p>
+<p>“好吧……”他的语气也变得有些失落。“那我可以在这里借读一会儿吗？”</p>
+<p>“这倒是可以。”</p>
+<p>“太感谢了！”</p>
+<p>他的脸上露出笑容。</p>
+<p>​     </p>
+<p>这个十几平米的小书店中并没有为阅读者设立座位，她把收银台后的小凳子借给了他。</p>
+<p>此时已近黄昏，城市的喧嚣逐渐从远方的楼宇上逼近，掠过书店的玻璃大门，向着城中心的商业街呼啸而去。而在这个未曾经受过霓虹灯渲染的小巷中，他与她在一个个黑白铅字中休憩了一整天。</p>
+<p>“我看完了。”</p>
+<p>他把手中的书合起来，小心翼翼地在书脊处用手按压了两下，让它变得更平整一点。</p>
+<p>“真没想到你会在这里坐上这么久……”她接过书，“很久没有见到像你这么认真的人了。”</p>
+<p>“能有朝一日读到《推理房间》的创刊号，感觉人生都完整了不少啊。”</p>
+<p>“哈哈……有这么夸张吗？”</p>
+<p>“人生本就是由一个个愿望和目标组成的。现在完成了其中的一个心愿，这种小小的满足感就是支撑我们继续前进的动力吧。”</p>
+<p>“这句话也是夏虫老师说过的吧？”</p>
+<p>“对对对……是在《番茄汤》89期上的《蓝色漩涡》中女主说的话。”</p>
+<p>“你真的是夏虫老师的铁杆粉丝呢……其实我也一样。”</p>
+<p>他的心脏猛然颤动了一下。</p>
+<p>“只可惜这两天读不到新作品了……”</p>
+<p>“但是——”</p>
+<p>“嗯？”</p>
+<p>他才意识到自己打断了对方的话。</p>
+<p>“我想说的是，你好像还是没有关注我提到的美术设计方面。”</p>
+<p>“啊……大概是吧。我可能只专注于故事了。”</p>
+<p>她重新把那本《推理房间》拿了出来。</p>
+<p>“让故事印刷在纸张上的技巧，也是在为讲述故事服务。一本书，在故事之外往往还有故事。”</p>
+<p>​     </p>
+<p>“包括字体在内，宋体、黑体和楷体依然是最适合用作大段文字排版的字体，即便很多人觉得它们太普通了。而这种看起来很好看的字并不适合铺开长文本，花里胡哨的字形会影响你的阅读，通常读久一点就会觉得辨认困难……”</p>
+<p>两个人就这样坐在书店对面的包子铺中，他听着她说话。他不敢在对方认真讲述的时候动筷子，那样大概显得很不礼貌——但包子确实快要凉了。</p>
+<p>“啊……还是先把书收起来吧，你小心不要让粥撒上去了。”</p>
+<p>但这样又打断了对方的话，似乎更不礼貌了。</p>
+<p>她停下了在书本上挥舞的手指，尴尬地笑了一下。</p>
+<p>“不好意思……我一激动话就会很多。”</p>
+<p>“没事，吃完我可以陪你好好聊聊。”他在小碟中倒着蘸料，“我也一直觉得，读《番茄汤》的时候，那种阅读的流畅感会不如其他书本来得自在。”</p>
+<p>“字体，字号，字距这些文字排版方面都只是最基本的，还有标题和插图这些次要元素的放置以及整篇刊物内容顺序的编排，都是……”</p>
+<p>她喝了一口粥，温热的汤汁浸润了嘴唇。</p>
+<p>“不急不急，吃完慢慢说。”</p>
+<p>包子馅料的香味在舌尖迸射开来。</p>
+<p>​     </p>
+<p>他从未想过，来这里只是为了买一本杂志的自己，竟会和一个刚认识不久的女生共进晚餐。自从大学毕业后，孤身一身在这座城市生活的他已经很久没有与其他人一起吃饭了，甚至也很久没有与人随心所欲地交流这么多话题了。</p>
+<p>这天晚上在他的眼中是浪漫无比的。纵使两个人只是在书店对门的包子铺吃了些包子和粥，纵使晚餐全程的话题只是她在向他讲述美术设计在书籍制作中的重要性——但这一切都是令人享受的。</p>
+<p>他喜欢与她聊天。聊书、聊电影、聊美术、音乐和理想。或许他对这些文艺作品实际上并没有多少独特的认识与见解，他也往往觉得她在自己的表述中时常陷入“为赋新词强说愁”的文青境地，但她的思想真的十分与自己的灵魂契合——至少在接下来一个月的接触中，他是这么认为的。</p>
+<p>他也曾在今后的日子里无数次地回忆这段最初的时光。</p>
+<p>​     </p>
+<p>“叙述性诡计这种手法，如果用好了的话一定可以成为佳作，但实际上大部分人都用不好。”</p>
+<p>此刻，他和她正在咖啡厅中聊天，而他又把话题带到了自己最喜欢的推理小说上。</p>
+<p>“我记得夏虫老师小说中也用过这种手法吧？”</p>
+<p>“你是说《玛丽庄园枪声》吧？很早以前的作品了。那本不太行……大概是夏虫在学生时代写的，整体上都是在模仿阿加莎的《罗杰疑案》。”</p>
+<p>“《罗杰疑案》我还没有读过……不过我倒是很喜欢东野圭吾的《恶意》。”</p>
+<p>“我就猜你会提到东野圭吾。”</p>
+<p>“毕竟是大家的‘畅销君’呢。”</p>
+<p>她把手中的咖啡杯放在了盘子上，饶有兴致地听着对方的侃侃而谈。</p>
+<p>“很多人不看好东野圭吾，觉得他不能算作本格推理作家。但我觉得这些评价多少带了些个人情绪在里面。”</p>
+<p>“怎么说？”</p>
+<p>“其实大部分人只是喜欢逆潮流罢了。他们觉得东野的作品太火了，而去推崇一些小众的作家更能彰显自己的认知与阅历……”</p>
+<p>“推理类的小说本身就不够大众吧。”</p>
+<p>“像阿加莎和奎因，在大家眼里才能算作正宗的本格推理作家。”</p>
+<p>“啊……但这二位还算小众吗？”</p>
+<p>“不不不，不是小众……我只是说，很多人喜欢拿东野和他们去比，然后得出结论……”</p>
+<p>“可是我觉得，你的评价才是带了些个人情绪进去。”</p>
+<p>听到这句话的他刚咽下一口咖啡，差点被呛住。</p>
+<p>“为什么？”</p>
+<p>“你看，你脱离了作品和作者本身，而是分析起了读者的问题。你的结论是——有些人不喜欢东野的书，只是因为他们不喜欢太热门的作品。”</p>
+<p>“并不完全是这个意思，我只是说这是一种可能的原因……而且我是在探寻问题的本质。”</p>
+<p>“但我们是在讨论东野圭吾，不是吗？”她微笑着。</p>
+<p>他一瞬间不知道该说些什么，稍稍有点焦躁地把弄着咖啡勺。</p>
+<p>她也察觉到了对方的情绪，便想转移开话题：“不过为什么一定要将东野限定为‘本格推理作家’呢？”</p>
+<p>“也是，其他体裁的作品也有很多。”</p>
+<p>“我最喜欢的还是《白夜行》。”</p>
+<p>“嗯……是经常被称作‘代表作’的小说。”</p>
+<p>“就好比在这本书里，比起推理和悬疑，男女主凄美的爱情才是真正的主题。”</p>
+<p>“是这样的，但我也时常思考……他们的关系，仅仅是‘爱情’吗？”</p>
+<p>“那是什么？”</p>
+<p>“显然是一种超出普通爱情的，建立在生命高度上的，一种互相依靠、互相扶持、互相……嗯……互相救赎的关系。”</p>
+<p>“那不还是可以算作爱情吗？”</p>
+<p>“对，但我的意思是——这种相濡以沫的感情，已经不是通俗的爱情所能比拟的。”</p>
+<p>不知为何，她笑了起来。</p>
+<p>“你有谈过恋爱吗？”</p>
+<p>“啊？”</p>
+<p>突如其来的提问，让他吓了一跳。</p>
+<p>“有吗？我似乎也从来没听说过你提起女朋友……现在是单身？”</p>
+<p>“呃，是单身。”</p>
+<p>“那以前有过吗？”</p>
+<p>“上大学的时候谈过一个……”</p>
+<p>他努力回忆着大学期间那位前女友的相貌，但似乎很模糊。日子已经过去很久了，而且这段感情持续的时间非常短，并未在他的脑海中留下多么深刻的印象。</p>
+<p>她没有继续说话，慢慢地嘬了一口咖啡。</p>
+<p>“为什么突然问这个？”他感觉自己现在非常尴尬。</p>
+<p>“我觉得你对‘爱情’的看法，和夏虫老师真的很像。”</p>
+<p>“啊……或许就是看了太多他的书导致的。”</p>
+<p>“仅仅是‘看了’吗？”</p>
+<p>“什么意思？”</p>
+<p>他看着对方的眼睛，疑惑的神情中带着一丝丝惊讶。</p>
+<p>“没什么意思，随便问问。”</p>
+<p>她扭头看向了窗外，一对男女正从咖啡厅门口走过。即便在繁华的商业街，这家咖啡厅的周围却非常安静，只能偶尔听到一两声树上的蝉鸣。</p>
+<p>今天是他第一次约她出来玩。准确地说——是第一次约到离书店比较远的地方一起吃饭，还顺便去了咖啡厅聊天。他觉得这是向前迈出的很好的一步。</p>
+<p>“天快黑了，我们回去吧？”</p>
+<p>​     </p>
+<p>他和她并肩沿着河边的小路行走。</p>
+<p>这段路本该是坐公交车或者打车回去的，但不知为何，两个人都没有提这件事，似乎很默契地一同选择了步行。</p>
+<p>天色已经完全陷入了黑暗，城市的天空看不到几颗星星，只有月亮孤独地在夜里沉思。</p>
+<p>他和她继续并肩沿着河边的小路行走。</p>
+<p>周围格外安静，没有行人。除了偶尔在几十米外呼啸而过的车流，就只有潺潺水声与风声在河边萦绕。</p>
+<p>两个人都没有说话，只是在这静谧的夜中步行。</p>
+<p>他的心跳在逐渐加速。</p>
+<p>​     </p>
+<p>他已经记不清是从什么时候开始察觉到了自己的情感。或许这是一个渐进的过程？他说不清。</p>
+<p>但是他很清楚，在今晚，情感的积累已经快要触及到了顶端。</p>
+<p>他喜欢她。</p>
+<p>在今天出门之前，他并未打算告白，他觉得两人的关系还需要慢慢发展。</p>
+<p>但在几个小时之前，他和她聊到了《白夜行》，聊到了“爱情”，她还问了自己有没有女朋友。</p>
+<p>——这算是暗示吗？</p>
+<p>他不想猜，他只想尽快确认。</p>
+<p>他不知道自己为什么会在没有任何准备的情况下突然告白，自己的理性告诉他本不该这样。</p>
+<p>但在今晚，在这个被月光温柔抚摸的河边，他内心热烈躁动的荷尔蒙再也按耐不住了。</p>
+<p>就当一切都是月亮怂恿他去做的吧。</p>
+<p>​     </p>
+<p>“为什么《白夜行》会叫做“白夜行”呢？”</p>
+<p>“嗯？”</p>
+<p>他找了一个不太合适的，但可以延续之前话题的切入点。</p>
+<p>“男女主在夜中徘徊——这夜本是无比黑暗的。”</p>
+<p>“小说的基调确实是这样。”</p>
+<p>她附和着，似乎有些漫不经心。</p>
+<p>“但所谓‘白夜’，大概就是意味着——男女主互相成为了对方的光，照亮了黑夜？”</p>
+<p>“很浪漫的解读呢。”</p>
+<p>“我迄今为止的人生就像这片夜一样黑暗。”</p>
+<p>他停下了脚步。</p>
+<p>她转过身看着他，眼睛微微睁大。</p>
+<p>“但我遇到了你。在这个无聊而荒唐的世界，有人会和我一样喜欢夏虫的书，会不厌其烦地和我聊各种事情，会……陪着我。”</p>
+<p>他的脸红得发烫。但所幸周围没有灯光，不会被她看见。</p>
+<p>她低下了头，一言不发。他看不到她的表情。</p>
+<p>“我已经意识到了，你就是照亮我的月光，让我的黑夜变成了白夜。”</p>
+<p>“你……”她咬着嘴唇，吐字不清。</p>
+<p>“我喜欢你。如果可以的话，我希望能够得到一个回应。”</p>
+<p>……</p>
+<p>时间仿佛凝固了。</p>
+<p>他瞬间觉得这几句告白太过于朴素和直接了，简直对不起和自己聊过那么多文学作品的她。</p>
+<p>但这一切都不重要了，他现在只是期待着一份回应。</p>
+<p>​     </p>
+<p>她率先打破了沉默，语气异常轻松。</p>
+<p>“我还以为你会弯弯绕绕地说出来呢，像什么‘月色真美’之类的……”</p>
+<p>“嗯……也不是不可以，如果你想听的话。”</p>
+<p>她“噗”地一声笑了出来。</p>
+<p>“那你再说一遍？用更文艺的方式表达一下？”</p>
+<p>他感觉自己在被对方戏弄，便做出反击：“那你可以先用文艺的方式做一个回应吗？”</p>
+<p>“好呀，让我想想……”她把双手抱在胸前，“不如就说——孤独的孩子在黑暗中寻找着光明……当他找到光的时候，才意识到自己原来也是光，被照耀的同时，也照耀了别人。”</p>
+<p>“感觉有点老套。”</p>
+<p>“你讲的那几句更老套吧！”</p>
+<p>他也笑了起来。</p>
+<p>风吹过，河岸边柳树的枝叶沙沙作响。</p>
+<p>月亮一如既往的宁静。</p>
+<p>​     </p>
+<p>故事似乎就是这么简单。</p>
+<p>故事如果这么简单就好了。</p>
+<p>很多年以后，他依然会觉得那天晚上的告白显得十分不尽人意，拿《白夜行》作引子并不是一个很好的选项。他和她并没有经历过男女主角那般刻骨铭心的事件，有的只是平平淡淡的生活与简简单单的快乐。</p>
+<p>但那又怎样呢？柳絮每年都会飘落在河岸上，风一吹，飞得到处都是。</p>
+<p>《番茄汤》每半个月都会按时发售新的一刊，他也不用专门跑去书店购买了。</p>
+<p>​     </p>
+<hr>
+<p>​     </p>
+<p>“这是什么？爱情小故事？你的自传？”</p>
+<p>《番茄汤》的编辑一只手拿着我的稿子，另一只手掐灭了烟头。</p>
+<p>“差不多吧，但也不能算自传。”</p>
+<p>“为啥完全没有一丁点悬疑要素啊？读者们可都等着你的新案件呢。”</p>
+<p>“我……也想偶尔换换口味嘛，整天写悬疑推理，脑细胞都快死光了。”</p>
+<p>“意思是江郎才尽咯？”</p>
+<p>编辑满口烟味，令我十分反感。</p>
+<p>“你爱怎么想就怎么想。反正这个月的稿子就只有这篇了……我最近状态确实不是很好。”</p>
+<p>“你要是想转型去写言情的话，比你优秀的作者可多了去了。”编辑把我的稿子随手扔到了桌子上。</p>
+<p>“那就去找比我优秀的作者吧。如果贵社也想早点转型成地摊文学集的话。”</p>
+<p>“哈哈哈……”编辑笑了起来，“那可不行，我们这个小小的杂志社还是得仰仗夏虫老师撑腰呢。”</p>
+<p>“你们随意，我先告辞了。”</p>
+<p>我转身离开了办公室，实在是不想和这种人多说话。</p>
+<p>但我还是听到了背后的议论声。</p>
+<p>“夏虫他最近怎么了？”</p>
+<p>“追女孩子失败，抑郁了呗……还写这种意淫的玩意，真的是……”</p>
+<p>……</p>
+<p>​     </p>
+<p>我有点生气，但也懒得多嘴。</p>
+<p>毕竟这确实是我的问题。</p>
+<p>离开番茄汤杂志社，我没有直接回出租屋，而是又走到了那条曾经飘着书香的小巷。</p>
+<p>半年前，书店因为经营不善关门了，自那以后我再也没有见过她。</p>
+<p>临别的时候，她把那本《推理房间》的创刊号送给了我，说是为了感谢我对书店的照顾。</p>
+<p>原来的书店变成了一家奶茶店。奶茶店的招牌风格鲜艳可爱，看样子会很受年轻人欢迎。</p>
+<p>街对面的包子铺依旧生意兴隆。</p>
+<p>我去点了一笼包子和一碗粥，白米粥伴着泪水咽下，味道有些发酸，有些发咸。</p>
+<p>我的耳边又出现了她的声音——</p>
+<p>“一本书，在故事之外往往还有故事。”</p>
+<p>​     </p>
+<blockquote>
+<p>此文刊登于《番茄汤》第158期</p>
+<p>夏虫</p>
+</blockquote>
+
+    </article>
+    <!-- license -->
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2022/08/10/%E5%BE%B7%E5%A1%94/" title="德塔">
+                    <div class="nextTitle">德塔</div>
+                </a>
+        </li>
+        <li class="previous">
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2022/04/13/%E7%88%86%E7%82%B8%E3%80%81%E5%91%8A%E7%99%BD%E3%80%81%E8%89%BA%E6%9C%AF%E5%AE%B6%E4%B8%8E%E5%A4%A7%E4%BE%BF/" title="爆炸、告白、艺术家与大便">
+                    <div class="prevTitle">爆炸、告白、艺术家与大便</div>
+                </a>
+        </li>
+    </ul>
+    <!-- comment -->
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+            
+            
+            
+            <!-- utteranc评论 -->
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+            
+            
+                <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+    <link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet' />
+    <div id="comment"></div>
+    <script>
+    Waline.init({
+        el: '#comment' ,
+        serverURL: "https://blog-api-48sc2v2e6-sherroe.vercel.app",
+        locale: {
+            placeholder: "讲两句"
+        },
+        login: ""
+    });
+    </script>
+
+        </div>
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    <!-- Mathjax -->
+</main>
+
+                <!-- profile -->
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+        <div class="social">
+                            <a href="mailto:sherroe@163.com" class="iconfont-archer email" title="email" ></a>
+                <a href="//github.com/Sherroe" class="iconfont-archer github" target="_blank" title="github"></a>
+                <a href="//twitter.com/Sherroe_XD" class="iconfont-archer twitter" target="_blank" title="twitter"></a>
+                <a href="//space.bilibili.com/57427709" class="iconfont-archer bilibili" target="_blank" title="bilibili"></a>
+                <a href="//weibo.com/u/5992045682" class="iconfont-archer weibo" target="_blank" title="weibo"></a>
+
+        </div>
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+        <div class="website-approve">
+        </div>
+    <!-- 不蒜子  -->
+        <div class="busuanzi-container">
+                <span id="busuanzi_container_site_pv">访问量: <span id="busuanzi_value_site_pv"></span> ——也许实际上并没有这么多？</span>
+        </div>
+</footer>
+
+        </div>
+        <!-- toc -->
+            <div class="toc-wrapper toc-wrapper-loding" style=    top:50vh;
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                
+            </div>
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 22
+        </div>
+        <!-- search  -->
+            <div class="site-search site-search-loading popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+    </div>
+    <div class="post-archive">
+            <div class="archive-year"> 2077 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span>
+            <a class="archive-post-title" href="/2077/07/08/%E6%AD%8C%E5%A1%94/">歌塔</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/07</span>
+            <a class="archive-post-title" href="/2077/07/07/%E5%BC%82%E6%AC%A1%E5%85%83%E7%9A%84%E5%B9%B8%E5%AD%98%E8%80%85/">异次元的幸存者</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span>
+            <a class="archive-post-title" href="/2025/01/31/%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E7%9A%84Python%E5%BA%93/">关于工作中常用的一些操作文件的Python库</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2023/08/18/%E6%AF%9B%E9%9B%A8%E6%98%9F/">毛雨星</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/20</span>
+            <a class="archive-post-title" href="/2023/07/20/%E9%80%9A%E6%81%92%E9%9B%86/">通恒集</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2023/02/21/%E9%9D%A2%E8%AF%95/">面试</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span>
+            <a class="archive-post-title" href="/2022/12/16/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/">新年快乐</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span>
+            <a class="archive-post-title" href="/2022/11/20/%E5%A6%84%E6%83%B3%E5%BD%95%20%E5%A4%96%E7%AF%87%20%E6%A0%B8%E9%85%B8%E6%97%A5%E8%AE%B0/">妄想录 外篇 核酸日记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/19</span>
+            <a class="archive-post-title" href="/2022/09/19/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%B8%80/">妄想录 篇一</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span>
+            <a class="archive-post-title" href="/2022/09/10/%E7%BB%9D%E4%B8%96%E5%94%90%E9%97%A8/">绝世唐门</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2022/08/10/%E5%BE%B7%E5%A1%94/">德塔</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span>
+            <a class="archive-post-title" href="/2022/05/03/%E7%95%AA%E8%8C%84%E6%B1%A4/">番茄汤</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span>
+            <a class="archive-post-title" href="/2022/04/13/%E7%88%86%E7%82%B8%E3%80%81%E5%91%8A%E7%99%BD%E3%80%81%E8%89%BA%E6%9C%AF%E5%AE%B6%E4%B8%8E%E5%A4%A7%E4%BE%BF/">爆炸、告白、艺术家与大便</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2022/04/12/%E6%9D%A8%E5%A4%8F%E7%9A%84%E6%97%A5%E8%AE%B0/">杨夏的日记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2022/04/11/%E4%B8%80%E7%99%BD%E7%9A%84%E5%AE%87%E5%AE%99/">一白的宇宙</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2022/04/07/Linux%E4%BD%9C%E4%B8%9A%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">Linux作业 正则表达式</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/28</span>
+            <a class="archive-post-title" href="/2022/03/28/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%BA%8C/">妄想录 篇二</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span>
+            <a class="archive-post-title" href="/2022/03/27/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Linux学习笔记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span>
+            <a class="archive-post-title" href="/2022/03/17/%E4%BD%BF%E7%94%A8Github%E4%B8%8Ehexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用GitHub与Hexo搭建个人博客</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2022/03/16/HelloWorld/">Hello World</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2020 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span>
+            <a class="archive-post-title" href="/2020/09/03/%E8%9B%87/">蛇</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 1970 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/1970/01/01/%E8%B5%9E%E8%B5%8F/">赞赏</a>
+        </li>
+            </ul>
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+            <span class="sidebar-tag-name" data-tags="呓语">
+                <span class="iconfont-archer">&#xe606;</span>
+                呓语
+            </span>
+            <span class="sidebar-tag-name" data-tags="学习">
+                <span class="iconfont-archer">&#xe606;</span>
+                学习
+            </span>
+            <span class="sidebar-tag-name" data-tags="作业">
+                <span class="iconfont-archer">&#xe606;</span>
+                作业
+            </span>
+            <span class="sidebar-tag-name" data-tags="Linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                Linux
+            </span>
+            <span class="sidebar-tag-name" data-tags="笔记">
+                <span class="iconfont-archer">&#xe606;</span>
+                笔记
+            </span>
+            <span class="sidebar-tag-name" data-tags="随笔">
+                <span class="iconfont-archer">&#xe606;</span>
+                随笔
+            </span>
+            <span class="sidebar-tag-name" data-tags="短篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                短篇
+            </span>
+            <span class="sidebar-tag-name" data-tags="妄想录">
+                <span class="iconfont-archer">&#xe606;</span>
+                妄想录
+            </span>
+            <span class="sidebar-tag-name" data-tags="教程">
+                <span class="iconfont-archer">&#xe606;</span>
+                教程
+            </span>
+            <span class="sidebar-tag-name" data-tags="GitHub">
+                <span class="iconfont-archer">&#xe606;</span>
+                GitHub
+            </span>
+            <span class="sidebar-tag-name" data-tags="Hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                Hexo
+            </span>
+            <span class="sidebar-tag-name" data-tags="小说">
+                <span class="iconfont-archer">&#xe606;</span>
+                小说
+            </span>
+            <span class="sidebar-tag-name" data-tags="Python">
+                <span class="iconfont-archer">&#xe606;</span>
+                Python
+            </span>
+            <span class="sidebar-tag-name" data-tags="长篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                长篇
+            </span>
+            <span class="sidebar-tag-name" data-tags="连载">
+                <span class="iconfont-archer">&#xe606;</span>
+                连载
+            </span>
+            <span class="sidebar-tag-name" data-tags="杂谈">
+                <span class="iconfont-archer">&#xe606;</span>
+                杂谈
+            </span>
+            <span class="sidebar-tag-name" data-tags="通恒集">
+                <span class="iconfont-archer">&#xe606;</span>
+                通恒集
+            </span>
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+        <span class="sidebar-category-name" data-categories="呓语">
+            <span class="iconfont-archer">&#xe60a;</span>
+            呓语
+        </span>
+        <span class="sidebar-category-name" data-categories="学习">
+            <span class="iconfont-archer">&#xe60a;</span>
+            学习
+        </span>
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "http://sherroe.github.io",
+        root: siteMetaRoot,
+        author: "Sherroe Huang"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+        <!-- main func -->
+        <script src="/scripts/main.js"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
+        <!-- algolia -->
+            <div class="site-search site-search-loading">
+    <div class="algolia-popup popup">
+        <div class="algolia-search">
+            <div class="algolia-search-input-icon">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="algolia-search-input" id="algolia-search-input"></div>
+            <div class="popup-btn-close">
+                <i class="iconfont-archer">&#xe609;</i>
+            </div>
+        </div>
+
+        <div class="algolia-results">
+            <div id="algolia-stats" class="algolia-stats"></div>
+            <div id="algolia-hits"></div>
+            <div id="algolia-pagination" class="algolia-pagination"></div>
+        </div>
+    </div>
+</div>
+
+            <script src="/scripts/search.js" async></script>
+        <!-- busuanzi -->
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        <!-- async load share.js -->
+            <script src="/scripts/share.js" async></script>
+        <!-- mermaid -->
+    </body>
+</html>

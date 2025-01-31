@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
+<!-- keywords -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Sherroe Huang">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Sherroe Huang">
+        <meta name="keywords" content="Sherroe,sherroe,blog,hexo,hexo-theme,hexo-blog">
+    <meta name="description" content="">
+    <meta name="description" content="——关于《再见绘梨》与我所知的一切 ​       关于本文的阅读提示： 0. 本文含有大量剧透内容，强烈建议在阅读本文前反复认真欣赏藤本树短篇漫画《再见绘梨》。 1. 本文所叙述的内容包含了大量笔者的主观评价与个人论断。 2. 如果在阅读本文的过程中产生任何生理上的不适感，请立刻停止阅读，并向医生寻求帮助。 3. 藤本树，我的超人，精神病人，永远的神明。 4. ？ 7. 爆炸爆炸爆炸爆炸爆炸爆炸">
+<meta property="og:type" content="article">
+<meta property="og:title" content="爆炸、告白、艺术家与大便">
+<meta property="og:url" content="http://sherroe.github.io/2022/04/13/%E7%88%86%E7%82%B8%E3%80%81%E5%91%8A%E7%99%BD%E3%80%81%E8%89%BA%E6%9C%AF%E5%AE%B6%E4%B8%8E%E5%A4%A7%E4%BE%BF/index.html">
+<meta property="og:site_name" content="妄想录">
+<meta property="og:description" content="——关于《再见绘梨》与我所知的一切 ​       关于本文的阅读提示： 0. 本文含有大量剧透内容，强烈建议在阅读本文前反复认真欣赏藤本树短篇漫画《再见绘梨》。 1. 本文所叙述的内容包含了大量笔者的主观评价与个人论断。 2. 如果在阅读本文的过程中产生任何生理上的不适感，请立刻停止阅读，并向医生寻求帮助。 3. 藤本树，我的超人，精神病人，永远的神明。 4. ？ 7. 爆炸爆炸爆炸爆炸爆炸爆炸">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/01.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/02.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/03.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/04.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/05.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/06.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/07.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/08.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/09.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/10.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/11.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/12.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/13.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/14.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/15.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/16.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/17.png">
+<meta property="og:image" content="http://sherroe.github.io/images/tengbenshu/18.png">
+<meta property="article:published_time" content="2022-04-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-03T10:04:04.853Z">
+<meta property="article:author" content="Sherroe Huang">
+<meta property="article:tag" content="呓语">
+<meta property="article:tag" content="杂谈">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://sherroe.github.io/images/tengbenshu/01.png">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/img/favicon.png">
+    <title>爆炸、告白、艺术家与大便 · 妄想录 | Sherroe&#39;s Blog</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .footer-fixed-btn,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(
+            -45deg,
+            #444 0,
+            #444 80px,
+            #333 80px,
+            #333 160px
+        );
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="/css/dark.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+        <script>
+            var hits = JSON.parse('{"per_page":10}')
+            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
+
+            var algolia = {
+                applicationID: 'GEEDN46CDJ',
+                apiKey: '8d3c584ac83bd68b3e1b07c68e0404e6',
+                indexName: 'Sherroe Huang',
+                hits: hits,
+                labels: labels
+            }
+        </script>
+    <!-- 百度统计  -->
+    <!-- 谷歌统计  -->
+    <!-- Google tag (gtag.js) -->
+<link rel="alternate" href="/atom.xml" title="妄想录" type="application/atom+xml">
+</head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+        <body class="post-body">
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress read-progress-feature"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        <div class="header-sidebar-menu header-sidebar-menu-rounded">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href="/">Sherroe's Blog</a>
+        </span>
+    </div>
+    <!-- toggle banner -->
+    <div class="banner banner-clean">
+        <div class="blog-title header-element">
+            <a href="/">Sherroe&#39;s Blog</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name">爆炸、告白、艺术家与大便</a>
+        </div>
+    </div>
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- donate button -->
+
+    <!-- back to top button -->
+    <div class="footer-fixed-btn footer-fixed-btn--hidden footer-fixed-btn--rounded back-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="    height:50vh;
+">
+    <!-- 主页  -->
+    <!-- 404页  -->
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/img/cover.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+                爆炸、告白、艺术家与大便
+            <!-- 404 -->
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            <!-- 404 -->
+        </p>
+        <!-- 文章页 meta -->
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                    <div class="post-intro-tags" >
+        <span class="post-category" data-categories="呓语">
+            <i class="fas fa-folder post-category-icon"></i>
+            <span class="post-category-text">
+                呓语
+            </span>
+        </span>
+        <a class="post-tag" href="javascript:void(0);" data-tags="呓语">呓语</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="杂谈">杂谈</a>
+</div>
+
+                <!-- 文章字数统计 -->
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">3.9k</span>阅读时长: <span class="post-count reading-time">12 min</span></span>
+                    </div>
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2022/04/13</span>
+                    <!-- busuanzi -->
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <p>——<strong>关于《再见绘梨》与我所知的一切</strong></p>
+<p>​     </p>
+<blockquote>
+<p><strong>关于本文的阅读提示：</strong></p>
+<p><strong>0.</strong> 本文含有大量剧透内容，强烈建议在阅读本文前反复认真欣赏藤本树短篇漫画《再见绘梨》。</p>
+<p><strong>1.</strong> 本文所叙述的内容包含了大量笔者的主观评价与个人论断。</p>
+<p><strong>2.</strong> 如果在阅读本文的过程中产生任何生理上的不适感，请立刻停止阅读，并向医生寻求帮助。</p>
+<p><strong>3.</strong> 藤本树，我的超人，精神病人，永远的神明。</p>
+<p><strong>4.</strong> ？</p>
+<p><strong>7.</strong> 爆炸爆炸爆炸爆炸爆炸爆炸爆炸爆炸爆炸爆炸爆炸爆炸爆炸爆炸</p>
+</blockquote>
+<p>​    </p>
+<p><em>“创作就是深入作品受众的内心问题，让他们大哭或者大笑。如果作者不受到相应的伤害，岂不是很不公平？”</em></p>
+<p>电影的台词如是说，拍电影的人如是说；漫画的文本如是说，漫画家如是说。</p>
+<p><img src="/images/tengbenshu/01.png" alt="01"></p>
+<h2 id="爆炸"><a href="#爆炸" class="headerlink" title="爆炸"></a>爆炸</h2><p>全作的开篇，一切之起始——便是年轻的电影艺术家伊藤优太为他的母亲所拍摄的亲情电影纪录片——《爆亡吾母》</p>
+<p>母亲罹患重病，即将撒手人寰。唯一的儿子用手机镜头为她记录下每天的生活，直到母亲去世的那一刻——</p>
+<p>那一刻——</p>
+<p>那一刻，<strong>医院爆炸了。</strong></p>
+<p>？</p>
+<p>仿佛是在一家人其乐融融地吃饭时突然把筷子扔出窗外一般；</p>
+<p>仿佛是在恋人热情地接吻时突然把口中的呕吐物送到对方嘴里一般；</p>
+<p>仿佛是在卫生间畅快地排泄时突然低头开始喝起马桶水一般——</p>
+<p>医院爆炸了。</p>
+<p>不知所云的剧情，毫无逻辑的转折，莫名其妙的结尾。</p>
+<p>医院爆炸了。</p>
+<p>学校文化节的放映现场，也爆炸了。</p>
+<p>伊藤优太的艺术家人生，也爆炸了。</p>
+<p><img src="/images/tengbenshu/02.png" alt="02"></p>
+<p>同样地，在漫画的最后，爆炸又一次发生了。</p>
+<p>多年后，当主人公优太再度与绘梨重逢，听对方娓娓道来作为吸血鬼的人生的时候——当绘梨邀请优太坐下来继续观看电影的时候——当读者看到了一个参杂着悲剧的寿命论但此刻依然浪漫无比的画面的时候——</p>
+<p><strong>房子爆炸了。</strong></p>
+<p>缺一抹奇幻的色彩？</p>
+<p>奇幻的色彩已经被渲染得淋漓尽致。</p>
+<p>两次好莱坞式的，主人公帅气背对爆炸的大场面镜头，更为这混沌而抽象的奇幻色彩多添了一笔灰色的幽默感。</p>
+<p><img src="/images/tengbenshu/03.png" alt="03"></p>
+<p>为什么会爆炸？</p>
+<p>简单地归结，那便是主人公优太（同时也是作者藤本树本人）与常人不同的极端跳跃性思维。</p>
+<p>一个稀松平常的悲情故事大家已经看过太多遍了。如果你想搞点不一样的，那么便可以在这温馨的气氛与情感逐渐积累并推向顶峰的时刻，突然插入一个诡异的结尾。这个结尾生硬地打断了故事的高潮，让本来发展平稳的剧情路线失足掉下悬崖。</p>
+<p>这种突如其来的变化，反而是在另一个层面上的绝妙笔法——它让这个故事自身的剧情变得稀烂，带来的则是创作者<strong>在叙事手法上的高潮</strong>。</p>
+<p>伊藤优太创作了这样一个荒诞的电影，藤本树创作了这样一个荒诞的漫画。</p>
+<p>​     </p>
+<p>那么自然会有不服气的读者在此开始诘问：这有什么意义？</p>
+<p>那便是<strong>没有意义</strong>。</p>
+<p>正是因为没有意义，这“无意义”的举措本身才能成为如此处理故事结局的意义。</p>
+<p>正如前文所说，故事的剧情因这爆炸而变得稀烂，但呈现这个故事的载体——这部电影，或是这篇漫画本身，却因此而成就了一种抽象且畸形的美感。</p>
+<p>伊藤优太，或者说藤本树，便热衷于欣赏、创作这样的美感。</p>
+<p>​     </p>
+<hr>
+<p>​     </p>
+<h2 id="死亡"><a href="#死亡" class="headerlink" title="死亡"></a>死亡</h2><p><strong>死亡</strong>，在整篇漫画中频繁地出现。母亲的死亡、绘梨的死亡、父亲与妻女的死亡——优太身边的所有的人都死了，而他本人也曾两次试图自杀。优太所创作的两部电影，也都是以记录死亡为主题的。</p>
+<p>但通篇看下来，读者似乎很少感受到死亡的沉重。纵使这篇漫画使用了大量篇幅来描绘母亲和绘梨的重症，并花费大量笔墨渲染亲近之人的逝去给优太带来的影响——但这些“死亡”中大部分所表现出的感情依然非常虚浮，仿佛爆炸时扬起的尘埃一般转瞬即逝——母亲的死亡在医院的爆炸中变成了一个玩笑；父亲和妻女的死亡则是在优太的自述中一笔带过；优太的两次自杀也都在两次遇见绘梨后放弃了。</p>
+<p>除了其中一处——</p>
+<p>当学校文化节的大荧幕播放出绘梨在病床上的最后一句话时。</p>
+<p><img src="/images/tengbenshu/04.png" alt="04"></p>
+<p>说真的，看到这里时，我哭了。在这个如此荒唐的，角色的死亡如同儿戏一般的漫画中，这一幕真的表现出了生死两隔时的落寞感。</p>
+<p>此时能够调动读者的情绪，所依靠的正是前文对绘梨与优太快乐玩耍、在病房中依然讨论电影拍摄等大量生活细节的描绘。尤其是这部电影所传递的内核——死亡真正来临的时刻，恰是两人的电影杀青的时刻，而这一切的记录便是电影本身。</p>
+<p>同时，这个正常的感情流露的结尾也与优太的第一部电影——《爆亡吾母》的荒唐结局形成强烈反差。</p>
+<p>这一次，优太并没有让医院爆炸。</p>
+<p>因为只有绘梨，让优太注入了真正的感情。</p>
+<p><img src="/images/tengbenshu/05.png" alt="05"></p>
+<p><strong>但绘梨觉得，这依然缺一抹奇幻的色彩。</strong></p>
+<p>​     </p>
+<hr>
+<p>​     </p>
+<h2 id="漫画之中是电影，电影之中是人生"><a href="#漫画之中是电影，电影之中是人生" class="headerlink" title="漫画之中是电影，电影之中是人生"></a>漫画之中是电影，电影之中是人生</h2><p>优太的电影，比起“电影”更应该称之为“纪录片”。因为其中绝大部分的记录都不是虚构的角色和提前编写好的剧本，而是真实的人与事。但在真实之中依然穿插着不少虚构成分——母亲与绘梨因重病而死亡是真，但二位角色的形象则在可以剪辑的镜头中被美化了。</p>
+<p><img src="/images/tengbenshu/06.png" alt="06"></p>
+<p>电影拍摄的是死者，观看电影的却是生者。死者通过镜头记录自己，继而将镜头记录下的这一面展现给生者——<strong>电影记录成什么样，他在死后便是什么样。</strong></p>
+<p>一个人有两次死亡，一次是他停止呼吸时，另一次则是这个世界上没有人记得他时。</p>
+<p>而被优太的电影所记录下的两位死者，永远以电影的形式活在了世上。</p>
+<p>虽然，关于两位死者的<strong>“群体记忆”</strong>已经被电影所改变了。</p>
+<p><img src="/images/tengbenshu/07.png" alt="07"></p>
+<p><strong>人们对历史的记录，不也是如此吗？</strong></p>
+<p>​     </p>
+<p>在另一处，优太拍电影时给绘梨虚构了一个“吸血鬼”的角色形象，对应着最后绘梨阐明自己确实是真正的“吸血鬼”——虚构与现实交织在了一起。如此奇妙的转折，也正是作者对剧情精妙构思的体现。</p>
+<p><img src="/images/tengbenshu/08.png" alt="08"></p>
+<p>​     </p>
+<hr>
+<p>​     </p>
+<h2 id="是漫画的分镜，也是电影的镜头"><a href="#是漫画的分镜，也是电影的镜头" class="headerlink" title="是漫画的分镜，也是电影的镜头"></a>是漫画的分镜，也是电影的镜头</h2><p>说到分镜，一向以别出心裁的漫画分镜设计而闻名的藤本树似乎在“摆烂”：整篇漫画的格子分配全部都是平均分割，无一例外——每页四个整齐排列的等宽格子，或两个等宽格子，或单页。这样的格子分配简直不像是出自专业的传统漫画家之手，反而像某个移动阅读时代的网络条漫的偷懒作风——但这显然是故意的。</p>
+<p><img src="/images/tengbenshu/09.png" alt="09"></p>
+<p>此篇漫画以手机录像的视角开场，并在全篇中大量使用录像的镜头来直接作为漫画的分镜。这便是如此设计分格的用意——优太的故事从手机录像开始，优太的生活通过手机录像记录，而这些记录便被直接安置在漫画中。</p>
+<p>漫画的格子讲述着优太的故事，优太用录像记录着自己与亲近之人的故事——它们被播放在学校文化节的大荧幕上，被印刷在读者手中的漫画书本上。</p>
+<p><strong>让镜头之外与镜头之内融合</strong>，正是作者的目的所在。</p>
+<p><img src="/images/tengbenshu/10.png" alt="10"></p>
+<p>“创作就是深入作品受众的内心问题，让他们大哭或者大笑。如果作者不受到相应的伤害，岂不是很不公平？”</p>
+<p>父亲的这句话，是优太拍摄电影的台本，同时也是父亲对现实中的优太与绘梨说的。而这一幕被画在了漫画中——它作为漫画的台词，同时也是作者藤本树对现实中的读者说的。</p>
+<p>此刻，我竟然体会到了一种meta的意味。</p>
+<p><strong>——如此分析的话，岂不是意味着藤本先生也受到过相应的伤害？</strong></p>
+<p>​     </p>
+<hr>
+<p>​     </p>
+<h2 id="重复，重复，重复和重复"><a href="#重复，重复，重复和重复" class="headerlink" title="重复，重复，重复和重复"></a>重复，重复，重复和重复</h2><p>同样值得一提的，还有大量的重复镜头。在这篇漫画中随处可见这种现象：一页四个格子使用几乎相同的分镜，有些地方甚至连续几页都是如此。</p>
+<p>一方面，这是为了表现这些镜头是优太使用手机拍摄的；另一方面，这能够很好地把控叙事的节奏，渲染漫画所传递的情绪。</p>
+<p><img src="/images/tengbenshu/11.png" alt="11"></p>
+<p><img src="/images/tengbenshu/12.png" alt="12"></p>
+<p>沉默，沉默，沉默接着还是沉默。画面中的人没有动，物体没有动，只有人物表情有着细微的变化。但正是这些细微的表情精确地刻画了角色的内心，同时也牵动着读者的情感。</p>
+<p>再配合上平均分割的等宽漫画格子，这看似拖拖拉拉的分镜设计成功地<strong>在一个没有时间轴的纸面作品中表现出了时间感</strong>——就像一帧一帧播放的电影一般，读者的阅读节奏被作者肆意地操控着。</p>
+<p>藤本树对这种重复镜头的掌握可以算是到达了炉火纯青的地步，在他的另一个短篇漫画作品《lookback》中对此也有大量运用。</p>
+<p><img src="/images/tengbenshu/13.png" alt="13"></p>
+<p>​     </p>
+<hr>
+<p>​     </p>
+<h2 id="有病的艺术家"><a href="#有病的艺术家" class="headerlink" title="有病的艺术家"></a>有病的艺术家</h2><p>伊藤优太，是个正常人吗？</p>
+<p>我觉得这个问题等同于——</p>
+<p>藤本树，是个正常人吗？</p>
+<p>在很多读者的调侃中，藤本树已经彻彻底底成为了一个“精神病漫画家”——我认为这是一种赞誉。这种看似诋毁的评价恰好说明了藤本树的漫画风格：奇幻，超脱，意料之外。</p>
+<p>伊藤优太的艺术风格，简直和藤本树一模一样。</p>
+<p>前文也提到过，优太对《爆亡吾母》的结局处理手法，正是藤本对《再见绘梨》（此处指本篇漫画，而非漫画中的电影作品）的结局处理手法。两次爆炸已经将两位创作者光怪陆离内心世界彻底展现。</p>
+<p>除此之外，漫画中也能见到许多对优太不寻常的行径的描述——</p>
+<p>因为电影遭到同学批评便想简单地轻生；</p>
+<p>被父亲评价“从小就有奇幻色彩”；</p>
+<p>对拍摄“拉屎视频”的异常执着……</p>
+<p><img src="/images/tengbenshu/14.png" alt="14"></p>
+<p>但我最想说的，还是这个——</p>
+<p>在漫画的结尾之处，优太的那一句<strong>“再见”</strong>。</p>
+<p><img src="/images/tengbenshu/15.png" alt="15"></p>
+<p> 当绘梨谈起自己真的是长生不老的吸血鬼后，有关寿命论的话题便开始了。</p>
+<p>死后可以复活的绘梨已经度过了几十次轮回，或许她曾与无数的人产生过交往，但都随着一次次死亡丧失的记忆而忘却了。</p>
+<p>但这一次则有所不同——优太为她拍摄了电影。</p>
+<p>于是，绘梨便可以通过这个永存的电影来认识上一个自己，认识优太。</p>
+<p><img src="/images/tengbenshu/16.png" alt="16"></p>
+<p>绘梨终于拥有了一个可以永远陪着自己的人。</p>
+<p>“不想坐着看电影的人，就请回吧？”</p>
+<p><strong>宛如告白一般的邀请。</strong></p>
+<p>如果这是一个正常又普通的恋爱漫画，那么此时，故事便应该在男女主一同看电影的画面中落下帷幕。</p>
+<p><img src="/images/tengbenshu/17.png" alt="17"></p>
+<p>但别忘了，这是藤本树的漫画。</p>
+<p>于是——我们看到——伊藤优太先生——这位有病的艺术家——</p>
+<p>他在如此浪漫的时刻，在两人历经了生死后重逢的时刻——</p>
+<p>说了句——</p>
+<p>“再见”</p>
+<p>随后，便是爆炸。</p>
+<p>​     </p>
+<p> 我的大脑仿佛被侵犯了。</p>
+<p>这一刻，我终于明白了。</p>
+<p>绘梨在生死轮回中希冀的，不是记忆，也不是一个能永远陪伴自己的人。</p>
+<p>优太穷尽一生所追求的，不是电影，也不是一个喜欢他和他的电影的人。</p>
+<p><strong>他们只想要那一抹奇幻的色彩。</strong><img src="/images/tengbenshu/18.png" alt="18"></p>
+<p>……</p>
+<p>在写完上面这段煽情文字后，我沉思良久。</p>
+<p>这看似无比浪漫的解读，真的是藤本先生创作的初衷吗？</p>
+<p>我觉得不是。</p>
+<p>他或许压根就没想那么多，只是在用自己的抽象的大脑画着漫画，让一切都遵从于自己的内心而发展——</p>
+<p>藤本树才是真正有病的艺术家。</p>
+<p>​     </p>
+<hr>
+<p>​     </p>
+<h2 id="番外篇：我为藤本树献上这一封情书"><a href="#番外篇：我为藤本树献上这一封情书" class="headerlink" title="番外篇：我为藤本树献上这一封情书"></a>番外篇：我为藤本树献上这一封情书</h2><p>以下这段文字，并非是为这篇《再见绘梨》创作的，而是在很久以前，我阅读完藤本树的著作《电锯人》后一时兴起而写的。只是在今天看完了《再见绘梨》这篇漫画后，我的大脑中重新浮现起了往日读《电锯人》时的那种扭曲的快感——请允许我再一次为藤本树献上这一封情书。</p>
+<p>​     </p>
+<blockquote>
+<p>我将心脏剖出，把鲜血涂抹在链锯上，向着宇宙之终焉献上丰盛的祭品，为穷尽一生所追求的真理的声音作出答复。在这超越永恒的刹那，深渊的回响愈发强烈，振聋发聩的咆哮声击穿了最后的防线，仿佛要窥见那不可知的极限——世界已深入混沌的漩涡，神明的惩罚已降临大地。那一切，便是用柴油与牛奶所清洗的，便是用泥土与面包所供养的，便是用报纸与棉被所遮掩的，都在一瞬之间爆炸，一切的物支离破碎，伴随着墓地前乌鸦的歌声升上天空——飞扬，散落，旋转，下坠——最终在熊熊烈焰的微笑中化为灰烬，却也不忘继续散布绝望的嘶吼，一如在极寒之境怒绽的鲜红色玫瑰。</p>
+<p>​     </p>
+<p>祂出现。似又离开，似又归来，似又消失，似又重现。在大脑与眼球将要炸裂的那一刻，祂振臂高呼，向着世间万物宣布新的造物主的尊名——</p>
+<p>​     </p>
+<p>藤本树！藤本树！藤本树！藤本树！</p>
+</blockquote>
+
+    </article>
+    <!-- license -->
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2022/05/03/%E7%95%AA%E8%8C%84%E6%B1%A4/" title="番茄汤">
+                    <div class="nextTitle">番茄汤</div>
+                </a>
+        </li>
+        <li class="previous">
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2022/04/12/%E6%9D%A8%E5%A4%8F%E7%9A%84%E6%97%A5%E8%AE%B0/" title="杨夏的日记">
+                    <div class="prevTitle">杨夏的日记</div>
+                </a>
+        </li>
+    </ul>
+    <!-- comment -->
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+            
+            
+            
+            <!-- utteranc评论 -->
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+            
+            
+                <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+    <link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet' />
+    <div id="comment"></div>
+    <script>
+    Waline.init({
+        el: '#comment' ,
+        serverURL: "https://blog-api-48sc2v2e6-sherroe.vercel.app",
+        locale: {
+            placeholder: "讲两句"
+        },
+        login: ""
+    });
+    </script>
+
+        </div>
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    <!-- Mathjax -->
+</main>
+
+                <!-- profile -->
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+        <div class="social">
+                            <a href="mailto:sherroe@163.com" class="iconfont-archer email" title="email" ></a>
+                <a href="//github.com/Sherroe" class="iconfont-archer github" target="_blank" title="github"></a>
+                <a href="//twitter.com/Sherroe_XD" class="iconfont-archer twitter" target="_blank" title="twitter"></a>
+                <a href="//space.bilibili.com/57427709" class="iconfont-archer bilibili" target="_blank" title="bilibili"></a>
+                <a href="//weibo.com/u/5992045682" class="iconfont-archer weibo" target="_blank" title="weibo"></a>
+
+        </div>
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+        <div class="website-approve">
+        </div>
+    <!-- 不蒜子  -->
+        <div class="busuanzi-container">
+                <span id="busuanzi_container_site_pv">访问量: <span id="busuanzi_value_site_pv"></span> ——也许实际上并没有这么多？</span>
+        </div>
+</footer>
+
+        </div>
+        <!-- toc -->
+            <div class="toc-wrapper toc-wrapper-loding" style=    top:50vh;
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%88%86%E7%82%B8"><span class="toc-number">1.</span> <span class="toc-text">爆炸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%BB%E4%BA%A1"><span class="toc-number">2.</span> <span class="toc-text">死亡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%AB%E7%94%BB%E4%B9%8B%E4%B8%AD%E6%98%AF%E7%94%B5%E5%BD%B1%EF%BC%8C%E7%94%B5%E5%BD%B1%E4%B9%8B%E4%B8%AD%E6%98%AF%E4%BA%BA%E7%94%9F"><span class="toc-number">3.</span> <span class="toc-text">漫画之中是电影，电影之中是人生</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%AF%E6%BC%AB%E7%94%BB%E7%9A%84%E5%88%86%E9%95%9C%EF%BC%8C%E4%B9%9F%E6%98%AF%E7%94%B5%E5%BD%B1%E7%9A%84%E9%95%9C%E5%A4%B4"><span class="toc-number">4.</span> <span class="toc-text">是漫画的分镜，也是电影的镜头</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%A4%8D%EF%BC%8C%E9%87%8D%E5%A4%8D%EF%BC%8C%E9%87%8D%E5%A4%8D%E5%92%8C%E9%87%8D%E5%A4%8D"><span class="toc-number">5.</span> <span class="toc-text">重复，重复，重复和重复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E7%97%85%E7%9A%84%E8%89%BA%E6%9C%AF%E5%AE%B6"><span class="toc-number">6.</span> <span class="toc-text">有病的艺术家</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%95%AA%E5%A4%96%E7%AF%87%EF%BC%9A%E6%88%91%E4%B8%BA%E8%97%A4%E6%9C%AC%E6%A0%91%E7%8C%AE%E4%B8%8A%E8%BF%99%E4%B8%80%E5%B0%81%E6%83%85%E4%B9%A6"><span class="toc-number">7.</span> <span class="toc-text">番外篇：我为藤本树献上这一封情书</span></a></li></ol>
+            </div>
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 22
+        </div>
+        <!-- search  -->
+            <div class="site-search site-search-loading popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+    </div>
+    <div class="post-archive">
+            <div class="archive-year"> 2077 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span>
+            <a class="archive-post-title" href="/2077/07/08/%E6%AD%8C%E5%A1%94/">歌塔</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/07</span>
+            <a class="archive-post-title" href="/2077/07/07/%E5%BC%82%E6%AC%A1%E5%85%83%E7%9A%84%E5%B9%B8%E5%AD%98%E8%80%85/">异次元的幸存者</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span>
+            <a class="archive-post-title" href="/2025/01/31/%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E7%9A%84Python%E5%BA%93/">关于工作中常用的一些操作文件的Python库</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2023/08/18/%E6%AF%9B%E9%9B%A8%E6%98%9F/">毛雨星</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/20</span>
+            <a class="archive-post-title" href="/2023/07/20/%E9%80%9A%E6%81%92%E9%9B%86/">通恒集</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2023/02/21/%E9%9D%A2%E8%AF%95/">面试</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span>
+            <a class="archive-post-title" href="/2022/12/16/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/">新年快乐</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span>
+            <a class="archive-post-title" href="/2022/11/20/%E5%A6%84%E6%83%B3%E5%BD%95%20%E5%A4%96%E7%AF%87%20%E6%A0%B8%E9%85%B8%E6%97%A5%E8%AE%B0/">妄想录 外篇 核酸日记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/19</span>
+            <a class="archive-post-title" href="/2022/09/19/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%B8%80/">妄想录 篇一</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span>
+            <a class="archive-post-title" href="/2022/09/10/%E7%BB%9D%E4%B8%96%E5%94%90%E9%97%A8/">绝世唐门</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2022/08/10/%E5%BE%B7%E5%A1%94/">德塔</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span>
+            <a class="archive-post-title" href="/2022/05/03/%E7%95%AA%E8%8C%84%E6%B1%A4/">番茄汤</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span>
+            <a class="archive-post-title" href="/2022/04/13/%E7%88%86%E7%82%B8%E3%80%81%E5%91%8A%E7%99%BD%E3%80%81%E8%89%BA%E6%9C%AF%E5%AE%B6%E4%B8%8E%E5%A4%A7%E4%BE%BF/">爆炸、告白、艺术家与大便</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2022/04/12/%E6%9D%A8%E5%A4%8F%E7%9A%84%E6%97%A5%E8%AE%B0/">杨夏的日记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2022/04/11/%E4%B8%80%E7%99%BD%E7%9A%84%E5%AE%87%E5%AE%99/">一白的宇宙</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2022/04/07/Linux%E4%BD%9C%E4%B8%9A%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">Linux作业 正则表达式</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/28</span>
+            <a class="archive-post-title" href="/2022/03/28/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%BA%8C/">妄想录 篇二</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span>
+            <a class="archive-post-title" href="/2022/03/27/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Linux学习笔记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span>
+            <a class="archive-post-title" href="/2022/03/17/%E4%BD%BF%E7%94%A8Github%E4%B8%8Ehexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用GitHub与Hexo搭建个人博客</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2022/03/16/HelloWorld/">Hello World</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2020 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span>
+            <a class="archive-post-title" href="/2020/09/03/%E8%9B%87/">蛇</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 1970 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/1970/01/01/%E8%B5%9E%E8%B5%8F/">赞赏</a>
+        </li>
+            </ul>
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+            <span class="sidebar-tag-name" data-tags="呓语">
+                <span class="iconfont-archer">&#xe606;</span>
+                呓语
+            </span>
+            <span class="sidebar-tag-name" data-tags="学习">
+                <span class="iconfont-archer">&#xe606;</span>
+                学习
+            </span>
+            <span class="sidebar-tag-name" data-tags="作业">
+                <span class="iconfont-archer">&#xe606;</span>
+                作业
+            </span>
+            <span class="sidebar-tag-name" data-tags="Linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                Linux
+            </span>
+            <span class="sidebar-tag-name" data-tags="笔记">
+                <span class="iconfont-archer">&#xe606;</span>
+                笔记
+            </span>
+            <span class="sidebar-tag-name" data-tags="随笔">
+                <span class="iconfont-archer">&#xe606;</span>
+                随笔
+            </span>
+            <span class="sidebar-tag-name" data-tags="短篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                短篇
+            </span>
+            <span class="sidebar-tag-name" data-tags="妄想录">
+                <span class="iconfont-archer">&#xe606;</span>
+                妄想录
+            </span>
+            <span class="sidebar-tag-name" data-tags="教程">
+                <span class="iconfont-archer">&#xe606;</span>
+                教程
+            </span>
+            <span class="sidebar-tag-name" data-tags="GitHub">
+                <span class="iconfont-archer">&#xe606;</span>
+                GitHub
+            </span>
+            <span class="sidebar-tag-name" data-tags="Hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                Hexo
+            </span>
+            <span class="sidebar-tag-name" data-tags="小说">
+                <span class="iconfont-archer">&#xe606;</span>
+                小说
+            </span>
+            <span class="sidebar-tag-name" data-tags="Python">
+                <span class="iconfont-archer">&#xe606;</span>
+                Python
+            </span>
+            <span class="sidebar-tag-name" data-tags="长篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                长篇
+            </span>
+            <span class="sidebar-tag-name" data-tags="连载">
+                <span class="iconfont-archer">&#xe606;</span>
+                连载
+            </span>
+            <span class="sidebar-tag-name" data-tags="杂谈">
+                <span class="iconfont-archer">&#xe606;</span>
+                杂谈
+            </span>
+            <span class="sidebar-tag-name" data-tags="通恒集">
+                <span class="iconfont-archer">&#xe606;</span>
+                通恒集
+            </span>
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+        <span class="sidebar-category-name" data-categories="呓语">
+            <span class="iconfont-archer">&#xe60a;</span>
+            呓语
+        </span>
+        <span class="sidebar-category-name" data-categories="学习">
+            <span class="iconfont-archer">&#xe60a;</span>
+            学习
+        </span>
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "http://sherroe.github.io",
+        root: siteMetaRoot,
+        author: "Sherroe Huang"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+        <!-- main func -->
+        <script src="/scripts/main.js"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
+        <!-- algolia -->
+            <div class="site-search site-search-loading">
+    <div class="algolia-popup popup">
+        <div class="algolia-search">
+            <div class="algolia-search-input-icon">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="algolia-search-input" id="algolia-search-input"></div>
+            <div class="popup-btn-close">
+                <i class="iconfont-archer">&#xe609;</i>
+            </div>
+        </div>
+
+        <div class="algolia-results">
+            <div id="algolia-stats" class="algolia-stats"></div>
+            <div id="algolia-hits"></div>
+            <div id="algolia-pagination" class="algolia-pagination"></div>
+        </div>
+    </div>
+</div>
+
+            <script src="/scripts/search.js" async></script>
+        <!-- busuanzi -->
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        <!-- async load share.js -->
+            <script src="/scripts/share.js" async></script>
+        <!-- mermaid -->
+    </body>
+</html>

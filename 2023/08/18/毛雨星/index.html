@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
+<!-- keywords -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Sherroe Huang">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Sherroe Huang">
+        <meta name="keywords" content="Sherroe,sherroe,blog,hexo,hexo-theme,hexo-blog">
+    <meta name="description" content="">
+    <meta name="description" content="一我万万没想到能在这里遇见毛雨星。 深圳的天永远都是燥热的。才到三月中旬，气温便开始猛地升高。我把外套收起来，只穿着一件短袖或者薄衬衫，便可在店门口坐上一整个白天。想起在北方的日子，只有六七月才有这简单的装束。 晚上九点多，我刚准备关店时，门口又走进一人。 “取件码。”我懒得抬头，一只手在手机上回着微信。 “C6……呃，1752。” 我把手机随便扔在桌上，转身在货架上找到了这个号码的快递。 “名字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="毛雨星">
+<meta property="og:url" content="http://sherroe.github.io/2023/08/18/%E6%AF%9B%E9%9B%A8%E6%98%9F/index.html">
+<meta property="og:site_name" content="妄想录">
+<meta property="og:description" content="一我万万没想到能在这里遇见毛雨星。 深圳的天永远都是燥热的。才到三月中旬，气温便开始猛地升高。我把外套收起来，只穿着一件短袖或者薄衬衫，便可在店门口坐上一整个白天。想起在北方的日子，只有六七月才有这简单的装束。 晚上九点多，我刚准备关店时，门口又走进一人。 “取件码。”我懒得抬头，一只手在手机上回着微信。 “C6……呃，1752。” 我把手机随便扔在桌上，转身在货架上找到了这个号码的快递。 “名字">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-08-29T15:42:19.206Z">
+<meta property="article:author" content="Sherroe Huang">
+<meta property="article:tag" content="呓语">
+<meta property="article:tag" content="短篇">
+<meta property="article:tag" content="小说">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/img/favicon.png">
+    <title>毛雨星 · 妄想录 | Sherroe&#39;s Blog</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .footer-fixed-btn,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(
+            -45deg,
+            #444 0,
+            #444 80px,
+            #333 80px,
+            #333 160px
+        );
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="/css/dark.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+        <script>
+            var hits = JSON.parse('{"per_page":10}')
+            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
+
+            var algolia = {
+                applicationID: 'GEEDN46CDJ',
+                apiKey: '8d3c584ac83bd68b3e1b07c68e0404e6',
+                indexName: 'Sherroe Huang',
+                hits: hits,
+                labels: labels
+            }
+        </script>
+    <!-- 百度统计  -->
+    <!-- 谷歌统计  -->
+    <!-- Google tag (gtag.js) -->
+<link rel="alternate" href="/atom.xml" title="妄想录" type="application/atom+xml">
+</head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+        <body class="post-body">
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress read-progress-feature"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        <div class="header-sidebar-menu header-sidebar-menu-rounded">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href="/">Sherroe's Blog</a>
+        </span>
+    </div>
+    <!-- toggle banner -->
+    <div class="banner banner-clean">
+        <div class="blog-title header-element">
+            <a href="/">Sherroe&#39;s Blog</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name">毛雨星</a>
+        </div>
+    </div>
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- donate button -->
+
+    <!-- back to top button -->
+    <div class="footer-fixed-btn footer-fixed-btn--hidden footer-fixed-btn--rounded back-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="    height:50vh;
+">
+    <!-- 主页  -->
+    <!-- 404页  -->
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/img/cover.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+                毛雨星
+            <!-- 404 -->
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            <!-- 404 -->
+        </p>
+        <!-- 文章页 meta -->
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                    <div class="post-intro-tags" >
+        <span class="post-category" data-categories="呓语">
+            <i class="fas fa-folder post-category-icon"></i>
+            <span class="post-category-text">
+                呓语
+            </span>
+        </span>
+        <a class="post-tag" href="javascript:void(0);" data-tags="呓语">呓语</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="短篇">短篇</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="小说">小说</a>
+</div>
+
+                <!-- 文章字数统计 -->
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">6.4k</span>阅读时长: <span class="post-count reading-time">21 min</span></span>
+                    </div>
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2023/08/18</span>
+                    <!-- busuanzi -->
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="一"><a href="#一" class="headerlink" title="一"></a>一</h1><p>我万万没想到能在这里遇见毛雨星。</p>
+<p>深圳的天永远都是燥热的。才到三月中旬，气温便开始猛地升高。我把外套收起来，只穿着一件短袖或者薄衬衫，便可在店门口坐上一整个白天。想起在北方的日子，只有六七月才有这简单的装束。</p>
+<p>晚上九点多，我刚准备关店时，门口又走进一人。</p>
+<p>“取件码。”我懒得抬头，一只手在手机上回着微信。</p>
+<p>“C6……呃，1752。”</p>
+<p>我把手机随便扔在桌上，转身在货架上找到了这个号码的快递。</p>
+<p>“名字。”</p>
+<p>“毛雨星。”</p>
+<p>这三个字令我愣了一下。我抬起头看向面前的人——瘦削的脸上戴着一副老旧的黑框眼镜，镜片后的眼球隐约布着些血丝，眼眶处的黑眼圈异常明显。他上身是一件已被反复洗得有些掉色的红黑格子衬衫，双肩包的背带则把衬衫压出了两处被汗水浸湿的深色区域。</p>
+<p>“毛雨星？”</p>
+<p>“对，毛雨星。毛线的毛……”</p>
+<p>“你是毛雨星！”</p>
+<p>我激动地喊起来，吓了他一跳。</p>
+<p>​     </p>
+<p>毛雨星是我大学的室友。</p>
+<p>我在北京读了四年大学，毛雨星当了我四年上铺。但这四年里，我与他的交流实际上少之又少。</p>
+<p>毛雨星是当之无愧的好学生，聪明、上进又勤奋。他每天早上七点准时起床，有课就去教室预习，没课就去图书馆读书，或者去实验室做他的项目开发。一直到晚上十点钟图书馆关门，他便换身运动装，去操场上跑两圈步，然后回宿舍睡觉。整个大学四年，他几乎每天都这样自律。</p>
+<p>毛雨星向来喜欢独自行动，所以我没什么机会和他讲话——即便是偶尔在周末，我们班级或者宿舍出门聚餐，他也总显得不善言辞。只有在同学们聊到课程或是学术相关的话题时，他才会时不时地插几句嘴，讲讲他的思路——这类话题也往往会因为他的准确解答而很快结束。</p>
+<p>自从毕业之后，我就没有见过他了。毛雨星考上了北京名校的研究生，而我去一家新媒体公司做了半年实习生。转正失败之后，我便回到深圳，帮父亲打理这家快递驿站。算下来，也有差不多五年没有见面了。</p>
+<p>​     </p>
+<p>“你先点。”我把菜单递给毛雨星，“来深圳多久了？”</p>
+<p>“刚过完年那会儿来的。”毛雨星接过菜单，手指似乎是沾到了塑封纸上的油污。他搓了搓指尖，换了只手打开菜单。</p>
+<p>“你是……前年毕业的？”我在心里盘算着。</p>
+<p>“对，前年。”</p>
+<p>“来这边出差吗？”</p>
+<p>“没，换工作了，刚入职。就在这附近。”</p>
+<p>“哦！我知道了……大厂啊。”</p>
+<p>毛雨星笑了笑，把菜单转给我：“吃腰子吗？”</p>
+<p>“吃，韭菜也来两串。我就喜欢这种。”</p>
+<p>毛雨星点点头，叫来服务员点菜。他似乎听不太懂服务员的广东口音，我时不时帮他解释两句。</p>
+<p>“再……再来两瓶珠江纯生。好了。”毛雨星把菜单合了起来。</p>
+<p>“你不是不喝酒吗？”</p>
+<p>“上班之后，也开始跟着同事喝了。”毛雨星递给我一个玻璃杯，“但我还是不会喝，就喝一点点。”</p>
+<p>“干你这行的，怎么也有酒桌文化啊？”</p>
+<p>“看企业。刚毕业去的那地方，不会喝酒真不行——隔几天就得跟那帮四五十岁的同事领导凑一桌，不喝就是不给面子。现在来互联网厂子好多了，年轻人多，聚餐点的全是可乐。”</p>
+<p>我笑了起来，毛雨星也跟着我笑。</p>
+<p>这一晚与毛雨星在烧烤摊上说的话，可能比当大学室友的那四年说的还多。我也逐渐了解到了他的近况。研究生毕业后的毛雨星在国企工作了一年半。今年过年后，为了和女友一同生活，他跳槽来了深圳。</p>
+<p>作为一个土生土长的东北人，毛雨星还不太适应深圳的气候和生活。但他的人生总归是一片坦途的——虽然他自己不好意思承认——但我想，就他的职业发展，肯定能满足他和女友在这座大都市好好规划未来。</p>
+<p>“其实啊，我有时候也挺羡慕你这样的：开个小店，有活就干，没活就歇……”毛雨星喝下一口酒，缓缓地说。</p>
+<p>我听了这话，哈哈大笑了起来：“你这大厂程序员，还羡慕我个开快递站的？我羡慕你才对吧！”</p>
+<p>“累啊，累。属实给人当牛做马。”毛雨星摇了摇头，“国企还好，说下班就下班，平日也闲散。到这边呢，压力太大了。从早到晚歇不了一口气，还总是加班到十一二点，每天不打三斤鸡血没法干……”</p>
+<p>“可你挣得多啊？”我依旧笑着，“多少人一辈子也挣不到你们这工资水平吧！”</p>
+<p>“是啊，挣得多……也就挣得多了……”毛雨星眼神飘忽了起来，没有继续回答我的话，而是把一大串烤肉塞到了自己的嘴里。</p>
+<p>我在心里想着，虽然知道他工资高，但具体是个什么数目就不是很清楚了。我刚想好奇一下，却在抬头看着毛雨星那略显憔悴的面孔时，突然不知被什么哽住了喉咙。最终也没有开口。只是和他同样拿起了一把肉串。</p>
+<p>那之后的几个月里，毛雨星很偶尔地来过我店里几次。大多时候是周末来，但也都只是为了拿快递，顺便才会和我寒暄几句。我大概能感受到，他的生活应该是异常忙碌的。差不多是过了国庆之后，我便再没有见过他了。</p>
+<p>​     </p>
+<hr>
+<p>​     </p>
+<h1 id="二"><a href="#二" class="headerlink" title="二"></a>二</h1><p>年底的某一天，我从税务局办完手续，之后为了拜访一位本家亲戚，一路大老远绕到了龙华。傍晚回店里的路上，我经过了一处人头攒动的路口。</p>
+<p>这里是一处日结工的招工地。周围随处可见各种廉价的宾馆、网吧和小吃摊，但却并没有什么令人感到舒适惬意的“人间烟火气”——因为这里总是有很多三五成群的闲散人员游荡在马路两边，或是在不远处的公园里随地躺卧。他们便是来这里寻找日结工作的人群，每天清晨和傍晚时，这些人都会聚集在这个路口，等待招工的面包车前来将他们打包带走。</p>
+<p>我不常来这个地方，这里的环境和人总是会给我一种莫名的危险气息——似是有一股强烈的焦虑和压抑感凝结在空气中。我加快了脚步，想赶快离开这个路口。</p>
+<p>但猛然间，人群中的一个熟面孔让我停了下来。我一眼就认出了他——虽然皮肤变得黝黑了不少，但那依旧瘦削的脸和标志性的黑框眼镜还是能让我分辨出不远处的人物。</p>
+<p>毛雨星也站在路口，和一个由十几人组成的人堆保持着不到几米的距离。他看起来无所事事，却又时不时地像在寻找什么一般四处张望。</p>
+<p>我走近他，叫了他的名字，他在一瞬间带着惊愕的表情回了头。</p>
+<p>我看到了毛雨星的正脸——气色简直要比上次偶遇时还要糟糕。虽然眼球里的血丝不那么明显了，但整幅面孔也都没有了什么血色。黑框眼镜的镜片脏了许多，镜腿也有些歪斜了，那细窄的鼻梁甚至似乎要难以承受眼镜的重压。他脸颊下胡子拉碴，看来是很久没有打理过了，短短的寸头却像是刚剃的。</p>
+<p>“呀……好久不见了。”毛雨星反应过来是我后，表情才恢复平淡。</p>
+<p>“确实好久不见了。今天不上班？”我问道，在心里重新确认了一遍今天应该是工作日。</p>
+<p>“怎么说呢……不干了。”</p>
+<p>“啊？”</p>
+<p>“哎呀，这说来话就多了。你吃过了没？”</p>
+<p>“没。怎么说，找个地方坐一坐？”</p>
+<p>“好啊好啊，再去上次那个烧烤摊吧。”</p>
+<p>我点了点头，毛雨星颓唐的脸上挤出了微笑。</p>
+<p>​     </p>
+<p>这一次，毛雨星没有主动点酒。当我问他还要不要像上次那样来两瓶珠江纯生时，他说他不想喝，转过头向服务员要了一杯热茶水。</p>
+<p>两盘肉下肚，毛雨星却一句都没有提起他自己，反倒是接连不断地问着我的生活——但我的生活是简单到十句话便能讲明白的。东拉西扯一会后，终于是无话可问了。</p>
+<p>“讲讲你吧？”我把话题引到对方身上，“咋了，为啥不干了？”</p>
+<p>毛雨星的眉间出现了与他年龄不符的皱纹。</p>
+<p>“被裁了。我在的那个业务线营收不好，整个项目组都解散了。”</p>
+<p>我略微点一点头。近来有很多大企业裁员的状况我也有所耳闻，但毕竟是与自己生活无关的事情，我也没怎么在意过。</p>
+<p>毛雨星继续说：“当时啊，其实也是能留下来的。公司给了我们一些名额，可以转到别的项目组去，但我最后还是没去。”</p>
+<p>“为啥不去？”</p>
+<p>“一个是，离职补偿也挺多一笔钱的。”毛雨星咬了下嘴唇，看得出来他很犹豫，“另一个是……我查出来自己身体不好了，稍微有点肝病变。”</p>
+<p>我也皱起了眉头，瞬间明白了毛雨星为什么不喝酒了。</p>
+<p>“是工作影响的吗……”</p>
+<p>“多半是。总加班总熬夜，自从来这边以后，我经常半夜心悸。”</p>
+<p>“也好，这种熬人的工作，不干了也好。身体才是本钱啊。”</p>
+<p>“对，对。”毛雨星砸吧着嘴，“所以我说啊，我有时候真的是挺羡慕你的。”</p>
+<p>我一时语塞，不知该如何接上对方的话。我该被他羡慕吗？毛雨星手里一次性拿到的离职补偿，可能要比我这个快递驿站半年的收入都多。但我确实也不用忍受那痛苦的工作压力，不用担心会因为工作而导致身体问题。</p>
+<p>“那之后什么打算？”</p>
+<p>“过年先回趟家，剩下的再说吧……”毛雨星的话里没有一丝底气。</p>
+<p>“你对象呢，深圳本地人吗？”我突然想起这个话题。</p>
+<p>对方沉默了些许时间，慢慢咽下一口肉，才说到：</p>
+<p>“跟她分了……”</p>
+<p>哪壶不开提哪壶，我突然感觉自己不适合聊天。离职，生病，分手。眼前的这个男人，比起和我三月份相遇那时，生活状态的差距早已不是一星半点。</p>
+<p>毛雨星似乎是察觉到了我的担忧，便宽慰我说：“其实啊，不用太担心。病不是什么大病，医生也说了，跟着疗程好好吃药，不多日子肯定就好了。”</p>
+<p>“那就好……”</p>
+<p>“但我当时确实有些害怕。平时工作本身就累，自己也想放个假好好歇歇。但我女朋友不这么想，她想让我继续上班。”</p>
+<p>“所以因为这个吵架了？”</p>
+<p>“差不多吧。不过我们俩有矛盾是早就有的了，这事顶多算个引子——现在就业环境这么差，我当时选了离职，再找新工作其实很难了。”</p>
+<p>可是我心中还有别的疑惑。回想起今天遇到他的地点，我问道：“你这样的高材生，怎么说也不会找不到个正经工作吧……哪怕工资差点呢？怎么跑去干日结了？”</p>
+<p>毛雨星微笑着回答：“我租的房子二月份就到期，之后不打算继续在深圳住着了。不想找长期工作。”</p>
+<p>“那干嘛不歇着呢？”</p>
+<p>“我呀，一个人住在出租屋里太无聊了，总想着找点事做，能短期能挣钱最好。上个月我试过送外卖，太累了，身体根本扛不住。这种日结就很有意思，能找到不需要动体力的，一天还能换一个花样，不想干了也随时摆烂。”</p>
+<p>聊起做日结的经历，毛雨星的愁容逐渐消散了一些，话匣子也打开了。</p>
+<p>“这些日结老哥，真的很有意思。没钱了就找一天的活干，挣到钱就立马跑去玩。买瓶大水，在网吧一坐就是一天。如此循环，一年到头都这样。你说你的生活简单，他们的生活更简单。啥都不想，过一天算一天。哪像我这几年过的日子，人都快焦虑疯了——工作、职级、房子、股票、感情、人际关系……一样比一样烦人。说到头啊，还是钱。没钱的都想有钱，有钱了又想起那不用成天顾头顾尾的日子……”</p>
+<p>他没喝一口酒，但也像是有些醉了。</p>
+<p>“……可是人人都有自己的苦，家家都有难念的经。有些年纪大点的日结老哥，也不是这么无忧无虑的。他们有孩子要养，挣了钱不是自己花，得存着给家里人用，日子过得就明显拧巴很多。这样的人，多半活着都是有盼头的，但被学历和年龄挡在前面，找不到长期工，最后也只能来做日结。我去那边快两周了，也跟好些人混熟了。但没人知道我其实完全不用干日结，我有学历和经历能找到正经工作。也没人知道我住在一个月要好几千的大出租屋里，手里边有不下六位数的存款……”</p>
+<p>说到这里，他的语气竟然有些哽咽了起来。</p>
+<p>“我压根不是去谋生的，说白了就是随便去体验一下生活，也不可能真正融入进去。但我确确实实在他们身上看到了一些不一样的东西——那是我所渴望的东西。我不知道我是出于羡慕，还是怜悯，还是好奇……还是什么，我时常觉得他们这样的人生没有出路，但我现在连自己的出路都找不到。”</p>
+<p>我陪着毛雨星在烧烤摊聊到了半夜十二点多。看得出来，他对未来已经没有什么明确的规划了。但他总还是有能力为自己找到路子的，我一向这么认为。</p>
+<p>​     </p>
+<p>分别的时候，毛雨星告诉我，他再过两周就要回东北老家去了。他的父母叫他回去相亲，他也想考个家附近的公务员试试。毛雨星说他临走前还想找我再吃顿饭，我立刻答应了下来。</p>
+<p>“有啥困难，都跟兄弟讲，能帮的肯定会帮。”我笑着说。</p>
+<p>“好好好……”毛雨星热情地和我握着手，“其实，有件事我没跟你说，我看你好像也一直没发现……”</p>
+<p>“什么事？”</p>
+<p>毛雨星松开了和我紧握的手，突然仰面大笑了起来。</p>
+<p>“哈哈哈……其实，其实我一直没想起来你叫什么名字！”</p>
+<p>我愣愣地站在原地。</p>
+<p>“哈哈哈哈……”</p>
+<p>毛雨星的笑声越来越大。</p>
+<p>我这才意识到，自从和毛雨星重逢以来，他确实一次都没有叫出过我的名字。</p>
+<p>“哈哈哈哈哈……”</p>
+<p>毛雨星的笑声震耳欲聋，把我从回忆中拉了出来。</p>
+<p>​     </p>
+<hr>
+<p>​     </p>
+<h1 id="三"><a href="#三" class="headerlink" title="三"></a>三</h1><p>我愣愣地站在原地。</p>
+<p>我面前的不再是那个有着瘦削的脸、带着黑框眼镜的寸头少年，而是一个孤零零的青白色石碑。这石碑立在一个光秃秃的山头上，山上刚下过雪，所见之处都是一片茫茫的白色。石碑的表面也覆盖着一层薄薄的雪，看起来大概是不久前刚被人擦拭过，但天空中从未停止过的雪花又重新为他盖上了一片白纱。透过那半透明的雪的白纱，我看到石碑上端端正正地刻着五个隶书大字——毛雨星之墓。</p>
+<p>一个星期前，毛雨星突然间离世了。</p>
+<p>在毛雨星在准备回家的前一天，他所乘坐的公交车和一辆运送钢材的卡车相撞了。数根钢材贯穿了卡车的驾驶室和公交车的车窗，以及毛雨星的身体。就在这件事发生的两秒钟前，毛雨星把同在公交车内的一个小女孩用力推向一边，让她避开了钢材的运动轨迹。</p>
+<p>毛雨星的遗体在深圳完成了火化，但是按他们家乡的习俗，他必须要葬在老家的祖坟里。</p>
+<p>于是，我也跟随着毛雨星，来到了他的家乡。</p>
+<p>这是辽宁边沿的一个小小的村镇。我看着手机地图，从这里向南不出几公里，就到了划分中朝边境的鸭绿江了。</p>
+<p>此时已近年关，不大的镇子里处处张灯结彩，空气中到处都洋溢着节日的喜庆——除了我所在的毛雨星家的小院。走进院门之后，先前在街边随处可见的红色的鞭炮、红色的春联和红色的灯笼都一并消失了，取而代之的是白色的纸钱、白色的挽联和白色的花圈。</p>
+<p>凌晨时分，十几个大汉抬着毛雨星的灵柩，一路抬上了山。抬棺的汉子每走一截路便要停下换人歇息，我也跟在人群后面，随着队伍走走停停。毛雨星的遗体早已不复存在，我不知道这样大的一个棺椁里面装着的是什么，会是他的骨灰，还是他的遗物，还是别的什么？我想了一会儿，总觉得不太礼貌，便不再去想了。</p>
+<p>上山之后，天空中开始下起了雪。山上的风、雪、泥土、杂草和毛雨星的灵柩一同被掩埋在那个坑洞之中。随后，青白色的石碑立了上去。</p>
+<p>我看着干活的汉子们来回忙碌，看着披着麻衣的人们跪在地上哭号，看着青白色的石碑渐渐被雪覆盖。我愣愣地站在原地。</p>
+<p>​     </p>
+<p>“小兄弟。”</p>
+<p>一个粗犷的男音出现在我身后。我转过身去，看到一个壮实的汉子，左手拿着一包烟，右手抽出来一根递给了我。</p>
+<p>“谢谢，我不抽。”</p>
+<p>“行。”汉子把伸出的手收了回去，“你是雨星他同学吧？”</p>
+<p>“对，我们是大学室友。”</p>
+<p>“好，好……”汉子把抽出的那根烟塞入了自己口中，“我听说，你住在深圳？”</p>
+<p>“是。”</p>
+<p>“那就好办了。”汉子咧起嘴笑着，“我是雨星哥哥，我叫毛雨田。就是有个事儿想麻烦麻烦……”</p>
+<p>“您说。”</p>
+<p>“就是这样嘛。我爸妈年纪都大了，腿脚不好。我自己得留在家里管事儿，他姐姐也走不开。毕竟我们一家子，除了雨星，连丹东市都没出去过。深圳那地确实远……”</p>
+<p>“您直说吧，能帮上的忙我会帮的。”</p>
+<p>“好，好，好。”毛雨田拿起火机点了烟，猛吸一口后，继续说，“雨星在深圳租了房子，房子里应该还留着不少他的东西。我寻思你回深圳以后，能不能帮他把行李装一装，给我们这儿寄过来……”</p>
+<p>“好说好说，有钥匙就行。”</p>
+<p>“有有有。”毛雨田点着头，“在这聊太冷了。别人也都下山了，咱回去再说？”</p>
+<p>于是我跟着毛雨田下了山，回到了毛家的小院中。</p>
+<p>​     </p>
+<p>中午吃酒席时，毛家小院的门口走进一对中年男女。毛雨田看到两人，立刻迎了上去。这对中年男女虽然都穿着一身纯黑色的朴素装束，但女方手中的提包和男方腕间的手表还是让我意识到了，这两位至少不会是毛家的老乡。</p>
+<p>我在不远处听到了他们和毛雨星父母的谈话。</p>
+<p>“我家雨星救下的小孩子，我们也想看看……”毛雨星的母亲说。</p>
+<p>中年男性面露难色：“媛媛她那边……学校通知的急，实在是没办法，等媛媛放假了，我们一定带她来。”</p>
+<p>“媛媛很感激雨星哥哥，这是她给你们写的信……”一旁的中年女性拿着一个信封，递给了毛雨星的母亲。</p>
+<p>毛雨田注意到我看着他们，低声对我说：“他俩就是雨星救下来的小女孩的父母，都是深圳人。小孩刚上完初中，家里就给送到加拿大去了，前几天刚走。”</p>
+<p>“雨星的丧葬费用，我们可以全出……”我听到那个中年男性的声音。</p>
+<p>​     </p>
+<p>傍晚时，毛家小院的门口又来了一位远客。</p>
+<p>一个怀抱着男婴的女人趔趔趄趄地走进院门。刚跨过门槛，她便突然将男婴放在地上，跪着磕起头来。旁人连忙将她扶起，让她去毛雨星的灵位前再跪。</p>
+<p>我本以为她也只是毛家的某位亲属。但这次，毛家人并没有像先前一样欢迎她。</p>
+<p>“大姐……别跪了，你走吧。我爸妈都不想见你。”毛雨田对女人说。</p>
+<p>女人没有回答，只是一边跪着，一边低声啜泣。怀里的男婴也跟着哭了起来。</p>
+<p>“真的，走吧。你跪着也没用。”</p>
+<p>“求你们了，真的求求你们再商量商量……”女人红着眼说，明显是四川口音。</p>
+<p>“哎呀……商量的事以后再商量，我们今儿忙的很，你在这跪着，也没人管你……”</p>
+<p>“以后，以后好久商量？我明天还要去郑州……”</p>
+<p>我不知道后来发生了什么，但总之是看到这个女人驼着背落寞地走出了毛家小院。</p>
+<p>“她就是乔广义老婆。”毛雨田对我说，“哦，乔广义就是那个害雨星出事的卡车司机，车祸里也死了。”</p>
+<p>“她说求你们商量，要商量什么？”我问道。</p>
+<p>“商量赔偿的事。我就觉得这有啥好商量的，法院怎么判就怎么赔呗。她只一个劲说她赔不起……那我家雨星，活生生一个人，也没人能赔得起……”</p>
+<p>我不禁觉得悲哀。毛雨田去忙别的事之后，我独自走出毛家小院，便看到这个女人坐在不远处的路沿旁，正哄着怀中的婴儿。</p>
+<p>我想了想，走上前去，与她聊了起来。</p>
+<p>女人名叫刘燕，她和丈夫乔广义都是四川人。为了在过年前多给家里攒点钱，乔广义独自一个人跑去深圳接单送货。结果不仅自己没有回来，还给她留下了两条人命的赔偿单。</p>
+<p>“他们叫我赔，我啷个赔得起？我们家再跑十年卡车也没得这些钱……”刘燕低下眉眼，她土黄的脸上遍布着皱纹，看不到一丝生气，“光是去丹东和郑州的路费，就要一千多块。家里穷的都见底了，还有两个娃娃要养。真是不让人活了……”</p>
+<p>不多时，刘燕便起身要离开。她说她明天就要去郑州，同另一位死者的家人求情商量。</p>
+<p>“谢谢你了。”刘燕对我强硬地挤出一个微笑，“毛家人都不愿给我好脸色，你是第一个会问我两句的……”</p>
+<p>我也带着苦涩的笑容向她点了点头，目送这个佝偻的女人坐上去县城的大巴车。看着大巴车渐渐消失在路的尽头，我依旧愣愣地站在原地。夕阳的余晖映照在不远处的雪山上，把雪的白纱浸染成一片暖黄。</p>
+<p>​     </p>
+<p>回到深圳后，我做的第一件事便是来到毛雨星的出租屋，帮他整理遗物。他的大部分行李其实已经打包好了，我把剩下的东西简单收拾了一下，便交给邮政快递站，寄去了他远在辽宁的老家。</p>
+<p>第二天，我和毛雨星的房东办了退租。把那串毛雨田交给我的钥匙还回去后，我犹豫半晌，用手机拨出毛雨田留给我的电话。</p>
+<p>“哦……哦！好，太谢谢了。”电话另一头依然是那个粗犷的男音，“就是，小兄弟。你给我打电话过来，我才想起来一个事。”</p>
+<p>“什么事？”</p>
+<p>“哈哈哈……我还不知道你叫啥呢！”毛雨田笑了起来，“实在不好意思啊，之前忙到连这都忘了问……”</p>
+<p>我再一次愣住了。</p>
+<p>是啊，我叫什么名字呢？</p>
+<p>但是这重要吗？这个故事的主角，是毛雨星啊。</p>
+<p>那我是谁呢？</p>
+
+    </article>
+    <!-- license -->
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2025/01/31/%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E7%9A%84Python%E5%BA%93/" title="关于工作中常用的一些操作文件的Python库">
+                    <div class="nextTitle">关于工作中常用的一些操作文件的Python库</div>
+                </a>
+        </li>
+        <li class="previous">
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2023/07/20/%E9%80%9A%E6%81%92%E9%9B%86/" title="通恒集">
+                    <div class="prevTitle">通恒集</div>
+                </a>
+        </li>
+    </ul>
+    <!-- comment -->
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+            
+            
+            
+            <!-- utteranc评论 -->
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+            
+            
+                <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+    <link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet' />
+    <div id="comment"></div>
+    <script>
+    Waline.init({
+        el: '#comment' ,
+        serverURL: "https://blog-api-48sc2v2e6-sherroe.vercel.app",
+        locale: {
+            placeholder: "讲两句"
+        },
+        login: ""
+    });
+    </script>
+
+        </div>
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    <!-- Mathjax -->
+</main>
+
+                <!-- profile -->
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+        <div class="social">
+                            <a href="mailto:sherroe@163.com" class="iconfont-archer email" title="email" ></a>
+                <a href="//github.com/Sherroe" class="iconfont-archer github" target="_blank" title="github"></a>
+                <a href="//twitter.com/Sherroe_XD" class="iconfont-archer twitter" target="_blank" title="twitter"></a>
+                <a href="//space.bilibili.com/57427709" class="iconfont-archer bilibili" target="_blank" title="bilibili"></a>
+                <a href="//weibo.com/u/5992045682" class="iconfont-archer weibo" target="_blank" title="weibo"></a>
+
+        </div>
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+        <div class="website-approve">
+        </div>
+    <!-- 不蒜子  -->
+        <div class="busuanzi-container">
+                <span id="busuanzi_container_site_pv">访问量: <span id="busuanzi_value_site_pv"></span> ——也许实际上并没有这么多？</span>
+        </div>
+</footer>
+
+        </div>
+        <!-- toc -->
+            <div class="toc-wrapper toc-wrapper-loding" style=    top:50vh;
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80"><span class="toc-number">1.</span> <span class="toc-text">一</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C"><span class="toc-number">2.</span> <span class="toc-text">二</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89"><span class="toc-number">3.</span> <span class="toc-text">三</span></a></li></ol>
+            </div>
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 22
+        </div>
+        <!-- search  -->
+            <div class="site-search site-search-loading popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+    </div>
+    <div class="post-archive">
+            <div class="archive-year"> 2077 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span>
+            <a class="archive-post-title" href="/2077/07/08/%E6%AD%8C%E5%A1%94/">歌塔</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/07</span>
+            <a class="archive-post-title" href="/2077/07/07/%E5%BC%82%E6%AC%A1%E5%85%83%E7%9A%84%E5%B9%B8%E5%AD%98%E8%80%85/">异次元的幸存者</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span>
+            <a class="archive-post-title" href="/2025/01/31/%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E7%9A%84Python%E5%BA%93/">关于工作中常用的一些操作文件的Python库</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2023/08/18/%E6%AF%9B%E9%9B%A8%E6%98%9F/">毛雨星</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/20</span>
+            <a class="archive-post-title" href="/2023/07/20/%E9%80%9A%E6%81%92%E9%9B%86/">通恒集</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2023/02/21/%E9%9D%A2%E8%AF%95/">面试</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span>
+            <a class="archive-post-title" href="/2022/12/16/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/">新年快乐</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span>
+            <a class="archive-post-title" href="/2022/11/20/%E5%A6%84%E6%83%B3%E5%BD%95%20%E5%A4%96%E7%AF%87%20%E6%A0%B8%E9%85%B8%E6%97%A5%E8%AE%B0/">妄想录 外篇 核酸日记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/19</span>
+            <a class="archive-post-title" href="/2022/09/19/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%B8%80/">妄想录 篇一</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span>
+            <a class="archive-post-title" href="/2022/09/10/%E7%BB%9D%E4%B8%96%E5%94%90%E9%97%A8/">绝世唐门</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2022/08/10/%E5%BE%B7%E5%A1%94/">德塔</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span>
+            <a class="archive-post-title" href="/2022/05/03/%E7%95%AA%E8%8C%84%E6%B1%A4/">番茄汤</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span>
+            <a class="archive-post-title" href="/2022/04/13/%E7%88%86%E7%82%B8%E3%80%81%E5%91%8A%E7%99%BD%E3%80%81%E8%89%BA%E6%9C%AF%E5%AE%B6%E4%B8%8E%E5%A4%A7%E4%BE%BF/">爆炸、告白、艺术家与大便</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2022/04/12/%E6%9D%A8%E5%A4%8F%E7%9A%84%E6%97%A5%E8%AE%B0/">杨夏的日记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2022/04/11/%E4%B8%80%E7%99%BD%E7%9A%84%E5%AE%87%E5%AE%99/">一白的宇宙</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2022/04/07/Linux%E4%BD%9C%E4%B8%9A%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">Linux作业 正则表达式</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/28</span>
+            <a class="archive-post-title" href="/2022/03/28/%E5%A6%84%E6%83%B3%E5%BD%95%20%E7%AF%87%E4%BA%8C/">妄想录 篇二</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span>
+            <a class="archive-post-title" href="/2022/03/27/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Linux学习笔记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span>
+            <a class="archive-post-title" href="/2022/03/17/%E4%BD%BF%E7%94%A8Github%E4%B8%8Ehexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用GitHub与Hexo搭建个人博客</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2022/03/16/HelloWorld/">Hello World</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2020 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span>
+            <a class="archive-post-title" href="/2020/09/03/%E8%9B%87/">蛇</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 1970 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/1970/01/01/%E8%B5%9E%E8%B5%8F/">赞赏</a>
+        </li>
+            </ul>
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+            <span class="sidebar-tag-name" data-tags="呓语">
+                <span class="iconfont-archer">&#xe606;</span>
+                呓语
+            </span>
+            <span class="sidebar-tag-name" data-tags="学习">
+                <span class="iconfont-archer">&#xe606;</span>
+                学习
+            </span>
+            <span class="sidebar-tag-name" data-tags="作业">
+                <span class="iconfont-archer">&#xe606;</span>
+                作业
+            </span>
+            <span class="sidebar-tag-name" data-tags="Linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                Linux
+            </span>
+            <span class="sidebar-tag-name" data-tags="笔记">
+                <span class="iconfont-archer">&#xe606;</span>
+                笔记
+            </span>
+            <span class="sidebar-tag-name" data-tags="随笔">
+                <span class="iconfont-archer">&#xe606;</span>
+                随笔
+            </span>
+            <span class="sidebar-tag-name" data-tags="短篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                短篇
+            </span>
+            <span class="sidebar-tag-name" data-tags="妄想录">
+                <span class="iconfont-archer">&#xe606;</span>
+                妄想录
+            </span>
+            <span class="sidebar-tag-name" data-tags="教程">
+                <span class="iconfont-archer">&#xe606;</span>
+                教程
+            </span>
+            <span class="sidebar-tag-name" data-tags="GitHub">
+                <span class="iconfont-archer">&#xe606;</span>
+                GitHub
+            </span>
+            <span class="sidebar-tag-name" data-tags="Hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                Hexo
+            </span>
+            <span class="sidebar-tag-name" data-tags="小说">
+                <span class="iconfont-archer">&#xe606;</span>
+                小说
+            </span>
+            <span class="sidebar-tag-name" data-tags="Python">
+                <span class="iconfont-archer">&#xe606;</span>
+                Python
+            </span>
+            <span class="sidebar-tag-name" data-tags="长篇">
+                <span class="iconfont-archer">&#xe606;</span>
+                长篇
+            </span>
+            <span class="sidebar-tag-name" data-tags="连载">
+                <span class="iconfont-archer">&#xe606;</span>
+                连载
+            </span>
+            <span class="sidebar-tag-name" data-tags="杂谈">
+                <span class="iconfont-archer">&#xe606;</span>
+                杂谈
+            </span>
+            <span class="sidebar-tag-name" data-tags="通恒集">
+                <span class="iconfont-archer">&#xe606;</span>
+                通恒集
+            </span>
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+        <span class="sidebar-category-name" data-categories="呓语">
+            <span class="iconfont-archer">&#xe60a;</span>
+            呓语
+        </span>
+        <span class="sidebar-category-name" data-categories="学习">
+            <span class="iconfont-archer">&#xe60a;</span>
+            学习
+        </span>
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "http://sherroe.github.io",
+        root: siteMetaRoot,
+        author: "Sherroe Huang"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+        <!-- main func -->
+        <script src="/scripts/main.js"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
+        <!-- algolia -->
+            <div class="site-search site-search-loading">
+    <div class="algolia-popup popup">
+        <div class="algolia-search">
+            <div class="algolia-search-input-icon">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="algolia-search-input" id="algolia-search-input"></div>
+            <div class="popup-btn-close">
+                <i class="iconfont-archer">&#xe609;</i>
+            </div>
+        </div>
+
+        <div class="algolia-results">
+            <div id="algolia-stats" class="algolia-stats"></div>
+            <div id="algolia-hits"></div>
+            <div id="algolia-pagination" class="algolia-pagination"></div>
+        </div>
+    </div>
+</div>
+
+            <script src="/scripts/search.js" async></script>
+        <!-- busuanzi -->
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        <!-- async load share.js -->
+            <script src="/scripts/share.js" async></script>
+        <!-- mermaid -->
+    </body>
+</html>
